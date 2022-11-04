@@ -65,6 +65,8 @@ class Blocksy_Custom_Post_Types {
 				'ha_nav_content',
 				'course',
 				'lesson',
+				'atbdp_orders',
+				'at_biz_dir',
 
 				// 'courses',
 				'tutor_quiz',

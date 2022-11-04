@@ -90,13 +90,25 @@ if (
 			</svg>
 		</button>
 
-		<?php if (
-			\Blocksy\Plugin::instance()->account_auth->has_woo_register_flow()
-			&&
-			function_exists('dokan')
-		) { ?>
-			<input type="hidden" name="redirect_to" value="<?php echo apply_filters('dokan_seller_setup_wizard_url', site_url('?page=dokan-seller-setup')) ?>">
-		<?php } ?>
+		<?php
+			if (
+				\Blocksy\Plugin::instance()->account_auth->has_woo_register_flow()
+				&&
+				function_exists('dokan')
+			) {
+				echo blocksy_html_tag(
+					'input',
+					[
+						'type' => 'hidden',
+						'name' => 'redirect_to',
+						'value' => apply_filters(
+							'dokan_seller_setup_wizard_url',
+							site_url('?page=dokan-seller-setup')
+						)
+					]
+				);
+			}
+		?>
 	</p>
 
 	<?php do_action('blocksy:account:modal:register:end'); ?>

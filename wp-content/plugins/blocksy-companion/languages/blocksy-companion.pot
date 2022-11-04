@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-10-27 19:55+0000\n"
+"POT-Creation-Date: 2022-11-04 16:01+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
@@ -122,73 +122,73 @@ msgid ""
 "a wishlits page."
 msgstr ""
 
-#: framework/theme-integration.php:350,
+#: framework/theme-integration.php:358,
 #: framework/extensions/widgets/widgets/ct-facebook/options.php:16,
 #: framework/extensions/widgets/widgets/ct-facebook/view.php:12,
 #: framework/extensions/widgets/widgets/ct-facebook/widget.php:13
 msgid "Facebook"
 msgstr ""
 
-#: framework/theme-integration.php:351
+#: framework/theme-integration.php:359
 msgid "Twitter"
 msgstr ""
 
-#: framework/theme-integration.php:352
+#: framework/theme-integration.php:360
 msgid "LinkedIn"
 msgstr ""
 
-#: framework/theme-integration.php:353
+#: framework/theme-integration.php:361
 msgid "Dribbble"
 msgstr ""
 
-#: framework/theme-integration.php:354
+#: framework/theme-integration.php:362
 msgid "Instagram"
 msgstr ""
 
-#: framework/theme-integration.php:355
+#: framework/theme-integration.php:363
 msgid "Pinterest"
 msgstr ""
 
-#: framework/theme-integration.php:356
+#: framework/theme-integration.php:364
 msgid "WordPress"
 msgstr ""
 
-#: framework/theme-integration.php:357
+#: framework/theme-integration.php:365
 msgid "GitHub"
 msgstr ""
 
-#: framework/theme-integration.php:358,
+#: framework/theme-integration.php:366,
 #: framework/extensions/widgets/widgets/ct-contact-info/options.php:497,
 #: framework/extensions/widgets/widgets/ct-socials/options.php:100,
 #: framework/premium/features/content-blocks/options/archive.php:47
 msgid "Medium"
 msgstr ""
 
-#: framework/theme-integration.php:359
+#: framework/theme-integration.php:367
 msgid "YouTube"
 msgstr ""
 
-#: framework/theme-integration.php:360
+#: framework/theme-integration.php:368
 msgid "Vimeo"
 msgstr ""
 
-#: framework/theme-integration.php:361
+#: framework/theme-integration.php:369
 msgid "VKontakte"
 msgstr ""
 
-#: framework/theme-integration.php:362
+#: framework/theme-integration.php:370
 msgid "Odnoklassniki"
 msgstr ""
 
-#: framework/theme-integration.php:363
+#: framework/theme-integration.php:371
 msgid "TikTok"
 msgstr ""
 
-#: framework/theme-integration.php:435
+#: framework/theme-integration.php:443
 msgid "Companion"
 msgstr ""
 
-#: framework/theme-integration.php:453 static/js/screens/SiteExport.js:111
+#: framework/theme-integration.php:461 static/js/screens/SiteExport.js:111
 msgid "PRO"
 msgstr ""
 
@@ -706,7 +706,7 @@ msgstr ""
 #: framework/premium/extensions/woocommerce-extra/header-items/wish-list/options.php:151,
 #: framework/premium/features/premium-header/items/contacts/options.php:404,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:186,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:371,
+#: framework/premium/features/premium-header/items/language-switcher/options.php:380,
 #: framework/premium/features/premium-header/items/search-input/options.php:188
 msgid "Design"
 msgstr ""
@@ -778,8 +778,8 @@ msgstr ""
 #: framework/premium/features/premium-header/items/language-switcher/options.php:249,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:279,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:308,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:399,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:425,
+#: framework/premium/features/premium-header/items/language-switcher/options.php:408,
+#: framework/premium/features/premium-header/items/language-switcher/options.php:434,
 #: framework/premium/features/premium-header/items/search-input/options.php:241,
 #: framework/premium/features/premium-header/items/search-input/options.php:273,
 #: framework/premium/features/premium-header/items/search-input/options.php:303,
@@ -836,7 +836,7 @@ msgstr ""
 #: framework/premium/features/premium-header/items/dark-mode-switcher/options.php:81,
 #: framework/premium/features/premium-header/items/dark-mode-switcher/options.php:111,
 #: framework/premium/features/premium-header/items/dark-mode-switcher/options.php:140,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:404,
+#: framework/premium/features/premium-header/items/language-switcher/options.php:413,
 #: framework/premium/features/premium-header/items/search-input/options.php:788
 msgid "Hover"
 msgstr ""
@@ -849,7 +849,7 @@ msgstr ""
 #: framework/features/header/items/account/options.php:1263,
 #: framework/premium/extensions/woocommerce-extra/includes/wish-list-options.php:173,
 #: framework/premium/extensions/post-types-extra/includes/read-progress/customizer.php:92,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:412
+#: framework/premium/features/premium-header/items/language-switcher/options.php:421
 msgid "Background Color"
 msgstr ""
 
@@ -872,7 +872,7 @@ msgstr ""
 #: framework/premium/features/premium-header/items/language-switcher/options.php:232,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:262,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:291,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:382
+#: framework/premium/features/premium-header/items/language-switcher/options.php:391
 msgid "Font Color"
 msgstr ""
 
@@ -2392,7 +2392,7 @@ msgstr ""
 
 #: framework/premium/extensions/mega-menu/options.php:644,
 #: framework/premium/extensions/shortcuts/customizer.php:900,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:432,
+#: framework/premium/features/premium-header/items/language-switcher/options.php:441,
 #: framework/premium/features/premium-header/items/search-input/options.php:836
 msgid "Items Divider"
 msgstr ""
@@ -2660,7 +2660,7 @@ msgstr ""
 #: framework/premium/extensions/post-types-extra/includes/filtering/customizer.php:173,
 #: framework/premium/features/premium-header/items/contacts/options.php:410,
 #: framework/premium/features/premium-header/items/language-switcher/options.php:192,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:376
+#: framework/premium/features/premium-header/items/language-switcher/options.php:385
 msgid "Font"
 msgstr ""
 
@@ -2683,7 +2683,7 @@ msgstr ""
 #: framework/premium/extensions/shortcuts/customizer.php:934,
 #: framework/premium/extensions/woocommerce-extra/floating-cart.php:123,
 #: framework/premium/features/content-blocks/options/popup.php:387,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:446
+#: framework/premium/features/premium-header/items/language-switcher/options.php:455
 msgid "Shadow"
 msgstr ""
 
@@ -4848,7 +4848,7 @@ msgstr ""
 
 #: framework/premium/features/content-blocks/options/popup.php:376,
 #: framework/premium/extensions/post-types-extra/includes/filtering/customizer.php:266,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:465
+#: framework/premium/features/premium-header/items/language-switcher/options.php:474
 msgid "Border Radius"
 msgstr ""
 
@@ -4936,7 +4936,7 @@ msgid "Items Horizontal Spacing"
 msgstr ""
 
 #: framework/premium/extensions/post-types-extra/includes/filtering/customizer.php:104,
-#: framework/premium/features/premium-header/items/language-switcher/options.php:360
+#: framework/premium/features/premium-header/items/language-switcher/options.php:369
 msgid "Items Vertical Spacing"
 msgstr ""
 
@@ -5077,7 +5077,7 @@ msgstr ""
 msgid "Dropdown Options"
 msgstr ""
 
-#: framework/premium/features/premium-header/items/language-switcher/options.php:352
+#: framework/premium/features/premium-header/items/language-switcher/options.php:361
 msgid "Dropdown Top Offset"
 msgstr ""
 

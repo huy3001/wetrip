@@ -1,3 +1,13 @@
+1.8.55: 2022-11-03
+- Improvement: Gradient tool does not work correctly with WP 6.1
+- Improvement: Don't steal focus when clicking a link inside overlay
+- Improvement: Added `theme.json` file in to the theme folder
+- Improvement: WordPress 6.1 compatibility
+- Improvement: Optimise search overlay REST API URL query string parameters
+- Improvement: Update WooCommerce template versions
+- Improvement: Better integration with new Elementor 3.8 container element
+- Fix: Related posts module columns number option
+
 1.8.53: 2022-10-20
 - Improvement: Better integration with Read Meter plugin
 - Improvement:  Show type and source of the font in typography option

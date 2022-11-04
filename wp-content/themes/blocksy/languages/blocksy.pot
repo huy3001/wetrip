@@ -237,15 +237,15 @@ msgstr ""
 msgid "by %s"
 msgstr ""
 
-#: woocommerce/product-searchform.php:25
+#: woocommerce/product-searchform.php:24
 msgid "Search for:"
 msgstr ""
 
-#: woocommerce/product-searchform.php:27
+#: woocommerce/product-searchform.php:26
 msgid "Search products&hellip;"
 msgstr ""
 
-#: woocommerce/product-searchform.php:29,
+#: woocommerce/product-searchform.php:28,
 #: inc/components/builder/header-elements.php:193,
 #: inc/panel-builder/header/search/config.php:4,
 #: inc/panel-builder/header/search/options.php:106,
@@ -330,7 +330,7 @@ msgstr ""
 msgid "Default image"
 msgstr ""
 
-#: inc/components/menus.php:422, inc/integrations/custom-post-types.php:190,
+#: inc/components/menus.php:422, inc/integrations/custom-post-types.php:192,
 #: inc/options/general/back-to-top.php:37,
 #: inc/options/general/breadcrumbs.php:12, inc/options/general/meta.php:139,
 #: inc/options/general/meta.php:341, inc/options/general/page-title.php:696,
@@ -507,13 +507,13 @@ msgstr ""
 msgid "After Footer"
 msgstr ""
 
-#: inc/integrations/custom-post-types.php:163,
-#: inc/integrations/custom-post-types.php:170
+#: inc/integrations/custom-post-types.php:165,
+#: inc/integrations/custom-post-types.php:172
 msgid "Category"
 msgstr ""
 
-#: inc/integrations/custom-post-types.php:164,
-#: inc/integrations/custom-post-types.php:171
+#: inc/integrations/custom-post-types.php:166,
+#: inc/integrations/custom-post-types.php:173
 msgid "Tag"
 msgstr ""
 
@@ -724,16 +724,16 @@ msgstr ""
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/single/single-helpers.php:328
+#: inc/single/single-helpers.php:249
 msgid "Joined"
 msgstr ""
 
-#: inc/single/single-helpers.php:332, inc/single/single-helpers.php:445,
+#: inc/single/single-helpers.php:253, inc/single/single-helpers.php:366,
 #: inc/options/general/page-title.php:513
 msgid "Articles"
 msgstr ""
 
-#: inc/single/single-helpers.php:336,
+#: inc/single/single-helpers.php:257,
 #: inc/options/general/comments-single.php:15,
 #: inc/options/general/meta.php:235, inc/options/general/page-title.php:514
 msgid "Comments"
@@ -945,7 +945,7 @@ msgstr ""
 
 #: inc/options/general/back-to-top.php:93,
 #: inc/options/general/breadcrumbs.php:59,
-#: inc/options/general/content-elements.php:59,
+#: inc/options/general/content-elements.php:47,
 #: inc/options/general/page-title.php:198, inc/options/general/sidebar.php:30,
 #: inc/options/posts/woo-categories.php:36,
 #: inc/options/posts/woo-general.php:470,
@@ -962,7 +962,7 @@ msgstr ""
 
 #: inc/options/general/back-to-top.php:98,
 #: inc/options/general/breadcrumbs.php:64,
-#: inc/options/general/content-elements.php:60,
+#: inc/options/general/content-elements.php:48,
 #: inc/options/general/page-title.php:203, inc/options/general/sidebar.php:35,
 #: inc/options/posts/woo-categories.php:41,
 #: inc/options/posts/woo-general.php:471,
@@ -979,7 +979,7 @@ msgstr ""
 
 #: inc/options/general/back-to-top.php:103,
 #: inc/options/general/breadcrumbs.php:69,
-#: inc/options/general/content-elements.php:61,
+#: inc/options/general/content-elements.php:49,
 #: inc/options/general/sidebar.php:40, inc/options/posts/woo-general.php:598,
 #: inc/panel-builder/header/cart/options.php:42,
 #: inc/panel-builder/header/menu/options.php:59,
@@ -989,7 +989,7 @@ msgid "Type 3"
 msgstr ""
 
 #: inc/options/general/back-to-top.php:108,
-#: inc/options/general/content-elements.php:62,
+#: inc/options/general/content-elements.php:50,
 #: inc/options/general/sidebar.php:46,
 #: inc/panel-builder/header/cart/options.php:47,
 #: inc/panel-builder/header/menu/options.php:64
@@ -997,7 +997,7 @@ msgid "Type 4"
 msgstr ""
 
 #: inc/options/general/back-to-top.php:113,
-#: inc/options/general/content-elements.php:63,
+#: inc/options/general/content-elements.php:51,
 #: inc/panel-builder/header/cart/options.php:52
 msgid "Type 5"
 msgstr ""
@@ -1405,7 +1405,7 @@ msgstr ""
 #: inc/panel-builder/header/trigger/options.php:472,
 #: inc/panel-builder/header/trigger/options.php:512,
 #: inc/panel-builder/header/trigger/options.php:550
-#: static/js/options/options/background/BackgroundModal.js:160
+#: static/js/options/options/background/BackgroundModal.js:155
 #: static/js/options/options/background/ImagePicker.js:189
 #: static/js/options/options/background/PatternPicker.js:170
 #: static/js/options/options/ct-border.js:94
@@ -1740,7 +1740,7 @@ msgstr ""
 #: inc/panel-builder/header/trigger/options.php:452,
 #: inc/panel-builder/header/trigger/options.php:492,
 #: inc/panel-builder/header/trigger/options.php:530
-#: static/js/options/options/background/BackgroundModal.js:150
+#: static/js/options/options/background/BackgroundModal.js:145
 msgid "Background Color"
 msgstr ""
 
@@ -1970,16 +1970,6 @@ msgid "Adjusts the spacing between the Gutenberg blocks."
 msgstr ""
 
 #: inc/options/general/content-elements.php:39
-msgid "Left & Right Blocks Offset"
-msgstr ""
-
-#: inc/options/general/content-elements.php:43
-msgid ""
-"This option will add offset to all left and right aligned blocks in "
-"Gutenberg editor."
-msgstr ""
-
-#: inc/options/general/content-elements.php:51
 msgid "Links Type"
 msgstr ""
 
@@ -2301,7 +2291,6 @@ msgid "Subtitle"
 msgstr ""
 
 #: inc/options/general/page-title.php:188
-#: static/js/options/options/background/gradient/custom-gradient-picker.js:95
 msgid "Type"
 msgstr ""
 
@@ -3277,7 +3266,7 @@ msgstr ""
 
 #: inc/options/posts/woo-categories.php:109,
 #: inc/options/posts/woo-gallery.php:95
-#: static/js/options/options/background/BackgroundModal.js:112
+#: static/js/options/options/background/BackgroundModal.js:107
 #: static/js/options/options/ct-background.js:164
 msgid "Image"
 msgstr ""
@@ -5841,7 +5830,7 @@ msgstr ""
 msgid "Option can't be edited for current device"
 msgstr ""
 
-#: static/js/options/options/background/BackgroundModal.js:111
+#: static/js/options/options/background/BackgroundModal.js:106
 #: static/js/options/options/ct-background.js:161
 msgid "Pattern"
 msgstr ""
@@ -5982,41 +5971,6 @@ msgstr ""
 
 #: static/js/options/options/background/PatternPicker.js:96
 msgid "Zig Zag"
-msgstr ""
-
-#: static/js/options/options/background/gradient/angle-picker-control/index.js:32
-msgid "Angle"
-msgstr ""
-
-#: static/js/options/options/background/gradient/constants.js:17
-msgid "Linear"
-msgstr ""
-
-#: static/js/options/options/background/gradient/constants.js:18
-msgid "Radial"
-msgstr ""
-
-#: static/js/options/options/background/gradient/custom-gradient-bar/control-points.js:325
-msgid "Remove Control Point"
-msgstr ""
-
-# %1$s: gradient position e.g: 70, %2$s: gradient color code e.g: rgb(52,121,151).
-#: static/js/options/options/background/gradient/custom-gradient-bar/control-points.js:64
-msgid "Gradient control point at position %1$s%% with color code %2$s."
-msgstr ""
-
-#: static/js/options/options/background/gradient/index.js:132
-msgid "Clear"
-msgstr ""
-
-# %s: The name of the gradient e.g: "Angular red to blue".
-#: static/js/options/options/background/gradient/index.js:51
-msgid "Gradient: %s"
-msgstr ""
-
-# %s: gradient code e.g: "linear-gradient(90deg, rgba(98,16,153,1) 0%, rgba(172,110,22,1) 100%);".
-#: static/js/options/options/background/gradient/index.js:53
-msgid "Gradient code: %s"
 msgstr ""
 
 #: static/js/options/options/box-shadow/box-shadow-modal.js:146

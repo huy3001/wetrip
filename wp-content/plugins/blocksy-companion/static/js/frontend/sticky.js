@@ -37,17 +37,20 @@ let cachedContainerInitialHeight = null
 let cachedHeaderInitialHeight = null
 let cachedStickyContainerHeight = null
 
+const clearCache = () => {
+	clearShrinkCache()
+	clearLogoShrinkCache()
+
+	cachedStartPosition = null
+	cachedContainerInitialHeight = null
+	cachedHeaderInitialHeight = null
+	cachedStickyContainerHeight = null
+	prevScrollY = null
+}
+
 ctEvents.on('blocksy:sticky:compute', () => {
 	setTimeout(() => {
-		clearShrinkCache()
-		clearLogoShrinkCache()
-
-		cachedStartPosition = null
-		cachedContainerInitialHeight = null
-		cachedHeaderInitialHeight = null
-		cachedStickyContainerHeight = null
-		prevScrollY = null
-
+		clearCache()
 		compute()
 	}, 100)
 })
@@ -57,15 +60,7 @@ if (window.wp && wp.customize && wp.customize.selectiveRefresh) {
 		'partial-content-rendered',
 		(placement) => {
 			setTimeout(() => {
-				clearShrinkCache()
-				clearLogoShrinkCache()
-
-				cachedStartPosition = null
-				cachedContainerInitialHeight = null
-				cachedHeaderInitialHeight = null
-				cachedStickyContainerHeight = null
-				prevScrollY = null
-
+				clearCache()
 				compute()
 			}, 500)
 		}
@@ -300,6 +295,7 @@ export const mountStickyHeader = () => {
 	window.addEventListener(
 		'resize',
 		(event) => {
+			clearCache()
 			compute(event)
 			ctEvents.trigger('ct:header:update')
 		},
@@ -307,6 +303,7 @@ export const mountStickyHeader = () => {
 	)
 
 	window.addEventListener('orientationchange', (event) => {
+		clearCache()
 		compute(event)
 		ctEvents.trigger('ct:header:update')
 	})

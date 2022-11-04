@@ -151,7 +151,7 @@ $options = [
 										'tablet' => 2,
 										'mobile' => 1
 									],
-									'min' => 2,
+									'min' => 1,
 									'max' => 4,
 									'design' => 'block',
 									'disableRevertButton' => true,

@@ -135,6 +135,7 @@ const hideOffcanvas = (settings, args = {}) => {
 
 	args = {
 		closeInstant: false,
+		shouldFocusOriginalTrigger: true,
 		...args,
 	}
 
@@ -153,11 +154,13 @@ const hideOffcanvas = (settings, args = {}) => {
 	].map((trigger, index) => {
 		trigger.setAttribute('aria-expanded', 'false')
 
-		setTimeout(() => {
-			if (index === 0) {
-				trigger.focus()
-			}
-		}, 50)
+		if (args.shouldFocusOriginalTrigger) {
+			setTimeout(() => {
+				if (index === 0) {
+					trigger.focus()
+				}
+			}, 50)
+		}
 	})
 
 	settings.container.classList.remove('active')
@@ -331,6 +334,7 @@ export const handleClick = (e, settings) => {
 
 				hideOffcanvas(settings, {
 					closeInstant: maybeA.getAttribute('href')[0] !== '#',
+					shouldFocusOriginalTrigger: false,
 				})
 
 				setTimeout(() => {

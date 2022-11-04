@@ -12,27 +12,18 @@ class ThemeIntegration {
 				||
 				is_customize_preview()
 			) {
-				$chunks[] = [
-					'id' => 'blocksy_account',
-					'selector' => implode(', ', [
-						'.ct-header-account[href*="account-modal"]',
-						'.must-log-in a'
-					]),
-					'url' => blc_call_fn(
-						[
-							'fn' => 'blocksy_cdn_url',
-							'default' => BLOCKSY_URL . 'static/bundle/account.js'
-						],
-						BLOCKSY_URL . 'static/bundle/account.js'
-					),
-					'deps' => [
+				$deps = [];
+				$global_data = [];
+
+				if (class_exists('woocommerce')) {
+					$deps = [
 						'blocksy-zxcvbn',
 						'wp-hooks',
 						'wp-i18n',
 						'password-strength-meter',
-					],
+					];
 
-					'global_data' => [
+					$global_data = [
 						[
 							'var' => 'wc_password_strength_meter_params',
 							'data' => [
@@ -63,8 +54,25 @@ class ThemeIntegration {
 								'mismatch' => _x( 'Mismatch', 'password mismatch' ),
 							]
 						]
+					];
+				}
 
-					],
+				$chunks[] = [
+					'id' => 'blocksy_account',
+					'selector' => implode(', ', [
+						'.ct-header-account[href*="account-modal"]',
+						'.must-log-in a'
+					]),
+					'url' => blc_call_fn(
+						[
+							'fn' => 'blocksy_cdn_url',
+							'default' => BLOCKSY_URL . 'static/bundle/account.js'
+						],
+						BLOCKSY_URL . 'static/bundle/account.js'
+					),
+					'deps' => $deps,
+					'global_data' => $global_data,
+
 					'trigger' => 'click',
 					'has_modal_loader' => [
 						'skip_if_no_template' => true,
@@ -500,32 +508,87 @@ class ThemeIntegration {
 	}
 
 	public function svg_dimensions($svg) {
-		$svg = @simplexml_load_file($svg);
+		$svg = file_get_contents($svg);
+
+		$attributes = new \stdClass();
+
+		if ($svg && function_exists('simplexml_load_string')) {
+			$svg = @simplexml_load_string($svg);
+
+			if ($svg) {
+				$attributes = $svg->attributes();
+			}
+		}
+
+		if (
+			! isset($attributes->width)
+			&&
+			$svg
+			&&
+			function_exists('xml_parser_create')
+		) {
+			$xml = xml_parser_create('UTF-8');
+
+			$svgData = new \stdClass();
+
+			xml_parser_set_option($xml, XML_OPTION_CASE_FOLDING, false);
+			xml_set_element_handler(
+				$xml,
+				function ($parser, $name, $attrs) use (&$svgData) {
+					if ($name === 'SVG') {
+						if (isset($attrs['WIDTH'])) {
+							$attrs['width'] = $attrs['WIDTH'];
+						}
+
+						if (isset($attrs['HEIGHT'])) {
+							$attrs['height'] = $attrs['HEIGHT'];
+						}
+
+						if (isset($attrs['VIEWBOX'])) {
+							$attrs['viewBox'] = $attrs['VIEWBOX'];
+						}
+
+						foreach ($attrs as $key => $value) {
+							$svgData->{$key} = $value;
+						}
+					}
+				},
+				'tag_close'
+			);
+
+			if (xml_parse($xml, $svg, true)) {
+				$attributes = $svgData;
+			}
+
+			xml_parser_free($xml);
+		}
+
+
 		$width = 0;
 		$height = 0;
 
-		if ($svg) {
-			$attributes = $svg->attributes();
+		if (empty($attributes)) {
+			return false;
+		}
 
-			if (
-				isset($attributes->width, $attributes->height)
-				&&
-				is_numeric($attributes->width)
-				&&
-				is_numeric($attributes->height)
-			) {
-				$width = floatval($attributes->width);
-				$height = floatval($attributes->height);
-			} elseif (isset($attributes->viewBox)) {
-				$sizes = explode(' ', $attributes->viewBox);
+		if (
+			isset($attributes->width, $attributes->height)
+			&&
+			is_numeric($attributes->width)
+			&&
+			is_numeric($attributes->height)
+		) {
+			$width = floatval($attributes->width);
+			$height = floatval($attributes->height);
+		} elseif (isset($attributes->viewBox)) {
+			$sizes = explode(' ', $attributes->viewBox);
 
-				if (isset($sizes[2], $sizes[3])) {
-					$width = floatval($sizes[2]);
-					$height = floatval($sizes[3]);
-				}
-			} else {
-				return false;
+			if (isset($sizes[2], $sizes[3])) {
+				$width = floatval($sizes[2]);
+				$height = floatval($sizes[3]);
 			}
+		} else {
+			return false;
 		}
 
 		return [

@@ -165,7 +165,11 @@ export const mount = (formEl, args = {}) => {
 				ct_localizations.rest_url.indexOf('?') > -1 ? '&' : '?'
 			}_embed=1&post_type=${options.postType}&per_page=${
 				options.perPage
-			}&product_price=${options.productPrice}&search=${e.target.value}`
+			}&${
+				options.productPrice === 'true' || options.productPrice === true
+					? `product_price=${options.productPrice}&`
+					: ``
+			}search=${e.target.value}`
 		).then((response) => {
 			let totalAmountOfPosts = parseInt(
 				response.headers.get('X-WP-Total'),

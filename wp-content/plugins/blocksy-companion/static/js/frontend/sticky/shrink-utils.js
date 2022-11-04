@@ -6,7 +6,15 @@ export const computeLinearScale = (domain, range, value) =>
 
 export const getRowInitialMinHeight = (el) => {
 	const elComp = getComputedStyle(el)
-	return parseFloat(elComp.getPropertyValue('--height'))
+	let containerStyles = getComputedStyle(el.firstElementChild)
+
+	let borderHeight =
+		parseFloat(elComp.borderTopWidth) +
+		parseFloat(elComp.borderBottomWidth) +
+		parseFloat(containerStyles.borderTopWidth) +
+		parseFloat(containerStyles.borderBottomWidth)
+
+	return parseFloat(elComp.getPropertyValue('--height')) + borderHeight
 }
 
 export const getRowInitialHeight = (el) => {
