@@ -53,7 +53,7 @@ add_filter('comment_form_defaults', function ($defaults) {
 	// Textarea
 	$defaults['comment_field'] =
 		'<p class="comment-form-field-textarea">
-			<label for="comment">' . __( 'Add Comment', 'blocksy' ) . '</label>
+			<label for="comment">' . __( 'Add Comment', 'blocksy' ) . '<b class="required">&nbsp;*</b></label>
 			<textarea id="comment" name="comment" cols="45" rows="8" required="required">' . '</textarea>
 		</p>';
 
@@ -64,6 +64,8 @@ add_filter('comment_form_defaults', function ($defaults) {
 		has_action('set_comment_cookies', 'wp_set_comment_cookies')
 		&&
 		get_option('show_comments_cookies_opt_in')
+		&&
+		! is_user_logged_in()
 	) {
 		$consent = empty($commenter['comment_author_email']) ? '' : ' checked="checked"';
 
@@ -110,14 +112,14 @@ add_filter(
 
 		$fields['author'] =
 			'<p class="comment-form-field-input-author">
-			<label for="author">' . __( 'Name', 'blocksy' ) . ' <b class="required">&nbsp;*</b></label>
+			<label for="author">' . __( 'Name', 'blocksy' ) . ' ' . ($req ? '<b class="required">&nbsp;*</b>' : '') . '</label>
 			<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . '>
 			</p>';
 
 		// Email input
 		$fields['email'] =
 			'<p class="comment-form-field-input-email">
-				<label for="email">' . __( 'Email', 'blocksy' ) . ' <b class="required">&nbsp;*</b></label>
+				<label for="email">' . __( 'Email', 'blocksy' ) . ' ' . ($req ? '<b class="required">&nbsp;*</b>' : '') . '</label>
 				<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '>
 			</p>';
 

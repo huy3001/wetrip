@@ -57,20 +57,5 @@ add_action('wp_body_open', function () {
 	if (! is_admin()) {
 		blocksy_output_drawer_canvas();
 	}
-});
+}, 60);
 
-add_action('wp_footer', function () {
-	if (is_customize_preview()) {
-		blocksy_add_customizer_preview_cache(
-			function () {
-				return blocksy_html_tag(
-					'div',
-					['data-id' => 'socials-general-cache'],
-					'<section>' . blocksy_social_icons(null, [
-						'type' => 'simple-small'
-					]) . '</section>'
-				);
-			}
-		);
-	}
-}, 5);

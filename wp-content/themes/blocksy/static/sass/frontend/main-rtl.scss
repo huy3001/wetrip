@@ -377,11 +377,8 @@
 		}
 	}
 
-	.cart .product-remove,
-	.cart_totals table td,
-	.ct-order-review table.shop_table tfoot td,
-	.ct-order-review table.shop_table .product-total {
-		text-align: left;
+	dl.variation dt {
+		float: right;
 	}
 
 	// messages

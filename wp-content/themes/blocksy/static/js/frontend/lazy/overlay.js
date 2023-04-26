@@ -1,8 +1,10 @@
-import { enable, disable } from './overlay/no-bounce'
+import { scrollLockManager } from './overlay/no-bounce'
 import ctEvents from 'ct-events'
 import { mount as mountMobileMenu } from './overlay/mobile-menu'
 
 import { focusLockManager } from '../helpers/focus-lock'
+
+import { isTouchDevice } from '../helpers/is-touch-device'
 
 const showOffcanvas = (settings) => {
 	settings = {
@@ -92,7 +94,7 @@ const showOffcanvas = (settings) => {
 		settings.computeScrollContainer ||
 		settings.container.querySelector('.ct-panel-content')
 	) {
-		disable(
+		scrollLockManager().disable(
 			settings.computeScrollContainer
 				? settings.computeScrollContainer()
 				: settings.container.querySelector('.ct-panel-content')
@@ -154,12 +156,16 @@ const hideOffcanvas = (settings, args = {}) => {
 	].map((trigger, index) => {
 		trigger.setAttribute('aria-expanded', 'false')
 
-		if (args.shouldFocusOriginalTrigger) {
-			setTimeout(() => {
-				if (index === 0) {
-					trigger.focus()
-				}
-			}, 50)
+		if (args.shouldFocusOriginalTrigger && !isTouchDevice()) {
+			if (!trigger.focusDisabled) {
+				setTimeout(() => {
+					if (index === 0) {
+						trigger.focus()
+					}
+				}, 50)
+			}
+
+			trigger.focusDisabled = false
 		}
 	})
 
@@ -169,7 +175,7 @@ const hideOffcanvas = (settings, args = {}) => {
 		document.body.removeAttribute('data-panel')
 		ctEvents.trigger('ct:modal:closed', settings.container)
 
-		enable(
+		scrollLockManager().enable(
 			settings.computeScrollContainer
 				? settings.computeScrollContainer()
 				: settings.container.querySelector('.ct-panel-content')
@@ -184,7 +190,7 @@ const hideOffcanvas = (settings, args = {}) => {
 					document.body.removeAttribute('data-panel')
 					ctEvents.trigger('ct:modal:closed', settings.container)
 
-					enable(
+					scrollLockManager().enable(
 						settings.computeScrollContainer
 							? settings.computeScrollContainer()
 							: settings.container.querySelector(
@@ -240,7 +246,8 @@ export const handleClick = (e, settings) => {
 					isInsidePanelContent) ||
 				(!settings.isModal &&
 					(isPanelContentItself || isInsidePanelContent)) ||
-				event.target.closest('[class*="select2-container"]')
+				event.target.closest('[class*="select2-container"]') ||
+				!event.target.closest('.ct-panel')
 			) {
 				return
 			}
@@ -307,6 +314,10 @@ export const handleClick = (e, settings) => {
 
 				if (event.target.closest('a')) {
 					maybeA = event.target.closest('a')
+				}
+
+				if (!maybeA.closest('.ct-panel')) {
+					return
 				}
 
 				if (!maybeA.closest('.ct-panel').classList.contains('active')) {

@@ -12,8 +12,6 @@
 	border-radius: 5px;
 	background: var(--background-color);
 
-	// --listItemSpacing: 0;
-	--listItemSpacing: 0.3em;
 	--listStyleType: none;
 	--linkInitialColor: var(--color);
 
@@ -38,6 +36,7 @@
 
 	li {
 		width: 100%;
+		margin-bottom: 0.3em;
 	}
 
 	.button,

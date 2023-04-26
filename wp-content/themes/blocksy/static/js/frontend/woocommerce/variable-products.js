@@ -179,9 +179,11 @@ const performInPlaceUpdate = ({
 	// Attempt slide to image
 
 	if (container.querySelector(`.flexy-pills > *`)) {
-		let maybePillImage = container.querySelector(
-			`.flexy-items [srcset*="${nextImage.src}"]`
-		)
+		let maybePillImage =
+			container.querySelector(
+				`.flexy-items [srcset*="${nextImage.src}"]`
+			) ||
+			container.querySelector(`.flexy-items [src*="${nextImage.src}"]`)
 
 		if (maybePillImage) {
 			let pillIndex = [
@@ -370,12 +372,16 @@ export const mount = (el) => {
 					el.remove()
 				}
 			})
+			let didInsert = false
 			;[...currentVariation.children].map((el, index) => {
 				if (el.matches('.flexy-container, .ct-image-container')) {
-					el.insertAdjacentHTML(
-						'beforebegin',
-						div.firstElementChild.innerHTML
-					)
+					if (!didInsert) {
+						didInsert = true
+						el.insertAdjacentHTML(
+							'beforebegin',
+							div.firstElementChild.innerHTML
+						)
+					}
 				}
 
 				if (

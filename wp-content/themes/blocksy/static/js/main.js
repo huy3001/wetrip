@@ -245,33 +245,24 @@ onDocumentLoaded(() => {
 })
 
 if ($) {
+	// https://woocommerce.com/document/composite-products/composite-products-js-api-reference/#using-the-api
+	$('.composite_data').on('wc-composite-initializing', (event, composite) => {
+		composite.actions.add_action('component_selection_changed', () => {
+			setTimeout(() => {
+				ctEvents.trigger('blocksy:frontend:init')
+			}, 1000)
+		})
+	})
+
 	$(document.body).on('wc_fragments_refreshed', () => {
 		ctEvents.trigger('blocksy:frontend:init')
 	})
 
+	$('.wc-product-table').on('draw.wcpt', () => {
+		ctEvents.trigger('blocksy:frontend:init')
+	})
+
 	$(document.body).on('wc_fragments_loaded', () => {
-		ctEvents.trigger('blocksy:frontend:init')
-	})
-
-	$(document).on('jet-filter-content-rendered', () => {
-		ctEvents.trigger('blocksy:frontend:init')
-	})
-
-	$(document).on('yith_infs_added_elem', function () {
-		ctEvents.trigger('blocksy:frontend:init')
-	})
-
-	jQuery(document).on('yith-wcan-ajax-filtered', function () {
-		ctEvents.trigger('blocksy:frontend:init')
-	})
-
-	$(document).on('berocket_ajax_filtering_end', () => {
-		setTimeout(() => {
-			ctEvents.trigger('blocksy:frontend:init')
-		}, 100)
-	})
-
-	$(document).on('preload', () => {
 		ctEvents.trigger('blocksy:frontend:init')
 	})
 
@@ -282,9 +273,21 @@ if ($) {
 	document.addEventListener('facetwp-loaded', () => {
 		ctEvents.trigger('blocksy:frontend:init')
 	})
-
-	$(document).on('sf:ajaxfinish', () => {
-		ctEvents.trigger('blocksy:frontend:init')
+	;[
+		'berocket_ajax_filtering_end',
+		'preload',
+		'jet-filter-content-rendered',
+		'yith_infs_added_elem',
+		'yith-wcan-ajax-filtered',
+		'sf:ajaxfinish',
+		'ready',
+		'ddwcpoRenderVariation',
+	].map((event) => {
+		$(document).on(event, () => {
+			setTimeout(() => {
+				ctEvents.trigger('blocksy:frontend:init')
+			}, 100)
+		})
 	})
 }
 

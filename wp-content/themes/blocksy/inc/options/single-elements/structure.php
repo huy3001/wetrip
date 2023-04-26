@@ -65,6 +65,7 @@ $options = [
 			'choices' => $structure_choices,
 			'sync' => blocksy_sync_whole_page([
 				'prefix' => $prefix,
+				'prefix_custom' => 'single-structure',
 				'loader_selector' => '[class*="ct-container"]'
 			]),
 		],

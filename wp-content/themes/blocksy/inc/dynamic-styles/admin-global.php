@@ -23,7 +23,7 @@ $css->put(
 );
 
 $contentSpacingMap = [
-	'none' => '0',
+	'none' => '0px',
 	'compact' => '0.8em',
 	'comfortable' => '1.5em',
 	'spacious' => '2em',

@@ -11,16 +11,6 @@
 		}
 	}
 
-	.first-item, .last-item {
-		svg + span {
-			display: none;
-		}
-	}
-
-	svg {
-		fill: currentColor;
-	}
-
 	.ct-home-icon {
 		position: relative;
 		top: -0.15em;

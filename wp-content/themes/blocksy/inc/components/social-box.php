@@ -897,6 +897,16 @@ function blocksy_get_social_metadata($args = []) {
 		if (empty(trim($single_metadata['url']))) {
 			$single_metadata['url'] = '#';
 		}
+
+		if (
+			$args['social'] === 'email'
+			&&
+			strpos($single_metadata['url'], 'mailto:') === false
+			&&
+			strpos($single_metadata['url'], '@') !== false
+		) {
+			$single_metadata['url'] = 'mailto:' . $single_metadata['url'];
+		}
 	}
 
 	if ($args['type'] === 'share') {
@@ -1257,6 +1267,10 @@ function blocksy_get_social_box($args = []) {
 						'aria-label' => $metadata['name']
 					];
 
+					if (strpos($attr['href'], 'mailto:') !== false) {
+						$attr['href'] = blocksy_safe_antispambot($attr['href']);
+					}
+
 					if (
 						(
 							(
@@ -1310,10 +1324,10 @@ function blocksy_get_social_box($args = []) {
 								],
 								$metadata['icon']
 							);
-							
+
 							if (function_exists('blc_get_icon')) {
 								$icon_source = blocksy_default_akg('icon_source', $single_social, 'default');
-								
+
 								if ( $icon_source === 'custom' ) {
 									$icon = blc_get_icon([
 										'icon_descriptor' => blocksy_akg(
@@ -1323,7 +1337,7 @@ function blocksy_get_social_box($args = []) {
 										),
 									]);
 								}
-								
+
 							}
 
 							echo $icon;

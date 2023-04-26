@@ -54,6 +54,7 @@ const performSelectorsReplace = () => {
 		;[...maybeIframe.contentDocument.querySelectorAll('style')].map(
 			(style) => {
 				if (
+					style.innerText &&
 					style.innerText.indexOf('narrow-container-max-width') === -1
 				) {
 					return

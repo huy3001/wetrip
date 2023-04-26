@@ -34,7 +34,7 @@ if ($has_live_results === 'yes') {
 
 	$live_results_attr = !empty($args['live_results_attr']) ? [$args['live_results_attr']] : [];
 
-	if ( $show_product_price ) {
+	if ($show_product_price) {
 		array_push($live_results_attr, 'product_price');
 	}
 
@@ -77,10 +77,6 @@ if (
 
 $home_url = home_url('/');
 
-if (function_exists('pll_home_url')) {
-	$home_url = pll_home_url();
-}
-
 $icon = apply_filters(
 	'blocksy:search-form:icon',
 	'<svg class="ct-icon" aria-hidden="true" width="15" height="15" viewBox="0 0 15 15"><path d="M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z"/></svg>'
@@ -111,11 +107,11 @@ if (isset($args['icon'])) {
 	</button>
 
 	<?php if (count($any) === 1) { ?>
-		<input type="hidden" name="post_type" value="<?php echo $any[0] ?>">
+		<input type="hidden" name="post_type" value="<?php echo esc_attr($any[0]) ?>">
 	<?php } ?>
 
 	<?php if (count($any) > 1) { ?>
-		<input type="hidden" name="ct_post_type" value="<?php echo implode(':', $any) ?>">
+		<input type="hidden" name="ct_post_type" value="<?php echo esc_attr(implode(':', $any)) ?>">
 	<?php } ?>
 
 	<?php if ($show_product_price || is_customize_preview()) { ?>

@@ -7,6 +7,31 @@
  * @package   Blocksy
  */
 
+add_filter('widget_nav_menu_args', function ($nav_menu_args) {
+	$nav_menu_args['menu_class'] = 'widget-menu';
+	return $nav_menu_args;
+}, 10, 1);
+
+add_action(
+	'dynamic_sidebar_before',
+	function () {
+		ob_start();
+	}
+);
+
+add_action(
+	'dynamic_sidebar_after',
+	function () {
+		$text = str_replace(
+			'textwidget',
+			'textwidget entry-content',
+			ob_get_clean()
+		);
+
+		echo $text;
+	}
+);
+
 if (! function_exists('blocksy_get_sidebar_to_render')) {
 	function blocksy_get_sidebar_to_render() {
 		if (class_exists('BlocksySidebarsManager')) {
@@ -75,6 +100,8 @@ if (! function_exists('blocksy_get_single_page_structure')) {
 			! is_singular()
 			&&
 			$prefix !== 'bbpress_single'
+			&&
+			$prefix !== 'buddypress_single'
 			&&
 			(
 				$prefix !== 'courses_archive'
@@ -147,6 +174,10 @@ if (! function_exists('blocksy_sidebar_position_unfiltered')) {
 		$is_dokan_store = class_exists('WeDevs_Dokan') && function_exists('dokan_is_store_page') && dokan_is_store_page();
 
 		if ($is_dokan_store) {
+			return 'none';
+		}
+
+		if (! $prefix) {
 			return 'none';
 		}
 

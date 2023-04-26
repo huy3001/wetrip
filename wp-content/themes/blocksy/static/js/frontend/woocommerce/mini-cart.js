@@ -44,6 +44,7 @@ export const mount = () => {
 						(document.body.classList.contains('single-product') &&
 							cart.querySelector('[data-auto-open*="product"]')))
 				) {
+					cart.querySelector('[data-auto-open]').focusDisabled = true
 					cart.querySelector('[data-auto-open]').click()
 				}
 			})
@@ -63,26 +64,6 @@ export const mount = () => {
 
 				elForOpen.classList.remove('ct-adding')
 				elForOpen.classList.add('ct-added')
-
-				if (document.querySelector('.ct-cart-content')) {
-					if (cart.querySelector('.ct-cart-content')) {
-						cart.querySelector('.ct-cart-content').innerHTML =
-							Object.values(fragments)[0]
-
-						if (
-							cart.querySelector('.ct-cart-total') &&
-							cart.querySelector(
-								'.ct-cart-content .woocommerce-mini-cart__total .woocommerce-Price-amount'
-							)
-						) {
-							cart.querySelector(
-								'.ct-cart-total'
-							).firstElementChild.innerHTML = cart.querySelector(
-								'.ct-cart-content .woocommerce-mini-cart__total .woocommerce-Price-amount'
-							).innerHTML
-						}
-					}
-				}
 			})
 		}
 	)

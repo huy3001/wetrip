@@ -1,6 +1,6 @@
 .wpforms-submit,
-.wp-block-button__link,
-.wp-block-file .wp-block-file__button {
+.wp-element-button,
+.wp-block-button__link {
 	display: inline-flex;
 	align-items: center;
 	padding: var(--button-padding);
@@ -13,8 +13,8 @@
 
 // filled button
 .wpforms-submit,
-.wp-block-file .wp-block-file__button,
-.wp-block-button:not(.is-style-outline) .wp-block-button__link {
+.wp-element-button,
+.wp-block-button__link {
 	color: var(--buttonTextInitialColor);
 	background-color: var(--buttonInitialColor);
 
@@ -25,6 +25,7 @@
 }
 
 // outlined button
+.wp-block-button.is-style-outline .wp-element-button,
 .wp-block-button.is-style-outline .wp-block-button__link {
 	padding: var(--button-padding);
 	color: var(--buttonInitialColor);

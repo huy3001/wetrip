@@ -186,6 +186,10 @@ if (! function_exists('blocksy_image')) {
 			);
 		}
 
+		if (empty($image_result)) {
+			return '';
+		}
+
 		return '<' . $args['tag_name'] . ' ' . $other_html_atts . '>' .
 			$image_result .
 			$args['inner_content'] .
@@ -303,7 +307,6 @@ if (! function_exists('blocksy_get_image_element')) {
 			}
 		}
 
-
 		$image = wp_get_attachment_image(
 			$args['attachment_id'],
 			$args['size'],
@@ -352,7 +355,7 @@ if (! function_exists('blocksy_get_image_element')) {
 			}
 		}
 
-		$output = $image . $output;
+		$output = $output . $image;
 
 		return $output;
 	}

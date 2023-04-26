@@ -4,9 +4,8 @@
 	position: relative;
 	min-height: calc(100vh - var(--admin-bar, 0px) - var(--frame-size, 0px) * 2);
 
-	@include media-breakpoint-down (md) {
-		overflow-x: hidden;
-	}
+	overflow: hidden; // to remove later, check caniuse.com
+	overflow: clip;
 
 	.site-main {
 		flex-grow: 1;
@@ -39,16 +38,18 @@
 
 // Fluid container
 .ct-container-fluid {
+	width: calc(var(--container-edge-spacing, 90vw) - var(--frame-size, 0px) * 2);
+
 	@include media-breakpoint-down (sm) {
-		width: 88vw;
+		--container-edge-spacing: 88vw;
 	}
 
 	@include media-breakpoint-only (md) {
-		width: 90vw;
+		--container-edge-spacing: 90vw;
 	}
 
 	@include media-breakpoint-up (lg) {
-		width: calc(100vw - 60px);
+		--container-edge-spacing: calc(100vw - 60px);
 	}
 }
 

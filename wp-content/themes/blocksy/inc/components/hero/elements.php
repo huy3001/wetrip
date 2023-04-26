@@ -39,6 +39,14 @@ if (
 			get_post_type() === 'topic'
 			||
 			get_post_type() === 'reply'
+			||
+			get_query_var('post_type') === 'forum'
+			||
+			bbp_is_topic_tag()
+			||
+			bbp_is_topic_tag_edit()
+			||
+			is_bbpress()
 		)
 	) && ! (get_post_type() === 'elementor_library')
 ) {
@@ -134,7 +142,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 
 		if (
 			(
-				is_singular() || blocksy_is_page()
+				is_singular() || blocksy_is_page() || $prefix === 'bbpress_single'
 			) && ! is_search()
 		) {
 			if (! $post_id) {
@@ -144,7 +152,6 @@ foreach ($hero_elements as $index => $single_hero_element) {
 			if (! empty(get_the_title($post_id))) {
 				$title = get_the_title($post_id);
 			}
-
 		} else {
 			if (! is_search()) {
 				if (! empty(get_the_archive_title())) {
@@ -179,14 +186,15 @@ foreach ($hero_elements as $index => $single_hero_element) {
 				}
 			} else {
 				$title = sprintf(
-					// translators: %s is the number of results
-					__( '<span>Search Results for</span> %s', 'blocksy' ),
+					// translators: 1: span opening 2: span closing 3: the number of results
+					__(
+						'%1$sSearch Results for%2$s %3$s',
+						'blocksy'
+					),
+					'<span>',
+					'</span>',
 					get_search_query()
 				);
-			}
-
-			if (!have_posts()) {
-				// $title = __('Nothing Found', 'blocksy');
 			}
 		}
 
@@ -281,7 +289,7 @@ foreach ($hero_elements as $index => $single_hero_element) {
 
 		if (
 			(
-				is_singular() || $is_page
+				is_singular() || $is_page || $prefix === 'bbpress_single'
 			) && ! is_search()
 		) {
 			if (! $post_id) {
@@ -296,11 +304,11 @@ foreach ($hero_elements as $index => $single_hero_element) {
 			}
 
 			if (has_excerpt($post_id)) {
-				$description = blocksy_entry_excerpt(
-					40,
-					$description_class,
-					$post_id
-				);
+				$description = blocksy_entry_excerpt([
+					'length' => 40,
+					'class' => $description_class,
+					'post_id' => $post_id
+				]);
 			}
 		} else {
 			if (! is_search()) {
@@ -313,19 +321,15 @@ foreach ($hero_elements as $index => $single_hero_element) {
 						$description = '<div class="' . $description_class . '">' . wp_kses_post(get_the_author_meta('description', blocksy_get_author_id())) . '</div>';
 					}
 				}
-
-				if (empty($description) && ! have_posts()) {
-					$description = __(
-						"It seems we can't find what you're looking for. Perhaps searching can help.",
-						'blocksy'
-					);
-
-					$description = '<div class="' . $description_class . '">' . $description . '</div>';
-				}
 			} else {
 				$title = sprintf(
-					// translators: %s is the number of results
-					__( '<span>Search Results for</span> %s', 'blocksy' ),
+					// translators: 1: span opening 2: span closing 3: the number of results
+					__(
+						'%1$sSearch Results for%2$s %3$s',
+						'blocksy'
+					),
+					'<span>',
+					'</span>',
 					get_search_query()
 				);
 
@@ -406,6 +410,20 @@ foreach ($hero_elements as $index => $single_hero_element) {
 			$meta_indexes['second'] !== null
 		) {
 			if ($index === $meta_indexes['first']) {
+				do_action('blocksy:hero:' . $single_hero_element['id'] . ':first:before');
+			}
+
+			if ($index === $meta_indexes['second']) {
+				do_action('blocksy:hero:' . $single_hero_element['id'] . ':second:before');
+			}
+		}
+
+		if (
+			$meta_indexes['first'] !== null
+			&&
+			$meta_indexes['second'] !== null
+		) {
+			if ($index === $meta_indexes['first']) {
 				// $attr['data-id'] = 'first';
 			}
 
@@ -472,6 +490,20 @@ foreach ($hero_elements as $index => $single_hero_element) {
 					'prefix' => $prefix . '_hero_meta'
 				]
 			);
+		}
+
+		if (
+			$meta_indexes['first'] !== null
+			&&
+			$meta_indexes['second'] !== null
+		) {
+			if ($index === $meta_indexes['first']) {
+				do_action('blocksy:hero:' . $single_hero_element['id'] . ':first:after');
+			}
+
+			if ($index === $meta_indexes['second']) {
+				do_action('blocksy:hero:' . $single_hero_element['id'] . ':second:after');
+			}
 		}
 	}
 

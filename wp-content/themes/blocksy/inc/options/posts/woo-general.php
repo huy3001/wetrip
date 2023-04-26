@@ -968,6 +968,7 @@ $options = [
 							'label' => __('Highlight Required Fields', 'blocksy'),
 							'type' => 'ct-switch',
 							'value' => 'yes',
+							'behavior' => 'bool',
 							'divider' => 'bottom',
 							'setting' => [
 								'type' => 'option'

@@ -98,18 +98,27 @@ class Blocksy_Meta_Boxes {
 				'update_callback' => function ($value, $object) {
 					$post_id = $object->ID;
 
-					$value['styles_descriptor'] = blocksy_manager()
+					$descriptor = blocksy_manager()
 						->dynamic_css
 						->maybe_set_single_post_styles_descriptor([
 							'post_id' => $post_id,
-							'atts' => $value
+							'atts' => $value,
+							'check_empty' => true
 						]);
 
-					update_post_meta(
-						$post_id,
-						'blocksy_post_meta_options',
-						$value
-					);
+					if ($descriptor) {
+						$value['styles_descriptor'] = $descriptor;
+					} else {
+						unset($value['styles_descriptor']);
+					}
+
+					if (! empty($value)) {
+						update_post_meta(
+							$post_id,
+							'blocksy_post_meta_options',
+							$value
+						);
+					}
 				}
 			)
 		);
@@ -192,12 +201,20 @@ class Blocksy_Meta_Boxes {
 
 		if (isset($_POST['blocksy_post_meta_options'][blocksy_post_name()])) {
 			$values = json_decode(
-				wp_unslash($_POST['blocksy_post_meta_options'][blocksy_post_name()]),
+				wp_unslash(
+					$_POST['blocksy_post_meta_options'][blocksy_post_name()]
+				),
 				true
 			);
 		}
 
-		update_post_meta($post_id, 'blocksy_post_meta_options', $values);
+		if (! empty($values)) {
+			update_post_meta(
+				$post_id,
+				'blocksy_post_meta_options',
+				$values
+			);
+		}
 	}
 }
 

@@ -1,6 +1,6 @@
 {
 	"name": "small-ct",
-	"version": "1.8.55",
+	"version": "1.8.84",
 	"title": "Blocksy",
 	"browserslist": "> 1%, not opera > 0, not op_mini all",
 	"devDependencies": {
@@ -24,7 +24,8 @@
 		"get-next-version": "node scripts/get-next-version.js",
 		"set-version": "node scripts/set-version.js",
 		"make-nightly": "scripts/make-nightly.sh",
-		"make-release": "scripts/make-release.sh"
+		"make-release": "scripts/make-release.sh",
+		"create-github-release": "env-cmd --silent node scripts/create-github-release.js"
 	},
 	"dependencies": {
 		"@reach/dialog": "^0.1.2",
@@ -42,7 +43,7 @@
 		"cross-env": "^7.0.3",
 		"ct-log": "^1.0.0",
 		"ct-wp-js-log": "^1.0.4",
-		"customizer-sync-helpers": "^0.0.45",
+		"customizer-sync-helpers": "^0.0.51",
 		"deep-equal": "^1.0.1",
 		"dom-chef": "^3.3.0",
 		"downshift": "^6.0.6",

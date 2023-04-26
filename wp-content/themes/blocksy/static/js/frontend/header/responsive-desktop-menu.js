@@ -54,20 +54,24 @@ const computeItemsWidth = (nav) => {
 				el.firstElementChild
 		)
 		.map((el, index) => {
-			const a = el.firstElementChild
-			a.innerHTML = `<span>${a.innerHTML}</span>`
+			if (el.firstElementChild.matches('a')) {
+				const a = el.firstElementChild
+				a.innerHTML = `<span>${a.innerHTML}</span>`
 
-			const props = window.getComputedStyle(a, null)
+				const props = window.getComputedStyle(a, null)
 
-			let actualWidth =
-				a.firstElementChild.getBoundingClientRect().width +
-				parseInt(props.getPropertyValue('padding-left'), 10) +
-				parseInt(props.getPropertyValue('padding-right'), 10) +
-				(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0)
+				let actualWidth =
+					a.firstElementChild.getBoundingClientRect().width +
+					parseInt(props.getPropertyValue('padding-left'), 10) +
+					parseInt(props.getPropertyValue('padding-right'), 10) +
+					(a.querySelector('.ct-toggle-dropdown-desktop') ? 13 : 0)
 
-			a.innerHTML = a.firstElementChild.innerHTML
+				a.innerHTML = a.firstElementChild.innerHTML
 
-			return actualWidth
+				return actualWidth
+			}
+
+			return el.firstElementChild.getBoundingClientRect().width
 		})
 }
 

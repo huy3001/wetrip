@@ -117,8 +117,6 @@ if (! $blocksy_is_quick_view) {
 
 ob_start();
 
-echo '<div ' . blocksy_attr_to_html($product_view_attr) . '>';
-
 if ($product->is_in_stock()) {
 	if (get_theme_mod('has_product_single_onsale', 'yes') === 'yes') {
 		woocommerce_show_product_sale_flash();
@@ -239,13 +237,20 @@ if ($maybe_custom_content) {
 do_action('blocksy:woocommerce:product-view:end', $gallery_images);
 do_action('woocommerce_product_thumbnails');
 
-echo '</div>';
-
 $result_html = ob_get_clean();
 
-echo apply_filters(
-	'woocommerce_single_product_image_thumbnail_html',
-	$result_html,
-	$gallery_images[0]
-);
+if (! empty($result_html)) {
+	$result_html = blocksy_html_tag(
+		'div',
+		$product_view_attr,
+		$result_html
+	);
+
+	echo apply_filters(
+		'woocommerce_single_product_image_thumbnail_html',
+		$result_html,
+		$gallery_images[0]
+	);
+}
+
 

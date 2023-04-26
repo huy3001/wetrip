@@ -1,4 +1,5 @@
 import { isTouchDevice } from '../helpers/is-touch-device'
+import { isIosDevice } from '../helpers/is-ios-device'
 
 const isRtl = () => document.querySelector('html').dir === 'rtl'
 
@@ -36,14 +37,6 @@ function furthest(el, s) {
 
 	return nodes[nodes.length - 1]
 }
-
-const isIosDevice =
-	typeof window !== 'undefined' &&
-	window.navigator &&
-	window.navigator.platform &&
-	(/iP(ad|hone|od)/.test(window.navigator.platform) ||
-		(window.navigator.platform === 'MacIntel' &&
-			window.navigator.maxTouchPoints > 1))
 
 const getPreferedPlacementFor = (el) => {
 	const farmost = furthest(el, 'li.menu-item')
@@ -143,8 +136,9 @@ const closeSubmenu = (e) => {
 	}
 
 	if (childIndicator) {
+		childIndicator.setAttribute('aria-expanded', 'false')
+
 		if (childIndicator.tagName.toLowerCase() === 'button') {
-			childIndicator.setAttribute('aria-expanded', 'false')
 			childIndicator.setAttribute(
 				'aria-label',
 				ct_localizations.expand_submenu
@@ -222,7 +216,7 @@ export const mountMenuLevel = (menuLevel, args = {}) => {
 			if (!hasClickInteraction) {
 				el.addEventListener('mouseenter', (e) => {
 					// So that mouseenter event is catched before the open itself
-					if (isIosDevice) {
+					if (isIosDevice()) {
 						openSubmenu({ target: el.firstElementChild })
 					} else {
 						requestAnimationFrame(() => {
@@ -287,7 +281,7 @@ export const mountMenuLevel = (menuLevel, args = {}) => {
 						} else {
 							openSubmenu(e)
 
-							if (isIosDevice) {
+							if (isIosDevice()) {
 								e.target.closest('li').addEventListener(
 									'mouseleave',
 									() => {

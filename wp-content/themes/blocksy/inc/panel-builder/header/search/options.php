@@ -418,27 +418,42 @@ $options = [
 				'sync' => 'live'
 			],
 
-			'searchHeaderImages' => [
-				'label' => __( 'Live Results Images', 'blocksy' ),
+			'enable_live_results' => [
+				'label' => __( 'Live Results', 'blocksy' ),
 				'type' => 'ct-switch',
 				'value' => 'yes',
-				'divider' => 'top',
-				'setting' => [ 'transport' => 'postMessage' ],
 			],
 
 			blocksy_rand_md5() => [
 				'type' => 'ct-condition',
-				'condition' => [ 'search_through/product' => true ],
+				'condition' => [ 'enable_live_results' => 'yes' ],
 				'options' => [
-					'searchHeaderProductPrice' => [
-						'label' => __( 'Live Results Product Price', 'blocksy' ),
+
+					'searchHeaderImages' => [
+						'label' => __( 'Live Results Images', 'blocksy' ),
 						'type' => 'ct-switch',
-						'value' => 'no',
+						'value' => 'yes',
 						'divider' => 'top',
 						'setting' => [ 'transport' => 'postMessage' ],
 					],
-				]
+
+					blocksy_rand_md5() => [
+						'type' => 'ct-condition',
+						'condition' => [ 'search_through/product' => true ],
+						'options' => [
+							'searchHeaderProductPrice' => [
+								'label' => __( 'Live Results Product Price', 'blocksy' ),
+								'type' => 'ct-switch',
+								'value' => 'no',
+								'divider' => 'top',
+								'setting' => [ 'transport' => 'postMessage' ],
+							],
+						]
+					],
+
+				],
 			],
+
 
 			blocksy_rand_md5() => [
 				'type' => 'ct-title',

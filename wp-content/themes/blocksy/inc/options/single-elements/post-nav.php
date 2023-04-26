@@ -62,9 +62,9 @@ $options = [
 								),
 								'sync' => [
 									'prefix' => $prefix,
-									'selector' => '.ct-related-posts',
+									'selector' => '.post-navigation',
 									'render' => function () {
-										blocksy_related_posts();
+										echo blocksy_post_navigation();
 									}
 								]
 							],
@@ -88,6 +88,45 @@ $options = [
 						'divider' => 'top:bottom',
 					],
 
+					$prefix . 'post_nav_thumb_size' => [
+						'label' => __('Image Size', 'blocksy'),
+						'type' => 'ct-select',
+						'value' => 'medium',
+						'view' => 'text',
+						'design' => 'inline',
+						'divider' => 'bottom',
+						'choices' => blocksy_ordered_keys(
+							blocksy_get_all_image_sizes()
+						),
+						'sync' => [
+							'prefix' => $prefix,
+							'selector' => '.post-navigation',
+							'render' => function () {
+								echo blocksy_post_navigation();
+							}
+						]
+					],
+
+					$prefix . 'post_nav_thumb_visibility' => [
+						'label' => __( 'Image Visibility', 'blocksy' ),
+						'type' => 'ct-visibility',
+						'design' => 'block',
+						'sync' => 'live',
+						'divider' => 'bottom',
+						'allow_empty' => true,
+						'value' => [
+							'desktop' => true,
+							'tablet' => true,
+							'mobile' => true,
+						],
+
+						'choices' => blocksy_ordered_keys([
+							'desktop' => __( 'Desktop', 'blocksy' ),
+							'tablet' => __( 'Tablet', 'blocksy' ),
+							'mobile' => __( 'Mobile', 'blocksy' ),
+						]),
+					],
+
 					$prefix . 'post_nav_title_visibility' => [
 						'label' => __( 'Title Visibility', 'blocksy' ),
 						'type' => 'ct-visibility',
@@ -99,26 +138,6 @@ $options = [
 							'desktop' => true,
 							'tablet' => true,
 							'mobile' => false,
-						],
-
-						'choices' => blocksy_ordered_keys([
-							'desktop' => __( 'Desktop', 'blocksy' ),
-							'tablet' => __( 'Tablet', 'blocksy' ),
-							'mobile' => __( 'Mobile', 'blocksy' ),
-						]),
-					],
-
-					$prefix . 'post_nav_thumb_visibility' => [
-						'label' => __( 'Thumbnail Visibility', 'blocksy' ),
-						'type' => 'ct-visibility',
-						'design' => 'block',
-						'sync' => 'live',
-						'divider' => 'bottom',
-						'allow_empty' => true,
-						'value' => [
-							'desktop' => true,
-							'tablet' => true,
-							'mobile' => true,
 						],
 
 						'choices' => blocksy_ordered_keys([
@@ -158,6 +177,7 @@ $options = [
 						'label' => __( 'Font Color', 'blocksy' ),
 						'type'  => 'ct-color-picker',
 						'design' => 'inline',
+						'sync' => 'live',
 						'value' => [
 							'default' => [
 								'color' => 'var(--color)',
@@ -167,9 +187,6 @@ $options = [
 								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
 						],
-
-						'sync' => 'live',
-
 						'pickers' => [
 							[
 								'title' => __( 'Initial', 'blocksy' ),
@@ -188,15 +205,13 @@ $options = [
 						'label' => __( 'Thumbnail Overlay Color', 'blocksy' ),
 						'type'  => 'ct-color-picker',
 						'design' => 'inline',
-						'divider' => 'top:full',
+						'sync' => 'live',
+						'divider' => 'top',
 						'value' => [
 							'hover' => [
 								'color' => Blocksy_Css_Injector::get_skip_rule_keyword('DEFAULT'),
 							],
 						],
-
-						'sync' => 'live',
-
 						'pickers' => [
 							[
 								'title' => __( 'Hover', 'blocksy' ),
@@ -216,7 +231,6 @@ $options = [
 						'inputAttr' => [
 							'placeholder' => '100'
 						],
-						// 'responsive' => true,
 						'sync' => 'live',
 					],
 

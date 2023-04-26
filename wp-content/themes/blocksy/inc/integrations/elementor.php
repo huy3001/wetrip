@@ -190,6 +190,13 @@ add_action('init', function () {
 	);
 
 	add_action('elementor/editor/after_enqueue_styles', function () {
+		if (! apply_filters(
+			'blocksy:integrations:elementor:has-ui-styles',
+			true
+		)) {
+			return;
+		}
+
 		$theme = blocksy_get_wp_parent_theme();
 
 		wp_enqueue_style(
@@ -200,17 +207,6 @@ add_action('init', function () {
 		);
 	});
 });
-
-add_filter('fl_builder_settings_form_defaults', function ($defaults, $form_type) {
-	if ('global' === $form_type) {
-		$defaults->row_padding = '0';
-		$defaults->row_width = '1290';
-		$defaults->medium_breakpoint = '1000';
-		$defaults->responsive_breakpoint = '690';
-	}
-
-	return $defaults;
-}, 10, 2);
 
 add_action(
 	'elementor/theme/register_locations',

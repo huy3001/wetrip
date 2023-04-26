@@ -1,4 +1,4 @@
-table.cart {
+form > table.cart {
 
 	@include media-breakpoint-down (sm) {
 		--table-padding: 1.3em 0.7em;
@@ -39,8 +39,4 @@ table.cart {
 			}
 		}
 	}
-}
-
-.multiply-symbol {
-	margin: 0 12px;
 }

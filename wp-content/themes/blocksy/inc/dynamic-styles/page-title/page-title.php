@@ -449,7 +449,7 @@ if ($type === 'type-2') {
 $selectors_map = [
 	// custom_meta is a bit specially handled
 	'author_social_channels' => blocksy_prefix_selector(
-		'.hero-section .author-box-social',
+		'.hero-section .author-box-socials',
 		$prefix
 	),
 	'custom_description' => blocksy_prefix_selector(

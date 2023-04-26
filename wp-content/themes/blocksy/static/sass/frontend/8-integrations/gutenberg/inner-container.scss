@@ -1,10 +1,16 @@
-.wp-block-group {	
-	// > *:where(:not(.alignleft):not(.alignright)) {
-	// 	margin-left: auto;
-	// 	margin-right: auto;
-	// }
+// cover block inner container
+.wp-block-cover,
+.wp-block-cover-image {
 
-	// > *:where(:not(.alignfull)) {
-	// 	width: #{'min(100%, var(--container-width))'};
-	// }
+	.wp-block-cover__inner-container {
+		width: var(--default-editor, var(--block-width));
+		max-width: var(--default-editor, var(--block-max-width));
+	}
+}
+
+body .is-layout-constrained {
+
+	> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+		width: var(--default-editor, var(--block-width));
+	}
 }

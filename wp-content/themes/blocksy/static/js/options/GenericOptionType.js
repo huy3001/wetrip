@@ -360,12 +360,16 @@ const GenericOptionType = ({
 			{BeforeOptionContent && BeforeOptionContent.content}
 			<OptionComponent
 				key={id}
-				ref={(c) => {
-					if (c) {
-						childComponentRef.current = c
-					}
-				}}
 				{...{
+					...(option.type === 'ct-slider'
+						? {
+								ref: (c) => {
+									if (c) {
+										childComponentRef.current = c
+									}
+								},
+						  }
+						: {}),
 					option: {
 						...option,
 						value: isOptionResponsiveFor(option, {

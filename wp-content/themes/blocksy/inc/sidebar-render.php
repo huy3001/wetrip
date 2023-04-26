@@ -53,6 +53,11 @@ function blocksy_render_sidebar() {
 
 	$prefix = blocksy_manager()->screen->get_prefix();
 
+	$deep_link_args = [];
+
+	if (! is_singular()) {
+		$deep_link_args['suffix'] = $prefix . '_has_sidebar';
+	}
 
 	ob_start();
 
@@ -63,9 +68,7 @@ function blocksy_render_sidebar() {
 		<?php echo wp_kses_post($class_output); ?>
 		data-type="<?php echo esc_attr($type) ?>"
 		id="sidebar"
-		<?php echo blocksy_generic_get_deep_link([
-			'suffix' => $prefix . '_has_sidebar'
-		]); ?>
+		<?php echo blocksy_generic_get_deep_link($deep_link_args) ?>
 		<?php echo blocksy_schema_org_definitions('sidebar') ?>>
 
 		<?php do_action('blocksy:sidebar:before'); ?>

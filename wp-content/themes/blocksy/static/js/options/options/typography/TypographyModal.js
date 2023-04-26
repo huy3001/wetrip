@@ -123,8 +123,15 @@ const TypographyModal = ({
 		(currentList, currentSource) => [
 			...currentList,
 			...(typographyList[currentSource].families || []).filter(
-				({ family }) =>
-					fuzzysearch(searchTerm.toLowerCase(), family.toLowerCase())
+				({ family, display }) =>
+					fuzzysearch(
+						searchTerm.toLowerCase(),
+						family.toLowerCase()
+					) ||
+					fuzzysearch(
+						searchTerm.toLowerCase(),
+						(display || '').toLowerCase()
+					)
 			),
 		],
 		[]

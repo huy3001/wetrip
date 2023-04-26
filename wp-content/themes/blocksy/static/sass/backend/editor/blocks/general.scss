@@ -13,9 +13,12 @@ htmlroot {
 	box-sizing: border-box;
 	box-shadow: var(--has-boxed, var(--box-shadow));
 	max-width: var(--has-boxed, var(--block-max-width));
-	margin: var(--has-boxed, 10px) var(--has-boxed, auto);
 	border-radius: var(--has-boxed, var(--border-radius));
 	padding: var(--has-boxed, var(--boxed-content-spacing));
+
+	width: calc(100% - 20px);
+	margin-inline: auto;
+	margin-block: var(--has-boxed, 10px);
 	
 
 	// post/page title
@@ -24,8 +27,15 @@ htmlroot {
 
 		.editor-post-title {
 			margin-top: 0;
+			margin-bottom: 0;
 		}
 	}
+
+	// full width blocks
+	.is-root-container > .alignfull {
+		margin-left: var(--has-wide, -10px);
+    	margin-right: var(--has-wide, -10px);
+	} 
 	
 
 	// has background

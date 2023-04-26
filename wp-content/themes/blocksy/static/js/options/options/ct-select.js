@@ -209,7 +209,7 @@ const Select = ({
 				return (
 					<div
 						className={classnames(
-							'ct-select-input 1',
+							'ct-select-input',
 							inputClassName
 						)}>
 						{selectInputStart && selectInputStart()}

@@ -11,8 +11,10 @@
 	h6,
 	pre,
 	code,
-	.wp-block-pullquote p,
-	.wp-block-quote.is-style-large p {
+	// .wp-block-pullquote p,
+	// .wp-block-quote.is-style-large p,
+	.wp-block-quote,
+	.wp-block-pullquote {
 		font-family: var(--fontFamily);
 		font-size: var(--fontSize);
 		font-weight: var(--fontWeight);
@@ -35,10 +37,14 @@
 		text-decoration: var(--buttonTextDecoration);
 	}
 
-	.edit-post-visual-editor__post-title-wrapper > h1 {
-		font-size: 2.44em;
-		font-weight: 700;
-		line-height: 1.4;
-		color: var(--headings-color);
+	.edit-post-visual-editor__post-title-wrapper {
+		font-size: initial;
+
+		> h1 {
+			font-size: 2.44em;
+			font-weight: 700;
+			line-height: 1.4;
+			color: var(--headings-color);
+		}
 	}
 }

@@ -1,7 +1,9 @@
 {
 	"version": 2,
 
+
 	"settings": {
+
 		"appearanceTools": true,
 
 		"spacing": {
@@ -18,7 +20,34 @@
 		}
 	},
 
+
 	"styles": {
+		"elements": {
+			"link": {
+				"typography": { 
+					"textDecoration": false 
+				}
+			},
+			"button": {
+				"spacing": {
+					"padding": false
+				},
+				"border": {
+					"width": false
+				},
+				"color": {
+					"background": false,
+					"text": false
+				},
+				"typography": {
+					"fontFamily": false,
+					"fontSize": false,
+					"lineHeight": false,
+					"textDecoration": false
+				}
+			}
+		},
+
 		"spacing": {
 			"blockGap": "var(--content-spacing)"
 		}

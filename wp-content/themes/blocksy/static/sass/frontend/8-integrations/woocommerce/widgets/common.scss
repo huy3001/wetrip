@@ -22,6 +22,10 @@
 
 .wc-block-checkbox-list__checkbox {
 	width: 100%;
+
+	.wc-block-components-checkbox__mark {
+		display: none;
+	}
 }
 
 

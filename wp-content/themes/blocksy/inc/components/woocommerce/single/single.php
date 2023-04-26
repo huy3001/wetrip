@@ -162,8 +162,30 @@ add_action(
 if (! function_exists('blocksy_woo_single_product_after_main_content')) {
 	function blocksy_woo_single_product_after_main_content() {
 		if (is_product()) {
-			woocommerce_upsell_display();
-			woocommerce_output_related_products();
+
+			if (blocksy_some_device(
+				get_theme_mod(
+					'upsell_products_visibility',
+					[
+						'desktop' => true,
+						'tablet' => false,
+						'mobile' => false,
+					]
+				)
+			) || is_customize_preview()) {
+				woocommerce_upsell_display();
+			}
+
+			if (blocksy_some_device(get_theme_mod(
+				'related_products_visibility',
+				[
+					'desktop' => true,
+					'tablet' => false,
+					'mobile' => false,
+				]
+			)) || is_customize_preview()) {
+				woocommerce_output_related_products();
+			}
 		}
 	}
 }

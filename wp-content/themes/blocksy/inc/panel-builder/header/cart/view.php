@@ -215,7 +215,9 @@ if ($has_only_item) {
 }
 
 ob_start();
-woocommerce_mini_cart();
+if (isset($render_args['only_cart']) && $render_args['only_cart']) {
+	woocommerce_mini_cart();
+}
 $content = ob_get_clean();
 
 $cart_otput = blocksy_html_tag(

@@ -135,7 +135,7 @@ class Blocksy_Breadcrumbs_Builder {
 		$home_icon = '';
 
 		if (get_theme_mod('breadcrumb_home_item', 'text') === 'icon') {
-			$home_icon = '<svg class="ct-home-icon" width="15" viewBox="0 0 24 20"><path d="M12,0L0.4,10.5h3.2V20h6.3v-6.3h4.2V20h6.3v-9.5h3.2L12,0z"/></svg>';
+			$home_icon = '<svg class="ct-home-icon" width="15" viewBox="0 0 24 20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12,0L0.4,10.5h3.2V20h6.3v-6.3h4.2V20h6.3v-9.5h3.2L12,0z"/></svg>';
 		}
 
 		$return = [
@@ -594,11 +594,11 @@ class Blocksy_Breadcrumbs_Builder {
 		$items = $this->get_breadcrumbs();
 
 		$separators = [
-			'type-1' => '<svg class="separator" width="8" height="8" viewBox="0 0 8 8">
+			'type-1' => '<svg class="separator" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
 				<path d="M2,6.9L4.8,4L2,1.1L2.6,0l4,4l-4,4L2,6.9z"/>
 			</svg>',
 
-			'type-2' => '<svg class="separator" width="8" height="8" viewBox="0 0 8 8">
+			'type-2' => '<svg class="separator" width="8" height="8" viewBox="0 0 8 8" aria-hidden="true" focusable="false">
 				<polygon points="2.5,0 6.9,4 2.5,8 "/>
 			</svg>',
 
@@ -650,7 +650,7 @@ class Blocksy_Breadcrumbs_Builder {
 							}
 						}
 
-						echo '<span class="last-item" ' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
+						echo '<span class="last-item" aria-current="page" ' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
 
 						if (blocksy_has_schema_org_markup()) {
 							echo '<meta itemprop="position" content="' . ($i + 1) . '">';
@@ -659,21 +659,39 @@ class Blocksy_Breadcrumbs_Builder {
 						if (isset($items[$i]['url']) && $should_be_link) {
 							echo '<a href="' . esc_attr( $items[ $i ]['url'] ) . '" ' . blocksy_schema_org_definitions('item'). '>';
 
-							if (isset($items[$i]['icon'])) {
+							$span_attr = blocksy_schema_org_definitions('name', [
+								'array' => true
+							]);
+
+							if (
+								isset($items[$i]['icon'])
+								&&
+								! empty($items[$i]['icon'])
+							) {
+								$span_attr['class'] = 'screen-reader-text';
 								echo $items[$i]['icon'];
 							}
 
-							echo '<span ' . blocksy_schema_org_definitions('name') . '>';
+							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
 							echo $items[ $i ]['name'];
 							echo '</span>';
 
 							echo '</a>';
 						} else {
-							if (isset($items[$i]['icon'])) {
+							$span_attr = blocksy_schema_org_definitions('name', [
+								'array' => true
+							]);
+
+							if (
+								isset($items[$i]['icon'])
+								&&
+								! empty($items[$i]['icon'])
+							) {
+								$span_attr['class'] = 'screen-reader-text';
 								echo $items[$i]['icon'];
 							}
 
-							echo '<span ' . blocksy_schema_org_definitions('name') . '>';
+							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
 							echo $items[ $i ]['name'];
 							echo '</span>';
 						}
@@ -695,14 +713,23 @@ class Blocksy_Breadcrumbs_Builder {
 						}
 
 						if (isset($items[$i]['url'])) {
-							echo '<a href="' . esc_attr( $items[ $i ]['url'] ) . '" ' . blocksy_schema_org_definitions('item') . '>';
+							echo '<a href="' . esc_attr($items[$i]['url']) . '" ' . blocksy_schema_org_definitions('item') . '>';
 
-							if (isset($items[$i]['icon'])) {
+							$span_attr = blocksy_schema_org_definitions('name', [
+								'array' => true
+							]);
+
+							if (
+								isset($items[$i]['icon'])
+								&&
+								! empty($items[$i]['icon'])
+							) {
+								$span_attr['class'] = 'screen-reader-text';
 								echo $items[$i]['icon'];
 							}
 
-							echo '<span ' . blocksy_schema_org_definitions('name') . '>';
-							echo $items[ $i ]['name'];
+							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
+							echo $items[$i]['name'];
 							echo '</span>';
 
 							echo '</a>';
@@ -715,7 +742,7 @@ class Blocksy_Breadcrumbs_Builder {
 							&&
 							isset($items[$i]['url'])
 						) {
-							echo '<meta itemprop="url" content="' . esc_attr( $items[ $i ]['url'] ) . '"/>';
+							echo '<meta itemprop="url" content="' . esc_attr($items[$i]['url']) . '"/>';
 						}
 
 						echo $separator;
@@ -731,11 +758,20 @@ class Blocksy_Breadcrumbs_Builder {
 						if (isset($items[$i]['url'])) {
 							echo '<a href="' . esc_attr( $items[ $i ]['url'] ) . '" ' . blocksy_schema_org_definitions('item') . '>';
 
-							if (isset($items[$i]['icon'])) {
+							$span_attr = blocksy_schema_org_definitions('name', [
+								'array' => true
+							]);
+
+							if (
+								isset($items[$i]['icon'])
+								&&
+								! empty($items[$i]['icon'])
+							) {
+								$span_attr['class'] = 'screen-reader-text';
 								echo $items[$i]['icon'];
 							}
 
-							echo '<span ' . blocksy_schema_org_definitions('name') . '>';
+							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
 							echo $items[ $i ]['name'];
 							echo '</span>';
 

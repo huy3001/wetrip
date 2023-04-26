@@ -1,3 +1,6 @@
+import { getCurrentScreen } from '../helpers/current-screen'
+import { isTouchDevice } from '../helpers/is-touch-device'
+
 const tabbables = [
 	'button:enabled:not([readonly])',
 	'select:enabled:not([readonly])',
@@ -23,9 +26,16 @@ const handleKeydown = (e) => {
 		return
 	}
 
-	const focusableEls = [
-		...lockedElement.querySelectorAll(tabbables.join(',')),
-	]
+	let focusableEls = [...lockedElement.querySelectorAll(tabbables.join(','))]
+
+	if (
+		lockedElement.querySelector('[data-device="mobile"]') &&
+		getCurrentScreen() !== 'mobile'
+	) {
+		focusableEls = focusableEls.filter(
+			(el) => !el.closest('[data-device="mobile"]')
+		)
+	}
 
 	const firstFocusableEl = focusableEls[0]
 	const lastFocusableEl = focusableEls[focusableEls.length - 1]
@@ -71,7 +81,7 @@ const focusLockOn = (element, settings = {}) => {
 	lockedElement = element
 	document.addEventListener('keydown', handleKeydown)
 
-	if (settings.focusOnMount) {
+	if (settings.focusOnMount && !isTouchDevice()) {
 		setTimeout(() => {
 			focusableEls[0].focus()
 		}, 200)

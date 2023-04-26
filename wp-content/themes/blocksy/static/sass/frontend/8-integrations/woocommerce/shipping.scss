@@ -1,7 +1,5 @@
 .woocommerce-shipping-totals {
-	--listItemSpacing: 0.8em;
-	--content-spacing: 1em;
-
+	
 	form button {
 		width: 100%;
 	}
@@ -12,11 +10,13 @@
 }
 
 .woocommerce-shipping-methods {
+	margin-bottom: 1em;
 
 	li {
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row-reverse;
+		margin-bottom: 0.8em;
 
 		input[type="radio"] {
 			--top: 0.2em;

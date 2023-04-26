@@ -359,7 +359,7 @@ add_filter(
 
 		return [
 			'body' => $css,
-			'headers' => new Requests_Utility_CaseInsensitiveDictionary(),
+			'headers' => [],
 			'response' => [
 				'code' => 200,
 				'message' => 'OK',

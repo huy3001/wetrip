@@ -12,7 +12,6 @@ $options = [
 				'value' => 'panel',
 				'view' => 'text',
 				'design' => 'block',
-				'setting' => [ 'transport' => 'postMessage' ],
 				'choices' => [
 					'modal' => __( 'Modal', 'blocksy' ),
 					'panel' => __( 'Side Panel', 'blocksy' ),
@@ -30,7 +29,6 @@ $options = [
 						'value' => 'right',
 						'view' => 'text',
 						'design' => 'block',
-						'setting' => [ 'transport' => 'postMessage' ],
 						'choices' => [
 							'left' => __( 'Left Side', 'blocksy' ),
 							'right' => __( 'Right Side', 'blocksy' ),

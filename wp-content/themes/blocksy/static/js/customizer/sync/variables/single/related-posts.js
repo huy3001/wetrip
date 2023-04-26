@@ -64,14 +64,14 @@ export const getSingleElementsVariables = () => ({
 
 	[`${prefix}_single_author_box_social_icons_color`]: [
 		{
-			selector: applyPrefixFor('.author-box .author-box-social', prefix),
+			selector: applyPrefixFor('.author-box .author-box-socials', prefix),
 			variable: 'icon-color',
 			type: 'color:default',
 			responsive: true,
 		},
 
 		{
-			selector: applyPrefixFor('.author-box .author-box-social', prefix),
+			selector: applyPrefixFor('.author-box .author-box-socials', prefix),
 			variable: 'icon-hover-color',
 			type: 'color:hover',
 			responsive: true,
@@ -80,14 +80,14 @@ export const getSingleElementsVariables = () => ({
 
 	[`${prefix}_single_author_box_social_icons_background`]: [
 		{
-			selector: applyPrefixFor('.author-box .author-box-social', prefix),
+			selector: applyPrefixFor('.author-box .author-box-socials', prefix),
 			variable: 'background-color',
 			type: 'color:default',
 			responsive: true,
 		},
 
 		{
-			selector: applyPrefixFor('.author-box .author-box-social', prefix),
+			selector: applyPrefixFor('.author-box .author-box-socials', prefix),
 			variable: 'background-hover-color',
 			type: 'color:hover',
 			responsive: true,

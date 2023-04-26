@@ -11,6 +11,7 @@ class Blocksy_Manager {
 	public $post_types = null;
 
 	public $screen = null;
+    public $hooks = null;
 
 	public $dynamic_css = null;
 	public $dynamic_styles_descriptor = null;
@@ -47,6 +48,7 @@ class Blocksy_Manager {
 
 		$this->post_types = new Blocksy_Custom_Post_Types();
 		$this->screen = new Blocksy_Screen_Manager();
+		$this->hooks = new \Blocksy\WpHooksManager();
 
 		$this->dynamic_css = new Blocksy_Dynamic_Css();
 
@@ -73,6 +75,10 @@ class Blocksy_Manager {
 		add_action(
 			'wp_head',
 			function () {
+				if (defined('IFRAME_REQUEST') && IFRAME_REQUEST) {
+					return;
+				}
+
 				$this->dynamic_css->load_frontend_css([
 					'descriptor' => $this->dynamic_styles_descriptor
 				]);
@@ -159,6 +165,12 @@ class Blocksy_Manager {
 
 			'dynamic_styles_selectors' => []
 		]);
+
+		$maybe_current_language = blocksy_get_current_language('slug');
+
+		if ($maybe_current_language !== '__NOT_KNOWN__') {
+			$data['lang'] = $maybe_current_language;
+		}
 
 		if (is_customize_preview()) {
 			$data['customizer_sync'] = blocksy_customizer_sync_data();

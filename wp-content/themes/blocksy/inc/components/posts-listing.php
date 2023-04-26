@@ -31,7 +31,8 @@ add_action('parse_tax_query', function ($query) {
 		'allowed_prefixes' => [
 			'blog',
 			'categories',
-			'woo_categories'
+			'woo_categories',
+			'search'
 		],
 		'default_prefix' => 'blog'
 	]);

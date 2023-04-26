@@ -191,6 +191,7 @@ $when_enabled_general_settings = [
 			'design' => 'block',
 			'sync' => blocksy_sync_whole_page([
 				'prefix' => $prefix,
+				'prefix_custom' => 'hero'
 			]),
 			'choices' => [
 				'type-1' => [
@@ -219,7 +220,7 @@ $when_enabled_general_settings = [
 			'value' => $default_hero_elements,
 			'sync' => [
 				[
-					'selector' => '.hero-section',
+					'selector' => blocksy_prefix_custom_selector('.hero-section', 'hero'),
 					'container_inclusive' => true,
 					'prefix' => $prefix,
 					'render' => function ($args) {
@@ -229,37 +230,43 @@ $when_enabled_general_settings = [
 								'type-1'
 							)
 						]);
-					}
+					},
+					'prefix_custom' => 'hero'
 				],
 
 				[
 					'prefix' => $prefix,
 					'id' => $prefix . 'hero_elements_heading_tag',
 					'loader_selector' => '.page-title',
+					'prefix_custom' => 'hero'
 				],
 
 				[
 					'prefix' => $prefix,
 					'id' => $prefix . 'hero_elements_meta_first',
-					'loader_selector' => '.entry-meta:1'
+					'loader_selector' => '.entry-meta:1',
+					'prefix_custom' => 'hero'
 				],
 
 				[
 					'prefix' => $prefix,
 					'id' => $prefix . 'hero_elements_meta_second',
-					'loader_selector' => '.entry-meta:2'
+					'loader_selector' => '.entry-meta:2',
+					'prefix_custom' => 'hero'
 				],
 
 				[
 					'prefix' => $prefix,
 					'id' => $prefix . 'hero_elements_spacing',
 					'loader_selector' => 'skip',
+					'prefix_custom' => 'hero'
 				],
 
 				[
 					'prefix' => $prefix,
 					'id' => $prefix . 'hero_elements_author_avatar',
 					'loader_selector' => '.ct-author-name',
+					'prefix_custom' => 'hero'
 				]
 			],
 
@@ -1217,6 +1224,7 @@ $options_when_not_default = [
 		'wrapperAttr' => ['data-label' => 'heading-label'],
 		'sync' => blocksy_sync_whole_page([
 			'prefix' => $prefix,
+			'prefix_custom' => 'hero'
 		]),
 		'inner-options' => $when_enabled_settings
 	]

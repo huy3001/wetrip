@@ -198,7 +198,15 @@ if (! function_exists('blocksy_get_all_i18n_languages')) {
 }
 
 if (! function_exists('blocksy_get_current_language')) {
-	function blocksy_get_current_language() {
+	function blocksy_get_current_language($format = 'locale') {
+		if ($format === 'slug') {
+			if (function_exists('pll_current_language')) {
+				return pll_current_language();
+			}
+
+			return '__NOT_KNOWN__';
+		}
+
 		if (function_exists('pll_current_language')) {
 			return pll_current_language('locale');
 		}

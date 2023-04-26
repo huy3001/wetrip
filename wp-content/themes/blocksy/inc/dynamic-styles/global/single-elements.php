@@ -280,12 +280,12 @@ if (
 
 		'variables' => [
 			'default' => [
-				'selector' => blocksy_prefix_selector('.author-box .author-box-social', $prefix),
+				'selector' => blocksy_prefix_selector('.author-box .author-box-socials', $prefix),
 				'variable' => 'icon-color'
 			],
 
 			'hover' => [
-				'selector' => blocksy_prefix_selector('.author-box .author-box-social', $prefix),
+				'selector' => blocksy_prefix_selector('.author-box .author-box-socials', $prefix),
 				'variable' => 'icon-hover-color'
 			]
 		],
@@ -305,12 +305,12 @@ if (
 
 		'variables' => [
 			'default' => [
-				'selector' => blocksy_prefix_selector('.author-box .author-box-social', $prefix),
+				'selector' => blocksy_prefix_selector('.author-box .author-box-socials', $prefix),
 				'variable' => 'background-color'
 			],
 
 			'hover' => [
-				'selector' => blocksy_prefix_selector('.author-box .author-box-social', $prefix),
+				'selector' => blocksy_prefix_selector('.author-box .author-box-socials', $prefix),
 				'variable' => 'background-hover-color'
 			]
 		],

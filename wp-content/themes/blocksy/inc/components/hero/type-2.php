@@ -81,6 +81,11 @@ if ($page_title_bg_type === 'custom_image') {
 	}
 }
 
+$attachment_id = apply_filters(
+	'blocksy:hero:type-2:image:attachment_id',
+	$attachment_id
+);
+
 if (
 	$page_title_bg_type === 'custom_image'
 	||

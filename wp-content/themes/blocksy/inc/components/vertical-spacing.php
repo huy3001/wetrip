@@ -14,7 +14,9 @@ function blocksy_get_v_spacing($args = []) {
 
 	$prefix = blocksy_manager()->screen->get_prefix();
 
-	if (is_singular() || blocksy_is_page()) {
+	if (is_singular() || blocksy_is_page([
+		'blog_is_page' => false
+	])) {
 		$post_options = blocksy_get_post_options();
 
 		$page_vertical_spacing_source = blocksy_default_akg(
