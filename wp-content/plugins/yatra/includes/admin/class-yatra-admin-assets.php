@@ -23,7 +23,9 @@ if (!class_exists('Yatra_Admin_Assets')) {
             $screen_id = isset($screen->id) ? $screen->id : '';
 
             $coupon_dependency = file_exists(YATRA_ABSPATH . 'assets/build/js/coupon.asset.php') ? include_once(YATRA_ABSPATH . 'assets/build/js/coupon.asset.php') : array();
+
             $coupon_dependency['dependencies'] = isset($coupon_dependency['dependencies']) ? $coupon_dependency['dependencies'] : array();
+
             $coupon_dependency['version'] = isset($coupon_dependency['version']) ? sanitize_text_field($coupon_dependency['version']) : YATRA_VERSION;
 
             // Register Only Script
@@ -67,7 +69,7 @@ if (!class_exists('Yatra_Admin_Assets')) {
             wp_register_style('yatra-daterangepickercss', YATRA_PLUGIN_URI . '/assets/lib/daterangepicker/daterangepicker.css', false, YATRA_VERSION);
 
             // Font Awesome
-            wp_register_style('yatra-font-awesome', YATRA_PLUGIN_URI . '/assets/lib/font-awesome/css/fontawesome.min.css', false, YATRA_VERSION);
+            wp_register_style('yatra-font-awesome', YATRA_PLUGIN_URI . '/assets/lib/font-awesome/css/fontawesome.min.css', false, '6.2.0');
 
             // Taxonomy Activity JS
             wp_register_script('yatra-taxonomy-activityjs', YATRA_PLUGIN_URI . '/assets/admin/js/activity-taxonomy.js', array('jquery'), YATRA_VERSION);
@@ -134,7 +136,7 @@ if (!class_exists('Yatra_Admin_Assets')) {
                 case "yatra-booking":
                     $css_dependencies[] = 'yatra-booking-meta-css';
                     break;
-                case "tour_page_yatra-settings":
+                case "yatra_page_yatra-settings":
                     array_push($js_dependencies, 'wp-color-picker', 'yatra-settings-script', 'yatra-tippy');
                     array_push($css_dependencies, 'wp-color-picker', 'yatra-settings-style');
                     $localization_array['font_awesome_icons'] = array(
@@ -154,6 +156,7 @@ if (!class_exists('Yatra_Admin_Assets')) {
                 case "edit-tour":
                     array_push($js_dependencies, 'yatra-tour-listing-script', 'yatra-tippy');
                     $localization_array['tour_featured_status_update_action'] = 'yatra_update_tour_featured_status';
+                    $css_dependencies[] = 'yatra-font-awesome';
                     break;
                 case "tour":
                     array_push($js_dependencies, 'yatra-tour-meta-script', 'yatra-tippy');

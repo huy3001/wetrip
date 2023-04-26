@@ -253,6 +253,11 @@ if (!class_exists('Yatra_Tour_Booking')) {
             if ($post->post_status != 'publish') {
                 return false;
             }
+            $tour = yatra_get_tour($post->ID);
+
+            if (!$tour->get_can_book()) {
+                return false;
+            }
 
             return true;
         }
@@ -336,6 +341,18 @@ if (!class_exists('Yatra_Tour_Booking')) {
             return $meta_params['coupon'] ?? array();
         }
 
+        public function get_discount_amount()
+        {
+           $coupon = $this->get_coupon();
+
+            return $coupon['calculated_value'] ?? 0;
+        }
+
+        public function get_customer_id(){
+
+            return absint(get_post_meta($this->booking_id, 'yatra_customer_id', true));
+
+        }
         public function get_tax($rate_amount = 'rate')
         {
             $booking_details = $this->get_all_booking_details();

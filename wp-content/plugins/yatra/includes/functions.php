@@ -53,9 +53,13 @@ if (!function_exists('yatra_tour_metabox_tabs')) {
         $metabox_tabs = array(
 
             'general' => array(
-                'title' => esc_html__('General & Dates', 'yatra'),
+                'title' => esc_html__('General', 'yatra'),
                 'is_active' => true,
                 'settings' => yatra_tour_general_configurations()
+            ),
+            'duration' => array(
+                'title' => esc_html__('Date & Durations', 'yatra'),
+                'settings' => yatra_tour_duration_configurations()
             ),
             'pricing' => array(
                 'title' => esc_html__('Pricing', 'yatra'),
@@ -81,19 +85,9 @@ if (!function_exists('yatra_set_session')) {
 
     function yatra_set_session($key = '', $value = '')
     {
-        if (!session_id()) {
-            session_start();
-        }
+        yatra()->session->set($key, $value);
 
-        $yatra_session_id = "yatra_session";
-
-        if (!empty($key) && !empty($value)) {
-
-            $_SESSION[$yatra_session_id][$key] = $value;
-
-            return true;
-        }
-        return false;
+        return true;
 
     }
 }
@@ -102,24 +96,13 @@ if (!function_exists('yatra_get_session')) {
 
     function yatra_get_session($key = '')
     {
+        $session = yatra()->session->get($key);
 
-        $yatra_session_id = "yatra_session";
+        if (is_array($session)) {
 
-        if (!empty($key)) {
-
-            if (isset($_SESSION[$yatra_session_id][$key])) {
-
-                return $_SESSION[$yatra_session_id][$key];
-            }
-
+            return $session;
         }
-        if (isset($_SESSION[$yatra_session_id])) {
-
-            return $_SESSION[$yatra_session_id];
-        }
-
-        return array();
-
+        return [];
     }
 }
 
@@ -127,31 +110,9 @@ if (!function_exists('yatra_clear_session')) {
 
     function yatra_clear_session($key = '')
     {
-        if (!session_id()) {
-            session_start();
-        }
+        yatra()->session->set($key, '');
 
-
-        $yatra_session_id = "yatra_session";
-
-        if (!empty($key)) {
-
-            if (isset($_SESSION[$yatra_session_id][$key])) {
-
-                unset($_SESSION[$yatra_session_id][$key]);
-
-                return true;
-            }
-
-        }
-        if (isset($_SESSION[$yatra_session_id])) {
-
-            unset($_SESSION[$yatra_session_id]);
-
-            return true;
-        }
-
-        return false;
+        return true;
 
     }
 }
@@ -597,7 +558,11 @@ if (!function_exists('yatra_booking_smart_tags')) {
 
         $smart_tags['booking_status'] = '';
 
+        $smart_tags['total_number_of_persons'] = '';
+
         $tour_lists = array();
+
+        $total_number_of_persons = 0;
 
         if ($booking_id > 0) {
 
@@ -621,13 +586,21 @@ if (!function_exists('yatra_booking_smart_tags')) {
 
             $smart_tags['net_booking_price'] = yatra_get_price(yatra_get_current_currency_symbol($booking->get_currency_code()), $booking->get_total(true));
 
+            $smart_tags['gross_booking_price'] = yatra_get_price(yatra_get_current_currency_symbol($booking->get_currency_code()), $booking->get_total());
+
+            $smart_tags['discount'] = yatra_get_price(yatra_get_current_currency_symbol($booking->get_currency_code()), $booking->get_discount_amount());
+
             foreach ($booking_meta as $tour_id => $meta) {
 
                 $booked_date = $meta['yatra_selected_date'] ?? '';
 
                 $number_of_person = $meta['number_of_person'] ?? '';
 
+                $total_tour_price = $meta['total_tour_price'] ?? '';
+
                 $number_of_person = is_array($number_of_person) ? array_sum($number_of_person) : $number_of_person;
+
+                $total_number_of_persons += absint($number_of_person);
 
                 $tour_list = array();
 
@@ -637,6 +610,8 @@ if (!function_exists('yatra_booking_smart_tags')) {
 
                 $tour_list['number_of_person'] = $number_of_person;
 
+                $tour_list['total_tour_price'] = yatra_get_price(yatra_get_current_currency_symbol($booking->get_currency_code()), $total_tour_price);
+
                 array_push($tour_lists, $tour_list);
             }
 
@@ -644,9 +619,13 @@ if (!function_exists('yatra_booking_smart_tags')) {
 
         $smart_tags['tour_lists'] = $tour_lists;
 
+        $smart_tags['booking_tours_count'] = count($tour_lists);
+
+        $smart_tags['total_number_of_persons'] = $total_number_of_persons;
+
         return apply_filters(
-            'yatra_booking_smart_tags',
-            $smart_tags
+            'yatra_booking_smart_tags', $smart_tags,
+            ['booking_id' => $booking_id]
         );
     }
 }
@@ -679,8 +658,8 @@ if (!function_exists('yatra_customer_smart_tags')) {
         }
 
         return apply_filters(
-            'yatra_customer_smart_tags',
-            $smart_tags
+            'yatra_customer_smart_tags', $smart_tags,
+            ['booking_id' => $booking_id]
         );
     }
 }
@@ -728,7 +707,7 @@ if (!function_exists('yatra_maybe_parse_smart_tags')) {
     function yatra_maybe_parse_smart_tags($all_smart_tags = array(), $content = '')
     {
 
-
+        //For Back Compatibility
         $content = str_replace("{{tour_lists}}", "{{tour_lists_loop_start}}{{tour_name}}{{tour_lists_loop_end}}", $content);
 
         $looped_content = yatra_get_string_between($content, '{{tour_lists_loop_start}}', '{{tour_lists_loop_end}}');
@@ -737,6 +716,8 @@ if (!function_exists('yatra_maybe_parse_smart_tags')) {
         foreach ($all_smart_tags as $tag => $tag_value) {
 
             $content = yatra_parse_smart_tag_item($tag, $tag_value, $content);
+
+            $looped_content = yatra_parse_smart_tag_item($tag, $tag_value, $looped_content);
 
         }
         $parsed_looped_content = array();
@@ -803,7 +784,7 @@ if (!function_exists('yatra_all_smart_tags')) {
 
         $all_tags = array_merge($yatra_global_smart_tags, $yatra_booking_smart_tags, $yatra_customer_smart_tags);
 
-        return apply_filters('yatra_all_smart_tags', $all_tags);
+        return apply_filters('yatra_all_smart_tags', $all_tags, ['booking_id' => $booking_id]);
     }
 }
 
@@ -898,6 +879,12 @@ if (!function_exists('yatra_payment_gateway_fields')) {
 
             echo '<ul class="yatra-payment-gateway">';
 
+            $selected_gateway_id = $yatra_get_payment_gateways[0]['id'] ?? '';
+
+            $selected_gateway = yatra()->helper->input('yatra-payment-gateway');
+
+            $selected_gateway = $selected_gateway === '' ? $selected_gateway_id : $selected_gateway;
+
             foreach ($yatra_get_payment_gateways as $gateway) {
 
                 $gateway_id = isset($gateway['id']) ? $gateway['id'] : '';
@@ -908,7 +895,7 @@ if (!function_exists('yatra_payment_gateway_fields')) {
 
                     echo '<label for="yatra-payment-gateway-' . esc_attr($gateway_id) . '">';
 
-                    echo '<input type="radio" id="yatra-payment-gateway-' . esc_attr($gateway_id) . '" name="yatra-payment-gateway" value="' . esc_attr($gateway_id) . '"/>';
+                    echo '<input type="radio" id="yatra-payment-gateway-' . esc_attr($gateway_id) . '" name="yatra-payment-gateway" value="' . esc_attr($gateway_id) . '" ' . checked($gateway_id, $selected_gateway, false) . '/>';
 
                     echo '&nbsp;<span>' . $gateway['frontend_title'] . '</span>';
 

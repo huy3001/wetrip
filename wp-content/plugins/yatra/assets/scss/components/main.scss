@@ -33,95 +33,40 @@ del {
       height: auto;
       font-size: 15px;
       width: 100px;
-      border: 2px solid #1abc9c;
+      border: 2px solid var(--yatra_primary_color);
       border-radius: 0;
     }
   }
 
   .fa, .far, .fas {
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
+    font-family: var(--yatra-fa-style-family) !important;
+    font-weight: var(--yatra-fa-style-weight);
   }
 
 }
 
 .yatra-page-wrapper {
 
-  .nav-links {
-    .meta-nav {
-      display: none;
-    }
+  .pagination {
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
 
-    .nav-previous {
-      width: 50%;
-      float: left;
-    }
+    .page-numbers {
+      display: inline-block;
+      text-align: center;
+      font-weight: 400;
+      width: 40px;
+      height: 40px;
+      line-height: 35px;
+      border-radius: 5px;
+      border: 2px solid;
+      padding: 0;
 
-    .nav-next {
-      width: 50%;
-      text-align: right;
-      float: right;
-    }
+      &.current, &:hover {
 
-    .nav-previous a:before {
-      content: "\f0d9";
-      font-family: FontAwesome;
-      font-style: normal;
-      margin-right: 5px;
-    }
-
-    .nav-next a:after {
-      content: "\f0da";
-      font-family: FontAwesome;
-      font-style: normal;
-      margin-left: 5px;
-      position: absolute;
-      right: 10px;
-    }
-
-    .nav-previous {
-      float: left;
-      width: 25%;
-    }
-
-    .nav-next {
-      width: 25%;
-      float: right;
-
-      a {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        position: relative;
-        padding-right: 20px;
       }
     }
-
-    .nav-previous a {
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
-  .navigation.pagination {
-    padding: 0 0 30px;
-  }
-
-  .navigation .nav-links a,
-  .navigation .nav-links span.current,
-  .navigation .nav-links span.dots,
-  .bttn, button {
-
-  }
-
-  .navigation .nav-links span.current,
-  .navigation .nav-links span.dots {
-    color: inherit;
-    background: inherit;
-    padding: 10px 12px;
   }
 
 }
@@ -157,8 +102,8 @@ del {
 
         &:before {
           position: absolute;
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
+          font-family: var(--yatra-fa-style-family);
+          font-weight: var(--yatra-fa-style-weight);
           font-size: 13px;
           left: 0;
           top: 4px
@@ -193,8 +138,8 @@ del {
         text-align: center;
         padding: 10px 0;
         /* background: #d77b5d; */
-        color: #1abc9c;
-        border-bottom: 2px solid #1abc9c;
+        color: var(--yatra_primary_color);
+        border-bottom: 2px solid var(--yatra_primary_color);
         margin-bottom: 20px;
 
       }
@@ -241,7 +186,7 @@ del {
 }
 
 .detail-tab .tabs h3 {
-  color: #1abc9c;
+  color: var(--yatra_primary_color);
 }
 
 .overview-section {

@@ -44,27 +44,35 @@ class Yatra_Module_Filter_Sidebar
 
         echo '<div class="yatra-filter-sidebar-header">';
 
-        echo '<h2>' . __('Filter Criteria', 'yatra') . '</h2>';
+        echo '<h2>';
 
+        echo '<span class="yatra-icon fa fa-filter"></span>';
 
-        $clear_class = count((array)$filter) < 1 ? 'yatra-hide' : '';
+        echo __('Filter Criteria', 'yatra');
+
+        echo '</h2>';
+
+        $search_text = get_query_var('s');
+
+        $clear_class = count((array)$filter) < 1 && $search_text == '' ? 'yatra-hide' : '';
 
         echo '<a href="' . esc_attr($action) . '"  class="yatra-clear-filter ' . esc_attr($clear_class) . '">' . __('Clear filter', 'yatra') . '</a>';
 
         echo '</div>';
 
         $search_text = get_query_var('s');
-        if ('' != $search_text) {
-            ?>
-            <div class="yatra-sidebar-filter-field">
-                <h3 class="yatra-sidebar-filter-section-title"><?php echo __('Search', 'yatra') ?></h3>
-                <div class="yatra-sidebar-filter-section-content">
-                    <input type="text" name="s" value="<?php echo esc_attr($search_text) ?>"
-                           placeholder="<?php echo esc_attr__('Search …', 'yatra') ?>"/>
-                </div>
+
+        ?>
+        <div class="yatra-sidebar-filter-field search">
+            <h3 class="yatra-sidebar-filter-section-title">
+                <span class="yatra-icon fa fa-magnifying-glass"></span>
+                <?php echo __('Search', 'yatra') ?></h3>
+            <div class="yatra-sidebar-filter-section-content">
+                <input type="text" name="s" value="<?php echo esc_attr($search_text) ?>"
+                       placeholder="<?php echo esc_attr__('Type keyword here..', 'yatra') ?>"/>
             </div>
-            <?php
-        }
+        </div>
+        <?php
         $sidebar_filter_sections = yatra_get_sidebar_filter_sections();
 
         foreach ($sidebar_filter_sections as $section_id) {
@@ -93,7 +101,10 @@ class Yatra_Module_Filter_Sidebar
             echo '<input type="hidden" name="display_mode" value="' . esc_attr($filter->display_mode) . '"/>';
         }
 
-        echo '<button type="submit" class="yatra-button button yatra-filter-sidebar-submit">' . __('Filter', 'yatra') . '</button>';
+        echo '<button type="submit" class="yatra-button button yatra-filter-sidebar-submit">';
+        echo '<span class="yatra-icon fa fa-filter"></span>';
+        echo __('Filter', 'yatra');
+        echo '</button>';
         echo '</form>';
         echo '</div>';
         echo '</div>';

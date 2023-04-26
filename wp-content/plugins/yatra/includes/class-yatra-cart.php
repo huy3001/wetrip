@@ -7,6 +7,8 @@ if (!class_exists('Yatra_Cart')) {
         function __construct()
         {
 
+            include_once YATRA_ABSPATH . 'includes/functions/cart-functions.php';
+
             add_action('init', array($this, 'remove_cart'));
             add_action('init', array($this, 'remove_coupon'));
             add_filter('yatra_booking_final_price', array($this, 'final_price'), 10, 3);
@@ -46,7 +48,28 @@ if (!class_exists('Yatra_Cart')) {
 
         public function get_cart()
         {
-            return yatra_get_session('yatra_tour_cart');
+
+            $cart = yatra_get_session('yatra_tour_cart');
+
+            $items = isset($cart['items']) ? $cart['items'] : array();
+
+            $item_lists = array();
+
+            foreach ($items as $item_id => $item) {
+
+                if (get_post_status($item_id) === 'publish' && get_post_type($item_id) === 'tour') {
+
+                    $single_item = $item;
+
+                    $single_item['tour'] = get_post($item_id);
+
+                    $item_lists[$item_id] = $single_item;
+                }
+            }
+
+            $cart['items'] = $item_lists;
+
+            return $cart;
 
         }
 
@@ -208,15 +231,11 @@ if (!class_exists('Yatra_Cart')) {
         {
             $yatra_tour_cart = $this->get_cart();
 
-            $tour = get_post($tour_id);
-
             $yatra_multiple_pricing = get_post_meta($tour_id, 'yatra_multiple_pricing', true);
 
             $yatra_multiple_pricing = is_array($yatra_multiple_pricing) ? $yatra_multiple_pricing : array();
 
             $single_cart_item = array(
-
-                'tour' => $tour,
 
                 'number_of_person' => $number_of_persons,
 
@@ -227,6 +246,8 @@ if (!class_exists('Yatra_Cart')) {
                 'multiple_pricing' => $yatra_multiple_pricing,
 
                 'selected_date' => $selected_date,
+
+                'tour_id' => $tour_id
 
             );
             $yatra_tour_cart['items'][$tour_id] = $single_cart_item;
@@ -252,6 +273,13 @@ if (!class_exists('Yatra_Cart')) {
                     $unset_this = true;
                 }
             }
+            $tour = yatra_get_tour($tour_id);
+
+            if (!$tour->get_can_book()) {
+
+                $unset_this = true;
+            }
+
 
             if ($unset_this) {
 
@@ -331,6 +359,34 @@ if (!class_exists('Yatra_Cart')) {
 
         }
 
+        public function get_mini_cart_table($return = false, $cart_data = array())
+        {
+
+            if (count($cart_data) < 1) {
+
+                $cart_data = $this->get_cart();
+            }
+            $cart_items = isset($cart_data['items']) ? $cart_data['items'] : array();
+            $coupon = isset($cart_data['coupon']) ? $cart_data['coupon'] : array();
+
+            ob_start();
+
+            yatra_get_template('tmpl-mini-cart-table.php', array(
+                    'cart_items' => $cart_items,
+                    'coupon' => $coupon
+                )
+            );
+
+            $content = ob_get_clean();
+
+            if ($return) {
+
+                return $content;
+            }
+            echo $content;
+
+        }
+
         public function remove_cart_item($cart_item_hash = '')
         {
             $remove_item = isset($_GET['yatra_cart_remove_item']) ? $_GET['yatra_cart_remove_item'] : '';
@@ -338,7 +394,6 @@ if (!class_exists('Yatra_Cart')) {
             $nonce = isset($_GET['yatra_cart_remove_nonce']) ? $_GET['yatra_cart_remove_nonce'] : '';
 
             if (!empty($remove_item) && !empty($nonce)) {
-
 
                 $status = wp_verify_nonce($nonce, 'yatra_cart_remove_tour_item');
 
@@ -358,6 +413,7 @@ if (!class_exists('Yatra_Cart')) {
                     $this->refresh_cart_coupon(true);
 
                     wp_redirect(yatra_get_cart_page(true));
+
                     exit;
                 }
 

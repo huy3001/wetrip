@@ -5,21 +5,22 @@ class Yatra_Admin_Export_Import
 
     public function __construct()
     {
-        add_action('admin_menu', array($this, 'importer_menu'), 11);
+        add_filter('yatra_admin_main_submenu', array($this, 'importer_menu'));
         add_action('admin_enqueue_scripts', array($this, 'importer_scripts'), 11);
     }
 
-    public function importer_menu()
+    public function importer_menu($submenu)
     {
-        add_submenu_page(
-            'edit.php?post_type=tour',
-            __('Import/Export', 'yatra'),
-            __('Import/Export', 'yatra'),
-            'administrator',
-            'yatra_import_export', array($this, 'settings_page'),
-            998);
-
-
+        $submenu[] = array(
+            'parent_slug' => YATRA_ADMIN_MENU_SLUG,
+            'page_title' => __('Import/Export', 'yatra'),
+            'menu_title' => __('Import/Export', 'yatra'),
+            'capability' => 'manage_yatra',
+            'menu_slug' => 'yatra_import_export',
+            'callback' => array($this, 'settings_page'),
+            'position' => 26,
+        );
+        return $submenu;
     }
 
 
@@ -42,7 +43,7 @@ class Yatra_Admin_Export_Import
 
     public function importer_scripts($hook)
     {
-        if ('tour_page_yatra_import_export' != $hook) {
+        if ('yatra_page_yatra_import_export' != $hook) {
             return;
         }
 

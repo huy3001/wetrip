@@ -2,10 +2,10 @@
 Tags: widget, widgets
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.1
+Tested up to: 6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.8.56
+Stable tag: 1.8.84
 
 == Description ==
 
@@ -23,6 +23,111 @@ It runs and adds its enhancements only if the Blocksy theme is installed and act
 2. Activate the plugin by going to **Plugins** page in WordPress admin and clicking on **Activate** link.
 
 == Changelog ==
+1.8.84: 2023-04-20
+- Improvement: Sticky header increased height calculation for widget area
+- Improvement: Better display logic for taxonomy IDs condition
+- Improvement: Shortcode support in header account label option
+- Fix: Account modal -> registration -> eye icon to show password typed doesn't work
+
+1.8.83: 2023-04-13
+- Fix: Account modal `login page` string issue
+
+1.8.82: 2023-04-06
+- Improvement: Include only public posts for the query in the blocksy_posts shortcode
+
+1.8.81: 2023-03-30
+- Improvement: Account modal don't repeat email field ID
+- Improvement: Smarter loading of Dokan scripts for the registration modal
+- Improvement: Account modal header element shortcode support in "custom link" option
+
+1.8.80: 2023-03-27
+- Improvement: Compatibility with WordPress 6.2
+- Improvement: Never expose real login url in the account modal
+- Improvement: Header account element label not translatable via "String translations" (WPML)
+- Fix: Newsletter module text color option not applying correctly
+
+1.8.79: 2023-03-16
+- Fix: Account modal some strings where not translatable
+
+1.8.78: 2023-03-09
+- Improvement: Prefix XML parser class to not clash with other plugins
+- Improvement: Correctly extract SVG sizes in blocksy_image function
+
+1.8.77: 2023-03-02
+- Improvement: General fixes and improvements
+
+1.8.76: 2023-02-23
+- Improvement: Better detection of user and CPT conditions
+
+1.8.75: 2023-02-15
+- Improvement: General fixes and improvements
+
+1.8.74: 2023-02-15
+- Improvement: General fixes and improvements
+
+1.8.73: 2023-02-09
+- Improvement: Integrate B2B market with account modal
+- Improvement: Newsletter subscribe extensions retrieve correctly all subscribers lists
+- Improvement: More robust import of XML post data in starter sites
+
+1.8.72: 2023-02-02
+- Improvement: General fixes and improvements
+
+1.8.71: 2023-01-26
+- Improvement: General fixes and improvements
+
+1.8.70: 2023-01-26
+- Improvement: Smarter handling of login links in the account modal
+- Improvement: Small improvement for filter argument in posts shortcode
+- Improvement: Dont trigger WooCommerce actions in account modal when it is not active
+- Improvement: Add image size option to posts widget
+
+1.8.69: 2023-01-20
+- Improvement: General fixes and improvements
+
+1.8.68: 2023-01-20
+- Improvement: Escape class attr for blocksy_posts shortcode
+- Improvement: Introduce filter for controlling obfuscation process in the contacts link item
+
+1.8.67: 2023-01-19
+- Improvement: Ensure admin_body_class filter is called correctly
+- Improvement: Earlier computation of trending posts results
+- Improvement: Pass meta_value and meta_key fields to the blocksy_posts shortcode query
+
+1.8.66: 2023-01-11
+- Improvement: Better header sticky calculation with very high elements in the rows
+- Fix: Negative margin should not break sticky header calculations
+
+1.8.65: 2022-12-29
+- Improvement: General fixes and improvements
+
+1.8.64: 2022-12-28
+- Improvement: General fixes and improvements
+
+1.8.63: 2022-12-22
+- Improvement: Correctly re-apply sticky container height in customizer
+- Improvement: Don't output widgets heading tag if title is empty
+
+1.8.62: 2022-12-15
+- Improvement: More reliable checking of taxonomy in conditions manager
+
+1.8.61: 2022-12-09
+- Improvement: General fixes and improvements
+
+1.8.60: 2022-12-08
+- Improvement: Correctly output sticky row background image on responsive devices
+- Improvement: Better calculation for sticky shrink on responsive devices
+
+1.8.59: 2022-11-24
+- Improvement: Better handle the integration with Nextend Social plugin and account modal
+
+1.8.58: 2022-11-17
+- Improvement: Correct redirect to dashboard on plugin activation
+- Fix: Trending posts taxonomy relationship
+
+1.8.57: 2022-11-10
+- Improvement: General fixes and improvements
+
 1.8.56: 2022-11-04
 - Improvement: Sticky header shrink with border correctly position floating cart
 - Improvement: Better logic for simple XML svg parsing

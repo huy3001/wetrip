@@ -43,14 +43,18 @@ if (! $forgot_password_inline) {
 			<label for="rememberme"><?php echo __('Remember Me', 'blocksy-companion') ?></label>
 		</span>
 
-		<a href="<?php echo wp_lostpassword_url() ?>" class="<?php echo $forgot_pass_class ?>">
+		<a href="#" class="<?php echo $forgot_pass_class ?>">
 			<?php echo __('Forgot Password?', 'blocksy-companion') ?>
 		</a>
 	</p>
 
 	<?php
 		if (function_exists('blc_fs') && blc_fs()->can_use_premium_code()) {
-			if (class_exists('NextendSocialLogin')) {
+			if (
+				class_exists('NextendSocialLogin', false)
+				&&
+				! class_exists('NextendSocialLoginPRO', false)
+			) {
 				\NextendSocialLogin::addLoginFormButtons();
 			}
 		}

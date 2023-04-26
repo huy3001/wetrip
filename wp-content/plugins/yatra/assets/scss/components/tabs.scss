@@ -21,7 +21,7 @@
     list-style: none;
     border: 1px solid #ddd;
     font-size: 0;
-    background: #eafffb;
+    background: var(--yatra_primary_color_opacity);
     border-bottom: none;
   }
 
@@ -71,7 +71,7 @@
 .yatra-tabs > ul li.active a,
 .yatra-tabs > ul li.active:hover a,
 .yatra-tabs > ul li a:hover {
-  color: #1abc9c;
+  color: var(--yatra_primary_color);
   background: #fff;
 
 }
@@ -120,7 +120,6 @@
 
 .yatra-tab-content label {
   font-weight: bold;
-  font-size: 14px;
 }
 
 .yatra-tab-content .select2 {
@@ -133,13 +132,6 @@
 .yatra-tab-content select,
 .yatra-tab-content textarea
 .yatra-tab-content .widefat {
-  font-size: 14px;
-  height: auto;
-  padding: 6px 10px;
-  border-radius: 0;
-  border: 1px solid #ddd;
-  box-shadow: none;
-  color: #000;
   margin-top: 5px;
 }
 

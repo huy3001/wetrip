@@ -1,5 +1,7 @@
 <?php
 
+use Yatra\Core\Controllers\ThemeController;
+
 class Yatra_Setup_Wizard
 {
 
@@ -9,12 +11,14 @@ class Yatra_Setup_Wizard
     /** @var array Steps for the setup wizard */
     private $steps = array();
 
+
+    private $next_step_button_text = 'Continue';
+
     /**
      * Hook in tabs.
      */
     public function __construct()
     {
-
         // if we are here, we assume we don't need to run the wizard again
         // and the user doesn't need to be redirected here
         update_option('yatra_setup_wizard_ran', '1');
@@ -72,6 +76,11 @@ class Yatra_Setup_Wizard
                 'view' => array($this, 'setup_step_miscellaneous'),
                 'handler' => array($this, 'setup_step_miscellaneous_save'),
             ),
+            'theme' => array(
+                'name' => __('Theme', 'yatra'),
+                'view' => array($this, 'setup_step_themes'),
+                'handler' => array($this, 'setup_step_themes_save'),
+            ),
             'final' => array(
                 'name' => __('Final!', 'yatra'),
                 'view' => array($this, 'setup_final_ready'),
@@ -98,6 +107,8 @@ class Yatra_Setup_Wizard
                 'import_action' => 'yatra_import_sample_data_on_setup',
                 'import_nonce' => wp_create_nonce('wp_yatra_import_sample_data_on_setup_nonce'),
                 'loading_image' => YATRA_PLUGIN_URI . '/assets/images/loading.gif',
+                'theme_install_action' => 'yatra_install_theme',
+                'theme_install_nonce' => wp_create_nonce('wp_yatra_install_theme_nonce'),
 
             )
         );
@@ -105,7 +116,9 @@ class Yatra_Setup_Wizard
         wp_register_script('yatra-select2', YATRA_PLUGIN_URI . '/assets/lib/select2/js/select2.min.js', false, false, true);
 
         if (!empty($_POST['save_step']) && isset($this->steps[$this->step]['handler'])) {
-            call_user_func($this->steps[$this->step]['handler']);
+            if (is_callable($this->steps[$this->step]['handler'])) {
+                call_user_func($this->steps[$this->step]['handler']);
+            }
         }
 
         ob_start();
@@ -141,8 +154,11 @@ class Yatra_Setup_Wizard
         </head>
         <body class="yatra-setup wp-core-ui">
         <h1 class="yatra-logo"><a
-                    href="https://wpyatra.com/?utm_source=setup_wizard&utm_medium=logo&utm_campaign=plugin">Complete
-                Travel & Tour Booking System – Yatra</a></h1>
+                    href="https://wpyatra.com/?utm_source=setup_wizard&utm_medium=logo&utm_campaign=plugin"
+                    target="_blank">Yatra</a>
+            <p>Complete Travel & Tour Booking System for WordPress</p>
+        </h1>
+
         <?php
     }
 
@@ -202,7 +218,7 @@ class Yatra_Setup_Wizard
         ?>
         <p class="yatra-setup-actions step">
             <input type="submit" class="button-primary button button-large button-next"
-                   value="<?php esc_attr_e('Continue', 'yatra'); ?>" name="save_step"/>
+                   value="<?php echo esc_attr($this->next_step_button_text) ?>" name="save_step"/>
             <a href="<?php echo esc_url($this->get_next_step_link()); ?>"
                class="button button-large button-next"><?php _e('Skip this step', 'yatra'); ?></a>
             <?php wp_nonce_field('yatra-setup'); ?>
@@ -216,7 +232,7 @@ class Yatra_Setup_Wizard
     public function setup_step_introduction()
     {
         ?>
-        <h1><?php _e('Welcome to Complete Travel & Tour Booking System – Yatra!', 'yatra'); ?></h1>
+        <h1><?php _e('Welcome to WordPress Travel Booking System – Yatra!', 'yatra'); ?></h1>
         <p><?php _e('Thank you for choosing Yatra plugin for your travel & tour booking site. This setup wizard will help you configure the basic settings of the plugin. <strong>It’s completely optional and shouldn’t take longer than one minutes.</strong>', 'yatra'); ?></p>
         <p><?php _e('No time right now? If you don’t want to go through the wizard, you can skip and return to the WordPress dashboard.', 'yatra'); ?></p>
         <p class="yatra-setup-actions step">
@@ -549,26 +565,30 @@ class Yatra_Setup_Wizard
         exit;
     }
 
+    private function get_compatible_themes()
+    {
+        return array(
+            array(
+                'slug' => 'resa',
+                'title' => __('Resa', 'yatra'),
+                'demo_url' => 'https://demo.wpyatra.com',
+                'is_free' => true,
+                'screenshot' => 'https://i0.wp.com/themes.svn.wordpress.org/resa/1.0.2/screenshot.png?w=572&strip=all',
+                'landing_page' => 'https://wpyatra.com/best-wordpress-travel-theme/?ref=yatrasetup',
+                'is_installable' => false,
+                'download_link' => 'https://downloads.wordpress.org/theme/resa.zip'
+            )
+        );
+    }
+
     public function setup_step_themes()
     {
         ?>
-        <h1 style="text-align: center;font-weight: bold;text-transform: uppercase;color: #18d0ab;"><?php _e('Compatible Themes for Yatra Plugin', 'yatra'); ?></h1>
+        <h1 style="text-align: center;font-weight: bold;"><?php _e('Best Compatible Theme for Yatra', 'yatra'); ?></h1>
         <form method="post">
             <?php
-            //$compatible_themes = apply_filters('yatra_must_compatible_themes', array());
 
-            $compatible_themes = array(
-                array(
-                    'slug' => 'yatri',
-                    'title' => __('Yatri', 'yatra'),
-                    'demo_url' => 'https://wpyatri.com',
-                    'is_free' => true,
-                    'screenshot' => 'https://raw.githubusercontent.com/mantrabrain/yatri/master/screenshot.png',
-                    'landing_page' => 'https://wpyatri.com/?ref=yatrasetup',
-                    'is_installable' => false,
-                    'download_link' => 'https://downloads.wordpress.org/theme/yatri.zip'
-                )
-            )
+            $compatible_themes = $this->get_compatible_themes();
             ?>
             <div class="theme-browser content-filterable rendered wpclearfix">
                 <div class="themes wpclearfix">
@@ -592,20 +612,27 @@ class Yatra_Setup_Wizard
                             <span class="more-details"
                                   onclick="window.open('<?php echo esc_url($landing_page); ?>','_blank');"
                                   data-details-link="<?php echo esc_url($landing_page); ?>"><?php echo __('Details &amp; Preview', 'yatra'); ?></span>
-
+                            <?php
+                            $theme_controller = new ThemeController($theme_slug);
+                            $anchor_class = 'button button-primary theme-install yatra-theme-install';
+                            $install_button_text = __('Install & Activate', 'yatra');
+                            if ($theme_controller->is_activated()) {
+                                $anchor_class .= ' disabled';
+                                $install_button_text = __('Activated', 'yatra');
+                            } else if ($theme_controller->is_installed()) {
+                                $install_button_text = __('Activate', 'yatra');
+                            }
+                            ?>
 
                             <div class="theme-id-container">
                                 <h3 class="theme-name"><?php echo esc_html($title) ?></h3>
                                 <div class="theme-actions">
-                                    <a href="<?php echo esc_attr($download_link); ?>"
-                                       class="button button-primary theme-install"
-                                       data-name="<?php echo esc_attr($title) ?>"
-                                       data-slug="<?php echo esc_attr($theme_slug) ?>"
-                                       data-installable="<?php echo absint($is_installable) ?>"
-                                       aria-label="Install <?php echo esc_html($title) ?>"><?php echo __('Download', 'yatra'); ?></a>
-                                    <a href="<?php echo esc_attr($demo_url); ?>" target="_blank"
-                                       class="button preview install-theme-preview"><?php echo __('Preview', 'yatra'); ?></a>
-
+                                    <a
+                                            class="<?php echo esc_attr($anchor_class); ?>"
+                                            data-name="<?php echo esc_attr($title) ?>"
+                                            data-slug="<?php echo esc_attr($theme_slug) ?>"
+                                            data-installable="<?php echo absint($is_installable) ?>"
+                                            aria-label="Install <?php echo esc_html($title) ?>"><?php echo esc_html($install_button_text) ?></a>
                                 </div>
                             </div>
                         </div>
@@ -623,6 +650,9 @@ class Yatra_Setup_Wizard
 
     public function setup_step_themes_save()
     {
+        check_admin_referer('yatra-setup');
+
+
         wp_redirect(esc_url_raw($this->get_next_step_link()));
         exit;
     }
@@ -630,7 +660,6 @@ class Yatra_Setup_Wizard
     public function setup_final_ready()
     {
         ?>
-
         <div class="final-step">
             <h1><?php _e('Your Site is Ready!', 'yatra'); ?></h1>
 
@@ -638,14 +667,15 @@ class Yatra_Setup_Wizard
                 <div class="yatra-setup-next-steps-last">
                     <h2><?php _e('Next Steps &rarr;', 'yatra'); ?></h2>
 
-
-                    <a class="button button-primary button-large"
+                    <a class="button button-primary button-large go-to-dashboard"
                        href="<?php echo esc_url(admin_url('edit.php?post_type=tour&page=yatra-dashboard')); ?>">
-                        <?php _e('Go to Dashboard!', 'yatra'); ?>
+                        <span class="dashicons dashicons-dashboard"></span>
+                        <span>&nbsp;&nbsp;<?php _e('Go to Dashboard!', 'yatra'); ?></span>
                     </a>
                     <button class="button button-primary button-large yatra-import-dummy-data"
                             href="<?php echo esc_url(admin_url('edit.php?post_type=tour&page=yatra-dashboard')); ?>">
-                        <?php _e('Import Sample Data', 'yatra'); ?>
+                        <span class="dashicons dashicons-download"></span>
+                        <span>&nbsp;&nbsp;<?php _e('Import Sample Data', 'yatra'); ?></span>
                     </button>
                 </div>
             </div>

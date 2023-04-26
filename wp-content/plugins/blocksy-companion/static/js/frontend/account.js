@@ -175,7 +175,9 @@ export const handleAccountModal = (el) => {
 			if (
 				e.target.href &&
 				(e.target.href.indexOf('wp-login') > -1 ||
-					(maybeLogin && e.target.href === maybeLogin.action)) &&
+					(maybeLogin && e.target.href === maybeLogin.action) ||
+					e.target.href.indexOf('login') > -1 ||
+					e.target.dataset.login === 'yes') &&
 				e.target.href.indexOf('lostpassword') === -1
 			) {
 				activateScreen(el, { screen: 'login' })

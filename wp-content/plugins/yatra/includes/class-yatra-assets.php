@@ -38,21 +38,34 @@ if (!class_exists('Yatra_Assets')) {
             wp_register_style('yatra-jquery-ui', YATRA_PLUGIN_URI . '/assets/lib/jquery-ui/jquery-ui.css', false, '1.12.1');
 
             // Font Awesome
-            wp_register_style('yatra-font-awesome', YATRA_PLUGIN_URI . '/assets/lib/font-awesome/css/fontawesome.min.css', false, '5.9.0');
+            wp_register_style('yatra-font-awesome', YATRA_PLUGIN_URI . '/assets/lib/font-awesome/css/fontawesome.min.css', false, '6.2.0');
 
             wp_register_style('lightbox', YATRA_PLUGIN_URI . '/assets/lib/lightbox2/css/lightbox.css', false, '2.11.0');
 
+            // Mini Cart
+            wp_register_style('yatra-mini-cart', YATRA_PLUGIN_URI . '/assets/css/yatra-mini-cart.css', false, YATRA_VERSION);
+
+            wp_register_style('yatra-search-style', YATRA_PLUGIN_URI . '/assets/css/yatra-search.css', false, YATRA_VERSION);
+
+            wp_register_script('yatra-search-script', YATRA_PLUGIN_URI . '/assets/js/yatra-search.js', array('jquery', 'jquery-ui-slider', 'jquery.ui.touch-punch'), YATRA_VERSION);
+
             wp_register_script('lightbox-script', YATRA_PLUGIN_URI . '/assets/lib/lightbox2/js/lightbox.js', false, '2.11.0');
 
-            wp_register_script('yatra-filter', YATRA_PLUGIN_URI . '/assets/js/yatra-filter.js', array('jquery', 'jquery-ui-slider'), YATRA_VERSION);
+            wp_register_script('jquery.ui.touch-punch', YATRA_PLUGIN_URI . '/assets/lib/jquery.ui.touch-punch/jquery.ui.touch-punch.min.js', false, '0.2.3');
+
+            wp_register_script('yatra-filter', YATRA_PLUGIN_URI . '/assets/js/yatra-filter.js', array('jquery', 'jquery-ui-slider', 'jquery.ui.touch-punch'), YATRA_VERSION);
 
 
-            $main_css_dependency = array('yatra-font-awesome', 'lightbox', 'yatra-jquery-ui');
+            $main_css_dependency = array('yatra-font-awesome', 'lightbox', 'yatra-jquery-ui', 'yatra-mini-cart');
 
             $main_script_dependency = array('jquery', 'lightbox-script', 'yatra-moment', 'yatra-popper', 'yatra-tippy');
             if (is_singular('tour')) {
                 $main_script_dependency[] = 'yatra-calendarjs';
                 $main_css_dependency[] = 'yatra-calendarcss';
+            }
+            if (yatra_has_search_shortcode()) {
+
+                $main_css_dependency[] = 'yatra-search-style';
             }
 
             // Other Register and Enqueue
@@ -81,6 +94,9 @@ if (!class_exists('Yatra_Assets')) {
             if (yatra_is_archive_page()) {
 
                 wp_enqueue_script('yatra-filter');
+            }
+            if (yatra_has_search_shortcode()) {
+                wp_enqueue_script('yatra-search-script');
             }
 
             $enabled_date = array();
@@ -144,7 +160,7 @@ if (!class_exists('Yatra_Assets')) {
                 global $wp_locale;
 
                 $yatra_params['week_days'] = $wp_locale->weekday;
-                
+
                 $yatra_params['months'] = array_values($wp_locale->month);
             }
 

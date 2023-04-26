@@ -366,7 +366,7 @@ $options = [
 
 			'email' => [
 				'label' => __( 'Email', 'blocksy-companion' ),
-				'clone' => true,
+				'clone' => 2,
 				'options' => [
 					[
 						'title' => [

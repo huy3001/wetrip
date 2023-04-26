@@ -26,6 +26,7 @@ export const getPluginsMap = (plugins) => ({
 	leadin: 'HubSpot',
 	'block-slider': 'Block Slider',
 	'ht-slider-for-elementor': 'HT Slider For Elementor',
+	'modula-best-grid-gallery': 'Modula - Image Gallery',
 })
 
 export const getNameForPlugin = (plugin) => {

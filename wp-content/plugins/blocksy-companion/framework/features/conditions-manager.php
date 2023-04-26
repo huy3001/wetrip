@@ -17,6 +17,11 @@ class ConditionsManager {
 			return false;
 		}
 
+		// Check if it looks like a normal rules array. If it doesn't -- bail out.
+		if (! isset($rules[0]) || ! isset($rules[0]['rule'])) {
+			return false;
+		}
+
 		$all_includes = array_filter($rules, function ($el) {
 			return $el['type'] === 'include';
 		});
@@ -331,8 +336,11 @@ class ConditionsManager {
 		if ($rule['rule'] === 'post_with_taxonomy_ids') {
 			$is_blocksy_page = blocksy_is_page();
 			global $blocksy_is_quick_view;
+			global $wp_query;
 
-			if (is_singular() || $is_blocksy_page || true) {
+			global $post;
+
+			if (is_singular() || $is_blocksy_page || $wp_query->in_the_loop) {
 				$post_id = get_the_ID();
 
 				if ($is_blocksy_page) {
@@ -349,6 +357,8 @@ class ConditionsManager {
 					isset($rule['payload']['taxonomy_id'])
 					&&
 					$post_id
+					&&
+					get_term($rule['payload']['taxonomy_id'])
 					&&
 					in_array(
 						get_term($rule['payload']['taxonomy_id'])->taxonomy,
@@ -844,6 +854,11 @@ class ConditionsManager {
 	}
 
 	public function humanize_conditions($conditions) {
+		// Check if it looks like a normal rules array. If it doesn't -- bail out.
+		if (! isset($conditions[0]) || ! isset($conditions[0]['rule'])) {
+			return [];
+		}
+
 		$result = [];
 
 		foreach ($conditions as $condition) {
@@ -885,9 +900,11 @@ class ConditionsManager {
 					$condition['payload']['taxonomy_id']
 				);
 
-				$to_append .= ' (<a href="' . get_edit_term_link(
-					$condition['payload']['taxonomy_id']
-				) . '" target="_blank">' . $tax->name . '</a>)';
+				if ($tax) {
+					$to_append .= ' (<a href="' . get_edit_term_link(
+						$condition['payload']['taxonomy_id']
+					) . '" target="_blank">' . $tax->name . '</a>)';
+				}
 			}
 
 			if ($condition['rule'] === 'current_language') {

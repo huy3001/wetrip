@@ -3,6 +3,8 @@
 require_once dirname(__FILE__) . '/helpers.php';
 
 class BlocksyExtensionTrending {
+	private $result = null;
+
 	public function __construct() {
 		add_action('wp_enqueue_scripts', function () {
 			if (! function_exists('get_plugin_data')) {
@@ -66,6 +68,8 @@ class BlocksyExtensionTrending {
 				);
 			}
 
+			$this->result = blc_get_trending_posts_value();
+
 			add_action(
 				$location,
 				function () {
@@ -87,7 +91,7 @@ class BlocksyExtensionTrending {
 						}
 					}
 
-					echo blc_get_trending_block();
+					echo blc_get_trending_block($this->result);
 				},
 				50
 			);

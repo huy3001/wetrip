@@ -23,11 +23,13 @@ class Yatra_Shortcodes
 
             'yatra_checkout' => __CLASS__ . '::checkout',
             'yatra_cart' => __CLASS__ . '::cart',
+            'yatra_mini_cart' => __CLASS__ . '::mini_cart',
             'yatra_my_account' => __CLASS__ . '::my_account',
             'yatra_activity' => __CLASS__ . '::activity',
             'yatra_destination' => __CLASS__ . '::destination',
             'yatra_discount_and_deals' => __CLASS__ . '::discount_deals',
             'yatra_tour' => __CLASS__ . '::tour',
+            'yatra_search' => __CLASS__ . '::search',
         );
 
         foreach ($shortcodes as $shortcode => $function) {
@@ -90,6 +92,17 @@ class Yatra_Shortcodes
         return self::shortcode_wrapper(array('Yatra_Shortcode_Cart', 'output'), $atts);
     }
 
+    /**
+     * Minic art page shortcode.
+     *
+     * @param array $atts Attributes.
+     * @return string
+     */
+    public static function mini_cart($atts)
+    {
+        return self::shortcode_wrapper(array('Yatra_Shortcode_Cart', 'mini_cart_output'), $atts);
+    }
+
 
     /**
      * my account page shortcode.
@@ -145,6 +158,17 @@ class Yatra_Shortcodes
     public static function tour($atts)
     {
         return self::shortcode_wrapper(array('Yatra_Shortcode_Tour', 'output'), $atts);
+    }
+
+    /**
+     * search section shortcode.
+     *
+     * @param array $atts Attributes.
+     * @return string
+     */
+    public static function search($atts)
+    {
+        return self::shortcode_wrapper(array('\Yatra\Core\Shortcodes\Search', 'output'), $atts);
     }
 
 

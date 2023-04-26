@@ -547,7 +547,7 @@ window.yatra_global_tour_additional_price = 0;
                     },
 
                     changeTab: function (event) {
-                        var self = $(event.target);
+                        var self = $(event.currentTarget);
                         event.preventDefault();
                         this.removeTabFocus();
                         this.setSelectedTab(self);
@@ -636,7 +636,7 @@ window.yatra_global_tour_additional_price = 0;
                     },
 
                     setSelectedTabPanel: function (self) {
-                        this.$el.find('#' + self.attr('aria-controls')).attr('aria-hidden', null);
+                        this.$el.find('#' + self.attr('aria-controls')).attr('aria-hidden', false);
                     },
 
                 };
@@ -684,7 +684,15 @@ window.yatra_global_tour_additional_price = 0;
             } else {
                 $(el).prepend(error_html);
             }
-            document.getElementById("yatra-message").scrollIntoView();
+            let target = document.getElementById("yatra-message");
+
+            if (target.getBoundingClientRect().bottom > window.innerHeight) {
+                target.scrollIntoView(false);
+            }
+
+            if (target.getBoundingClientRect().top < 0) {
+                target.scrollIntoView();
+            }
 
             if (fade_out_delay > 0) {
 
@@ -710,7 +718,15 @@ window.yatra_global_tour_additional_price = 0;
             } else {
                 $(el).prepend(error_html);
             }
-            document.getElementById("yatra-message").scrollIntoView();
+            let target = document.getElementById("yatra-message");
+
+            if (target.getBoundingClientRect().bottom > window.innerHeight) {
+                target.scrollIntoView(false);
+            }
+
+            if (target.getBoundingClientRect().top < 0) {
+                target.scrollIntoView();
+            }
 
             if (fade_out_delay > 0) {
                 $(el).find('.yatra-message').delay(fade_out_delay).fadeOut(800, function () {

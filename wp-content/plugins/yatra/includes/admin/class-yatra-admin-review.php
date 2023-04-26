@@ -26,11 +26,7 @@ class Yatra_Admin_Review
         if (!is_super_admin()) {
             return;
         }
-
-        if ('yes' === get_option('yatra_hide_all_announcement_of_yatra_plugin', 'no')) {
-            return;
-        }
-
+        
         // Verify that we can do a check for reviews.
         $notices = get_option('yatra_admin_notices', []);
 
@@ -74,7 +70,7 @@ class Yatra_Admin_Review
 
     public function review()
     {
-        
+
         $booking = new Yatra_Tour_Booking();
 
         $total_completed_bookings = $booking->get_all_bookings('yatra-completed', 1);
@@ -92,7 +88,7 @@ class Yatra_Admin_Review
         <p><?php esc_html_e('Hey, I noticed you just get new tour booking from Yatra - that’s awesome! Could you please do me a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?', 'yatra'); ?></p>
 
         <p>
-            <strong><?php echo wp_kses(__('Umesh Ghimire<br>Co-Founder of Yatra', 'yatra'), ['br' => []]); ?></strong>
+            <strong><?php echo wp_kses(__('Gangadhar Kashyap<br>Co-Founder of Yatra', 'yatra'), ['br' => []]); ?></strong>
         </p>
         <p>
             <a href="https://wordpress.org/support/plugin/yatra/reviews/?filter=5#new-post"
@@ -104,9 +100,10 @@ class Yatra_Admin_Review
                rel="noopener noreferrer"><?php esc_html_e('I already did', 'yatra'); ?></a>
         </p>
         <?php
+        $notice_html = ob_get_clean();
 
         Notices::info(
-            ob_get_clean(),
+            $notice_html,
             [
                 'dismiss' => Notices::DISMISS_GLOBAL,
                 'slug' => 'review_request',
@@ -119,17 +116,15 @@ class Yatra_Admin_Review
 
     public function admin_footer($text)
     {
-
         global $current_screen;
-
 
         $yatra_screens = array(
             'edit-tour',
-            'tour_page_yatra-dashboard',
+            'toplevel_page_yatra-dashboard',
             'tour',
             'edit-activity',
             'edit-attributes',
-            'tour_page_enquiries',
+            'yatra_page_enquiries',
             'edit-destination'
         );
 
@@ -165,11 +160,11 @@ class Yatra_Admin_Review
 
         $yatra_screens = array(
             'edit-tour',
-            'tour_page_yatra-dashboard',
+            'toplevel_page_yatra-dashboard',
             'tour',
             'edit-activity',
             'edit-attributes',
-            'tour_page_enquiries',
+            'yatra_page_enquiries',
             'edit-destination'
         );
 

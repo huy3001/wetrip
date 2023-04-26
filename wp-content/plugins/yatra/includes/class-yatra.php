@@ -6,6 +6,13 @@
  * @since   1.0.0
  */
 
+use Yatra\Core\Admin\Notices;
+use Yatra\Core\Admin\Tracking;
+use Yatra\Core\Helper;
+use Yatra\Core\Initialize;
+use Yatra\Core\Session;
+ use Yatra\Core\Tour\TourFactory;
+
 defined('ABSPATH') || exit;
 
 /**
@@ -25,11 +32,46 @@ final class Yatra
 
 
     /**
+     * EDD loader file.
+     *
+     * @since 2.1.12
+     * @var string
+     */
+    private $file = '';
+    /**
      * Cart instance.
      *
      * @var Yatra_Cart
      */
     public $cart = null;
+
+    /**
+     * Session instance.
+     *
+     * @var Session
+     */
+    public $session = null;
+
+    /**
+     * Tracking instance.
+     *
+     * @var Tracking
+     */
+    public $tracking = null;
+
+    /**
+     * Tracking instance.
+     *
+     * @var TourFactory
+     */
+    public $tour_factory = null;
+
+    /**
+     * Tracking instance.
+     *
+     * @var Helper
+     */
+    public $helper = null;
 
     /**
      * Yatra_Error instance.
@@ -72,6 +114,18 @@ final class Yatra
     protected static $_instance = null;
 
 
+    private static function is_instantiated()
+    {
+
+        // Return true if instance is correct class
+        if (!empty(self::$_instance) && (self::$_instance instanceof Yatra)) {
+            return true;
+        }
+
+        // Return false if not instantiated correctly
+        return false;
+    }
+
     /**
      * Main Yatra Instance.
      *
@@ -80,12 +134,23 @@ final class Yatra
      * @return Yatra - Main instance.
      * @static
      */
-    public static function instance()
+    public static function instance($file = '')
     {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new self();
+        if (self::is_instantiated()) {
+            return self::$_instance;
         }
+        self::setup_instance($file);
+        self::$_instance->session = new Session();
+        self::$_instance->tracking = new Tracking();
+        self::$_instance->helper = new Helper();
+        self::$_instance->tour_factory = new TourFactory();
         return self::$_instance;
+    }
+
+    private static function setup_instance($file = '')
+    {
+        self::$_instance = new Yatra;
+        self::$_instance->file = $file;
     }
 
     /**
@@ -159,7 +224,16 @@ final class Yatra
         $this->define('YATRA_ABSPATH', dirname(YATRA_FILE) . '/');
         $this->define('YATRA_BASENAME', plugin_basename(YATRA_FILE));
         $this->define('YATRA_ROUNDING_PRECISION', 6);
-        $this->define('YATRA_REST_WEBHOOKS_NAMESPACE', 'yatra/v1/webhooks');
+        $this->define('YATRA_REST_NAMESPACE', 'yatra/v1/');
+        $this->define('YATRA_REST_WEBHOOKS_NAMESPACE', YATRA_REST_NAMESPACE . 'webhooks');
+        $this->define('YATRA_REST_GENERAL_NAMESPACE', YATRA_REST_NAMESPACE . 'general');
+
+        // Admin Menu Slugs
+
+        $this->define('YATRA_ADMIN_MENU_SLUG', 'yatra-dashboard');
+        $this->define('YATRA_TOUR_ADMIN_MENU_SLUG', 'edit.php?post_type=tour');
+
+
     }
 
     /**
@@ -257,7 +331,11 @@ final class Yatra
 
         $this->yatra_error = new WP_Error;
         $this->yatra_messages = new Yatra_Messages;
-        $this->admin_notice = new \Yatra\Core\Admin\Notices();
+        $this->admin_notice = new Notices();
+        Initialize::run();
+
+
+        include_once YATRA_ABSPATH . 'includes/admin/admin-bar.php';
 
 
     }

@@ -2,10 +2,18 @@
   display: none !important;
 }
 
-body.single {
+body.single-tour {
   .yatra-single-tour {
     .yatra-site-main {
       @import "parts/tour-meta";
+
+      .yatra-tour-meta {
+        width: 100%;
+        display: inline-block;
+        .yatra-cat-links, .yatra-tour-duration {
+          float: left;
+        }
+      }
     }
 
     .yatra-tour-info {
@@ -70,7 +78,7 @@ body.single {
 
     .icon-wrap {
       font-size: 30px;
-      color: #1abc9c;
+      color: var(--yatra_primary_color);
     }
 
     .info-title {
@@ -170,7 +178,7 @@ body.single {
 
       .attribute-icon {
         font-size: 30px;
-        color: #1abc9c;
+        color: var(--yatra_primary_color);
       }
 
       .attribute-title, .attribute-content, .attribute-icon {
@@ -205,19 +213,18 @@ body.single {
 
 .day.yatra-availability-booking {
 
-  border: 1px solid #2f582b !important;
-  border-bottom: 5px solid #2f582b !important;
+  border-bottom: 3.5px solid #2f582b !important;
 }
 
 .day.yatra-availability-enquiry {
 
-  border: 2px solid #008bb5 !important;
-  border-bottom: 5px solid #008bb5 !important;
+
+  border-bottom: 3.5px solid #008bb5 !important;
 }
 
 .day.yatra-availability-none {
-  border: 2px solid #aaa !important;
-  border-bottom: 5px solid #aaa !important;
+
+  border-bottom: 3.5px solid #aaa !important;
   cursor: not-allowed;
 }
 
@@ -259,9 +266,6 @@ body.single {
   input[type="text"], input[type="number"], input[type="email"], select, textarea {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 10px !important;
-    border-color: #ddd;
-    border-radius: 0;
   }
 
   .select2-container--default .select2-selection--single {
@@ -333,11 +337,11 @@ body.single {
   border: 1px solid #ddd;
   padding: 0;
   border-bottom: none;
-  border-top: 4px solid #1abc9c;
+  border-top: 4px solid var(--yatra_primary_color);
 
   .tour-info-pricing-header {
     padding: 10px 15px;
-    background: #dffff9;
+    background-color: var(--yatra_primary_color_opacity);
 
     h2 {
       font-weight: 500;
@@ -356,7 +360,7 @@ body.single {
     p {
       font-size: 20px;
       text-align: center;
-      color: #1abc9c;
+      color: var(--yatra_primary_color);
     }
   }
 
@@ -376,6 +380,7 @@ body.single {
 
 .yatra-tour-booking-form-section ul.yatra-calendar-booking-indicator-lists {
   display: flex;
+  margin-top: 5px;
 }
 
 .yatra-tour-booking-form-section .yatra-calendar-booking-indicator-lists li {
@@ -412,7 +417,7 @@ body.single {
   content: "";
   display: block;
   width: 100%;
-  height: 8px;
+  height: 5px;
   background: #ddd;
   margin: 0px;
 }

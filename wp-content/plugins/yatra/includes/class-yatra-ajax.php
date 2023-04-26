@@ -1,4 +1,7 @@
 <?php
+
+use Yatra\Core\Controllers\ThemeController;
+
 defined('ABSPATH') || exit;
 
 class Yatra_Ajax
@@ -14,7 +17,8 @@ class Yatra_Ajax
             'tour_availability',
             'day_wise_tour_availability',
             'day_wise_tour_availability_save',
-            'update_tour_featured_status'
+            'update_tour_featured_status',
+            'install_theme'
         );
 
         return $actions;
@@ -85,6 +89,29 @@ class Yatra_Ajax
 
     }
 
+    public function install_theme()
+    {
+
+        $status = $this->validate_nonce();
+
+        $theme = isset($_POST['theme']) ? sanitize_text_field($_POST['theme']) : '';
+
+        if (!$status) {
+            wp_send_json_error($this->ajax_error());
+        }
+        if (!apply_filters('yatra_enable_setup_wizard', true) || !current_user_can('install_themes') || $theme == '') {
+            wp_send_json_error('You do not have permission');
+        }
+        $theme = new ThemeController($theme);
+
+        $status = $theme->install_and_activate();
+
+        if (!$status) {
+            wp_send_json_error('Unable to process the request.');
+        }
+        wp_send_json_success(['yatra_theme_install_response' => true]);
+    }
+
     public function dismiss_admin_promo_notice()
     {
 
@@ -147,6 +174,13 @@ class Yatra_Ajax
         }
 
         $tour_id = isset($_POST['tour_id']) ? absint($_POST['tour_id']) : 0;
+
+        $tour = yatra_get_tour($tour_id);
+
+        if (!$tour->get_can_book()) {
+
+            wp_send_json_error('Booking is disabled for this tour package by admin.');
+        }
 
         $number_of_persons = isset($_POST['yatra_number_of_person']) ? ($_POST['yatra_number_of_person']) : array();
 
@@ -550,6 +584,10 @@ class Yatra_Ajax
             wp_send_json_error();
 
         }
+
+        global $yatra_tour;
+
+        $yatra_tour = yatra_get_tour($tour_id);
 
         $yatra_tour_options = new Yatra_Tour_Options($tour_id, $selected_date, $selected_date);
 

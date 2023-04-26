@@ -1,10 +1,10 @@
 === Best Travel Booking WordPress Plugin, Tour Booking System, Trip Booking WordPress Plugin - Yatra ===
-Contributors: Mantrabrain, ughimire1
+Contributors: MantraBrain, gangadharkashyap
 Tags: travel-agency, travel, tour-booking, travel-booking, tour-operator
 Requires at least: 4.7
-Tested up to: 6.0
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 2.1.11
+Stable tag: 2.1.14
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,6 +48,8 @@ It's really simple & easy to create trip, itinerary & trekking packages with the
 * Import/Export
 * Unlimited itineraries
 * Booking & Enquiry notification email
+* Advanced search & filter
+* Mini cart
 
 
 == Premium Payment Gateway Extensions/Addons ==
@@ -55,6 +57,7 @@ It's really simple & easy to create trip, itinerary & trekking packages with the
 * [Yatra Stripe](https://wpyatra.com/pricing/?ref=wordpress.org&addon=yatra-stripe)
 * [Yatra Authorize.Net](https://wpyatra.com/pricing/?ref=wordpress.org&addon=yatra-authorizenet)
 * [Yatra Razorpay](https://wpyatra.com/pricing/?ref=wordpress.org&addon=yatra-razorpay)
+* [Yatra 2Checkout](https://wpyatra.com/pricing/?ref=wordpress.org&addon=yatra-2checkout)
 
 == Other Premium Extensions/Addons ==
 
@@ -90,12 +93,22 @@ Shortcode for Discount & Deals Listing:
 Shortcode for Tour Listing:
 <pre>[yatra_tour order="asc" featured="1" posts_per_page="5"]</pre>
 
+Shortcode for Mini Cart:
+<pre>[yatra_mini_cart]</pre>
+
+Shortcode for Search:
+<pre>[yatra_search]</pre>
+
 
 == Smart Tags For Booking Notification Email ==
 * {{home_url}} : Get home page url
 * {{blog_info}} : Get blog info of a website
 * {{booking_code}} : Get booking code of specific booking
 * {{booking_status}} : Get current booking status of specific booking
+* {{booking_tours_count}} : Total tour count on  specific booking
+* {{total_number_of_persons}} : Get total number of persons on the specific booking.
+* {{gross_booking_price}} : Get current booking gross price of specific booking.
+* {{discount}} : Get discount amount of specific booking.
 * {{net_booking_price}} : Get current booking net price of specific booking.
 To show the tour list, You need to wrap as follows.
 You have to start and end tour_list_loop by using **{{tour_lists_loop_start}}** and **{{tour_lists_loop_end}}** to use the **{{tour_name}}**, **{{tour_date}}** and **{{number_of_person}}**.
@@ -103,8 +116,8 @@ You have to start and end tour_list_loop by using **{{tour_lists_loop_start}}** 
     * **{{tour_name}}** - Name of the particular tour
     * **{{tour_date}}**  - Tour Date ( which was selected by user while booking the tour package )
     * **{{number_of_person}}** - Number of person ( which was enter by user while booking the tour package )
+    * **{{total_tour_price}}** - Total tour price for individual tour
 * **{{tour_lists_loop_end}}**
-* {{tour_lists}} : Get booked tour lists of specific booking
 * {{customer_name}} : Get customer name of specific booking
 * {{customer_email}} : Get customer email of specific booking
 * {{customer_phone_number}} : Get customer phone number of specific booking
@@ -125,7 +138,11 @@ You have to start and end tour_list_loop by using **{{tour_lists_loop_start}}** 
 * {{enquiry_date}} :  Date of enquiry form submission
 
 
+== YATRA SPECIFIC THEME ==
+* [Resa](https://wordpress.org/themes/resa/?ref=yatrapluginorg) by MantraBrain
+
 == COMPATIBLE THEMES ==
+* [Resa](https://wordpress.org/themes/resa/?ref=yatrapluginorg) by MantraBrain
 * [Blocksy](https://wordpress.org/themes/blocksy/?ref=yatrapluginorg) by creativethemeshq
 * [Kadence](https://wordpress.org/themes/kadence/) by Ben Ritner - Kadence WP
 
@@ -174,11 +191,7 @@ No, you don't need any coding skills. You can create unlimited tour packages wit
 
 == Changelog ==
 
-= 2.1.11 | 2022/08/07 =
-* Fixed - Label update and setup wizard design update
-* Fixed - admin email feature restructured and fixed
-* Fixed - SSL issue fixed
-* Fixed - Filter issue fixed - For Duration days and number gap added
-* Fixed - Undefined issue solve on yatra addon page
-* Fixed - long pricing name issue on availability conditions calendar popup fixed
-* Added - More email smart tags
+= 2.1.14 | 2023-04-17
+* Fixed - WordPress 6.2 compatibility issue fixed
+
+
