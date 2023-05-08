@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-05-04T16:52:56+07:00\n"
-"PO-Revision-Date: 2023-05-05 07:15+0000\n"
+"PO-Revision-Date: 2023-05-05 10:42+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: yatra\n"
 "Language: vi\n"
@@ -39,7 +39,7 @@ msgstr ""
 
 #. Author of the plugin
 msgid "MantraBrain"
-msgstr "Thần chúNão"
+msgstr "MantraBrain"
 
 #. Author URI of the plugin
 msgid "https://mantrabrain.com/"
@@ -52,7 +52,7 @@ msgstr "Đặt tour của bạn đã được xác nhận"
 #: core/Admin/Emails/DefaultEmailMessages.php:19
 #: core/Admin/Emails/DefaultEmailMessages.php:63
 msgid "Hi %s,"
-msgstr "Của anh ấy,"
+msgstr "Chào %s,"
 
 #: core/Admin/Emails/DefaultEmailMessages.php:20
 msgid ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #: core/Admin/Emails/DefaultEmailMessages.php:42
 msgid "New Booking"
-msgstr "đặt phòng mới"
+msgstr "Đặt phòng mới"
 
 #: core/Admin/Emails/DefaultEmailMessages.php:51
 msgid "Your tour booking has been {{booking_status}}"
@@ -189,15 +189,19 @@ msgid ""
 "            <br/>\n"
 "\t\t\t"
 msgstr ""
-"Chào quản trị viên,<br/> {{enquiry_fullname}} gửi cho bạn câu hỏi về "
-"{{enquiry_tour_name}} trên <a target=\"_blank\" href=\"{{home_url}}\">"
-"{{blog_info}}</a> với các chi tiết sau.<br/> Email: <b>{{enquiry_email}}</b>"
-"<br/> Quốc gia: <b>{{enquiry_country}}</b><br/> Số điện thoại: <b>"
-"{{enquiry_phone_number}}</b><br/> Số người lớn: <b>"
-"{{enquiry_number_of_adults}}</b><br/> Số trẻ em: <b>"
-"{{enquiry_number_of_childs}}</b><br/> Chủ đề: <b>{{enquiry_subject}}</b><br/>"
-" Ngày: <b>{{enquiry_date}}</b><br/> <b>Tin nhắn</b><br/> {{enquiry_message}}"
-"<br/>"
+"Chào quản trị viên,<br/> \n"
+"{{enquiry_fullname}} gửi cho bạn câu hỏi về {{enquiry_tour_name}} trên <a "
+"target=\"_blank\" href=\"{{home_url}}\">{{blog_info}}</a> với các chi tiết "
+"sau.<br/> \n"
+"Email: <b>{{enquiry_email}}</b><br/> \n"
+"Quốc gia: <b>{{enquiry_country}}</b><br/> \n"
+"Số điện thoại: <b>{{enquiry_phone_number}}</b><br/> \n"
+"Số người lớn: <b>{{enquiry_number_of_adults}}</b><br/> \n"
+"Số trẻ em: <b>{{enquiry_number_of_childs}}</b><br/> \n"
+"Chủ đề: <b>{{enquiry_subject}}</b><br/> \n"
+"Ngày: <b>{{enquiry_date}}</b><br/> \n"
+"<b>Tin nhắn</b><br/> \n"
+"{{enquiry_message}}<br/>"
 
 #: core/Cron.php:34
 msgid "Once Weekly"
@@ -210,7 +214,7 @@ msgstr "Không nên gọi %1$s trước khi các hành động %2$s kết thúc.
 
 #: core/functions/tour.php:47
 msgid "Regular tour"
-msgstr "du lịch thường xuyên"
+msgstr "Chuyến tham quan thông thường"
 
 #: core/functions/tour.php:48
 msgid "External/Affiliate tour"
@@ -226,7 +230,7 @@ msgstr "Cài đặt"
 
 #: core/Hooks/NoticeHooks.php:50
 msgid "Import & Export"
-msgstr "Nhập khẩu xuất khẩu"
+msgstr "Nhập khẩu & Xuất khẩu"
 
 #: core/Hooks/NoticeHooks.php:63 core/Hooks/NoticeHooks.php:104
 #: includes/modules/blocks/class-yatra-blocks.php:18
@@ -320,7 +324,7 @@ msgstr "Sống"
 #: includes/admin/admin-bar.php:48
 #: includes/admin/settings/class-yatra-settings-payment-gateways.php:103
 msgid "Test Mode"
-msgstr "Chê độ kiểm tra"
+msgstr "Chế độ kiểm tra"
 
 #: includes/admin/admin-bar.php:58
 msgid "Site Status: &nbsp; %s"
@@ -365,12 +369,12 @@ msgstr "Bạn có chắc chắn muốn xóa thuộc tính?"
 #: includes/admin/class-yatra-admin-export-import.php:16
 #: includes/admin/class-yatra-admin-export-import.php:17
 msgid "Import/Export"
-msgstr "Nhập khẩu xuất khẩu"
+msgstr "Nhập khẩu/Xuất khẩu"
 
 #: includes/admin/class-yatra-admin-license-manager.php:20
 #: includes/admin/class-yatra-admin-license-manager.php:21
 msgid "Licenses"
-msgstr "giấy phép"
+msgstr "Giấy phép"
 
 #: includes/admin/class-yatra-admin-license-manager.php:123
 msgid ""
@@ -502,7 +506,7 @@ msgid ""
 "to help us spread the word and boost our motivation?"
 msgstr ""
 "Này, tôi nhận thấy bạn vừa nhận được đặt chỗ tour du lịch mới từ Yatra - "
-"thật tuyệt vời! Bạn có thể vui lòng giúp tôi một ưu đãi LỚN và xếp hạng 5 "
+"thật tuyệt vời! Bạn có thể vui lòng giúp tôi một ân huệ LỚN và xếp hạng 5 "
 "sao trên WordPress để giúp chúng tôi quảng bá và thúc đẩy động lực của chúng "
 "tôi không?"
 
@@ -520,7 +524,7 @@ msgstr "Không, có lẽ sau này"
 
 #: includes/admin/class-yatra-admin-review.php:100
 msgid "I already did"
-msgstr "tôi đã làm rồi"
+msgstr "Tôi đã làm rồi"
 
 #. translators: $1$s - Yatra plugin name; $2$s - WP.org review link; $3$s - WP.org review link.
 #: includes/admin/class-yatra-admin-review.php:136
@@ -798,7 +802,7 @@ msgstr "Những đứa trẻ"
 #: includes/admin/list-tables/class-yatra-admin-list-table-enquiries.php:80
 #: templates/emails/enquiry/enquiry.php:16
 msgid "Subject"
-msgstr "Chủ thể"
+msgstr "Chủ đề"
 
 #: includes/admin/list-tables/class-yatra-admin-list-table-enquiries.php:81
 #: includes/admin/templates/license/license.php:17
@@ -896,7 +900,7 @@ msgstr "Bố cục kiểu tab"
 #: includes/admin/settings/class-yatra-settings-design.php:101
 #: includes/admin/setup/class-yatra-setup-wizard.php:482
 msgid "Heading & Content Style Tab"
-msgstr "Tab Kiểu Tiêu đề & Nội dung"
+msgstr "Kiểu Tab Tiêu đề & Nội dung"
 
 #: includes/admin/settings/class-yatra-settings-design.php:115
 msgid "Color Settings"
@@ -1234,7 +1238,7 @@ msgstr "Các tab có sẵn"
 #: includes/admin/settings/class-yatra-settings-general.php:43
 #: includes/admin/setup/class-yatra-setup-wizard.php:65
 msgid "Pages"
-msgstr "trang"
+msgstr "Trang"
 
 #: includes/admin/settings/class-yatra-settings-general.php:87
 msgid "Page Settings"
@@ -1266,7 +1270,7 @@ msgstr "Trang tài khoản của tôi"
 
 #: includes/admin/settings/class-yatra-settings-general.php:115
 msgid "Thank you page"
-msgstr "cảm ơn trang"
+msgstr "Trang cảm ơn"
 
 #: includes/admin/settings/class-yatra-settings-general.php:116
 msgid "Thank you page after tour booking completed."
@@ -1362,7 +1366,7 @@ msgstr "Gửi yêu cầu"
 #: includes/admin/settings/class-yatra-settings-general.php:194
 #: includes/admin/settings/class-yatra-settings-general.php:195
 msgid "Select Date Title"
-msgstr "Chọn ngày Tiêu đề"
+msgstr "Chọn tiêu đề ngày"
 
 #: includes/admin/settings/class-yatra-settings-general.php:198
 #: templates/tour/sidebar.php:14
@@ -1448,7 +1452,7 @@ msgstr "Cập nhật văn bản nút giỏ hàng"
 
 #: includes/admin/settings/class-yatra-settings-general.php:243
 msgid "Text for update cart button"
-msgstr "Văn bản cho nút giỏ hàng cập nhật"
+msgstr "Văn bản cho nút cập nhật giỏ hàng"
 
 #: includes/admin/settings/class-yatra-settings-general.php:246
 msgid "Update Cart"
@@ -1456,7 +1460,7 @@ msgstr "Cập nhật giỏ hàng"
 
 #: includes/admin/settings/class-yatra-settings-general.php:250
 msgid "Proceed to checkout text"
-msgstr "Tiến hành kiểm tra văn bản"
+msgstr "Tiến hành văn bản thanh toán"
 
 #: includes/admin/settings/class-yatra-settings-general.php:251
 msgid "Text for proceed to checkout button."
@@ -1464,11 +1468,11 @@ msgstr "Văn bản để tiếp tục với nút thanh toán."
 
 #: includes/admin/settings/class-yatra-settings-general.php:254
 msgid "Proceed to checkout"
-msgstr "Tiến hành kiểm tra"
+msgstr "Tiến hành thanh toán"
 
 #: includes/admin/settings/class-yatra-settings-general.php:258
 msgid "Order booking text"
-msgstr "Văn bản đặt hàng"
+msgstr "Văn bản đặt phòng"
 
 #: includes/admin/settings/class-yatra-settings-general.php:259
 msgid "Text for order booking text."
@@ -1476,7 +1480,7 @@ msgstr "Văn bản cho văn bản đặt hàng."
 
 #: includes/admin/settings/class-yatra-settings-general.php:262
 msgid "Order Booking"
-msgstr "đặt hàng"
+msgstr "Đặt phòng"
 
 #: includes/admin/settings/class-yatra-settings-general.php:266
 msgid "Terms and condition label"
@@ -1579,7 +1583,7 @@ msgstr "Điều khoản khác"
 #: includes/admin/settings/class-yatra-settings-miscellaneous.php:42
 #: includes/admin/settings/class-yatra-settings-miscellaneous.php:88
 msgid "Miscellaneous Settings"
-msgstr "Cài đặt linh tinh"
+msgstr "Cài đặt khác"
 
 #: includes/admin/settings/class-yatra-settings-miscellaneous.php:93
 msgid "Log Options"
@@ -1719,7 +1723,7 @@ msgstr "Cổng thanh toán"
 
 #: includes/admin/settings/class-yatra-settings-payment-gateways.php:116
 msgid "Tax percentage"
-msgstr "phần trăm thuế"
+msgstr "Phần trăm thuế"
 
 #: includes/admin/settings/class-yatra-settings-payment-gateways.php:117
 msgid ""
@@ -1736,7 +1740,7 @@ msgstr "Giới thiệu"
 #: includes/admin/setup/class-yatra-setup-wizard.php:80
 #: includes/modules/status/templates/html-admin-page-status-report.php:843
 msgid "Theme"
-msgstr "chủ đề"
+msgstr "Chủ đề"
 
 #: includes/admin/setup/class-yatra-setup-wizard.php:85
 msgid "Final!"
@@ -1924,7 +1928,7 @@ msgstr ""
 
 #: includes/admin/templates/availability/availability-calendar-header.php:24
 msgid "Max. Traveller"
-msgstr "tối đa. khách du lịch"
+msgstr "Tối đa. Khách du lịch"
 
 #: includes/admin/templates/availability/availability-calendar-header.php:32
 msgid "Maximum number of travellers for this date."
@@ -1945,7 +1949,7 @@ msgstr "Tùy chọn sẵn có cho ngày này."
 #: includes/template-tags.php:847 templates/myaccount/tmpl-booking-item.php:65
 #: templates/myaccount/tmpl-pricing-header.php:7
 msgid "Price Per"
-msgstr "giá mỗi"
+msgstr "Giá mỗi"
 
 #: includes/admin/templates/availability/availability-calendar.php:32
 #: includes/admin/templates/metabox/tour/pricing/group-pricing.php:68
@@ -2002,7 +2006,7 @@ msgstr "Vui lòng nhập giá bán (%s)"
 #: includes/template-tags.php:891 includes/template-tags.php:895
 #: templates/myaccount/tmpl-booking-item.php:62
 msgid "Pricing Label"
-msgstr "nhãn giá"
+msgstr "Nhãn giá"
 
 #: includes/admin/templates/availability/availability-calendar.php:84
 #: includes/admin/templates/metabox/tour/pricing/group-pricing.php:19
@@ -2013,7 +2017,7 @@ msgstr "Nhập nhãn giá. Ví dụ. Giá người lớn"
 #: includes/admin/templates/metabox/tour/pricing/group-pricing.php:36
 #: includes/template-tags.php:719
 msgid "Minimum People (Pax)"
-msgstr "Người tối thiểu (Pax)"
+msgstr "Số người tối thiểu (Pax)"
 
 #: includes/admin/templates/availability/availability-calendar.php:93
 msgid "Minimum number of people per booking."
@@ -2154,7 +2158,7 @@ msgstr "Ngày du lịch :"
 
 #: includes/admin/templates/metabox/booking/tour.php:37
 msgid "Persons : "
-msgstr "người:"
+msgstr "Người:"
 
 #: includes/admin/templates/metabox/booking/tour.php:40
 msgid "Total Price : "
@@ -2254,7 +2258,7 @@ msgstr "Giỏ hàng được cập nhật thành công"
 
 #: includes/class-yatra-ajax.php:422
 msgid "Invalid file type. Please use vaild json file."
-msgstr "Loại tệp không hợp lệ. Vui lòng sử dụng tệp json vaild."
+msgstr "Loại tệp không hợp lệ. Vui lòng sử dụng tệp json."
 
 #: includes/class-yatra-ajax.php:428
 msgid "File upload failed. Please try again."
@@ -2278,7 +2282,7 @@ msgstr "Bạn phải đồng ý với các điều khoản và điều kiện."
 
 #: includes/class-yatra-ajax.php:723
 msgid "Thank you for your query. We will get back to you soon"
-msgstr "Cảm ơn bạn đã truy vấn của bạn. Chúng tôi sẽ lấy lại cho bạn sớm"
+msgstr "Cảm ơn bạn đã truy vấn của bạn. Chúng tôi trả lời lại cho bạn sớm"
 
 #: includes/class-yatra-change-password-form.php:24
 msgid "Old Password"
@@ -2298,7 +2302,7 @@ msgstr "Trường mật khẩu cũ là bắt buộc."
 
 #: includes/class-yatra-change-password-form.php:38
 msgid "New Password"
-msgstr "mật khẩu mới"
+msgstr "Mật khẩu mới"
 
 #: includes/class-yatra-change-password-form.php:44
 msgid "New Password field is required."
@@ -2394,7 +2398,7 @@ msgstr "Email là bắt buộc"
 
 #: includes/class-yatra-create-account-form.php:53
 msgid "Invalid email address"
-msgstr "địa chỉ email không hợp lệ"
+msgstr "Địa chỉ email không hợp lệ"
 
 #: includes/class-yatra-create-account-form.php:61
 #: templates/myaccount/tmpl-form-login.php:28
@@ -2519,7 +2523,7 @@ msgstr "Đang chờ"
 
 #: includes/class-yatra-payment.php:11
 msgid "Refunded"
-msgstr "hoàn lại tiền"
+msgstr "Hoàn lại tiền"
 
 #: includes/class-yatra-payment.php:12 includes/functions.php:273
 msgid "Failed"
@@ -2560,7 +2564,7 @@ msgstr "Họ"
 
 #: includes/class-yatra-user-form.php:51
 msgid "Invalid email field"
-msgstr "trường email không hợp lệ"
+msgstr "Trường email không hợp lệ"
 
 #: includes/class-yatra-user-form.php:65
 msgid "Date of birth"
@@ -2689,13 +2693,13 @@ msgstr[0] "Đang xử lý <span class=\"count\">(%s)</span>"
 #: includes/custom-post-type/class-yatra-custom-post-type-booking.php:34
 msgctxt "Booking status"
 msgid "On hold"
-msgstr "giữ"
+msgstr "Đang chờ"
 
 #. translators: %s: number of orders
 #: includes/custom-post-type/class-yatra-custom-post-type-booking.php:40
 msgid "On hold <span class=\"count\">(%s)</span>"
 msgid_plural "On hold <span class=\"count\">(%s)</span>"
-msgstr[0] "Đang giữ <span class=\"count\">(%s)</span>"
+msgstr[0] "Đang chờ <span class=\"count\">(%s)</span>"
 
 #: includes/custom-post-type/class-yatra-custom-post-type-booking.php:43
 msgctxt "Booking status"
@@ -2744,7 +2748,7 @@ msgstr "Xem Đặt chỗ"
 
 #: includes/custom-post-type/class-yatra-custom-post-type-booking.php:96
 msgid "Search Booking"
-msgstr "Tìm kiếm Đặt chỗ"
+msgstr "Tìm kiếm đặt chỗ"
 
 #: includes/custom-post-type/class-yatra-custom-post-type-booking.php:97
 msgid "No Bookings found"
@@ -2798,7 +2802,7 @@ msgstr "Tìm kiếm phiếu giảm giá"
 
 #: includes/custom-post-type/class-yatra-custom-post-type-coupons.php:31
 msgid "Parent Coupons:"
-msgstr "Phiếu giảm giá dành cho phụ huynh:"
+msgstr "Phiếu giảm giá gốc:"
 
 #: includes/custom-post-type/class-yatra-custom-post-type-coupons.php:32
 msgid "No Coupons found."
@@ -2880,7 +2884,7 @@ msgstr "Tùy chọn"
 #: includes/functions.php:28 includes/template-tags.php:326
 #: includes/template-tags.php:340
 msgid "Itinerary"
-msgstr "hành trình"
+msgstr "Hành trình"
 
 #: includes/functions.php:32 includes/template-tags.php:373
 #: includes/template-tags.php:387
@@ -2902,7 +2906,7 @@ msgstr "Ngày & Thời lượng"
 
 #: includes/functions.php:65
 msgid "Pricing"
-msgstr "định giá"
+msgstr "Định giá"
 
 #: includes/functions.php:74
 msgid "Tour Tabs"
@@ -2935,7 +2939,7 @@ msgstr "Bài tiếp theo"
 
 #: includes/functions.php:328
 msgid "Posted by"
-msgstr "Gửi bởi"
+msgstr "Đăng bởi"
 
 #: includes/functions.php:1229 includes/template-tags.php:893
 msgid "Guest"
@@ -2964,7 +2968,7 @@ msgstr "dram Armenia"
 
 #: includes/helpers/yatra-currency-helper.php:14
 msgid "Netherlands Antillean guilder"
-msgstr "Hà Lan Antillean guilder"
+msgstr "guilder Hà Lan Antillean"
 
 #: includes/helpers/yatra-currency-helper.php:15
 msgid "Angolan kwanza"
@@ -3064,7 +3068,7 @@ msgstr "franc Congo"
 
 #: includes/helpers/yatra-currency-helper.php:39
 msgid "Swiss franc"
-msgstr "đồng franc Thụy Sĩ"
+msgstr "franc Thụy Sĩ"
 
 #: includes/helpers/yatra-currency-helper.php:40
 msgid "Chilean peso"
@@ -3140,7 +3144,7 @@ msgstr "pound quần đảo Falkland"
 
 #: includes/helpers/yatra-currency-helper.php:58
 msgid "Pound sterling"
-msgstr "bảng Anh"
+msgstr "pound Anh"
 
 #: includes/helpers/yatra-currency-helper.php:59
 msgid "Georgian lari"
@@ -3148,15 +3152,15 @@ msgstr "lari Georgia"
 
 #: includes/helpers/yatra-currency-helper.php:60
 msgid "Guernsey pound"
-msgstr "bảng Guernsey"
+msgstr "pound Guernsey"
 
 #: includes/helpers/yatra-currency-helper.php:61
 msgid "Ghana cedi"
-msgstr "Đồng Cedi Ghana"
+msgstr "cedi Ghana"
 
 #: includes/helpers/yatra-currency-helper.php:62
 msgid "Gibraltar pound"
-msgstr "Bảng Gibraltar"
+msgstr "pound Gibraltar"
 
 #: includes/helpers/yatra-currency-helper.php:63
 msgid "Gambian dalasi"
@@ -3164,7 +3168,7 @@ msgstr "dalasi Gambia"
 
 #: includes/helpers/yatra-currency-helper.php:64
 msgid "Guinean franc"
-msgstr "đồng franc Guinea"
+msgstr "franc Guinea"
 
 #: includes/helpers/yatra-currency-helper.php:65
 msgid "Guatemalan quetzal"
@@ -3180,7 +3184,7 @@ msgstr "đôla Hong Kong"
 
 #: includes/helpers/yatra-currency-helper.php:68
 msgid "Honduran lempira"
-msgstr "Lempira Honduras"
+msgstr "lempira Honduras"
 
 #: includes/helpers/yatra-currency-helper.php:69
 msgid "Croatian kuna"
@@ -3188,7 +3192,7 @@ msgstr "kuna Croatia"
 
 #: includes/helpers/yatra-currency-helper.php:70
 msgid "Haitian gourde"
-msgstr "quả bầu Haiti"
+msgstr "gourde Haiti"
 
 #: includes/helpers/yatra-currency-helper.php:71
 msgid "Hungarian forint"
@@ -3196,27 +3200,27 @@ msgstr "forint Hungary"
 
 #: includes/helpers/yatra-currency-helper.php:72
 msgid "Indonesian rupiah"
-msgstr "đồng rupiah Indonesia"
+msgstr "rupiah Indonesia"
 
 #: includes/helpers/yatra-currency-helper.php:73
 msgid "Israeli new shekel"
-msgstr "Đồng shekel mới của Israel"
+msgstr "shekel mới Israel"
 
 #: includes/helpers/yatra-currency-helper.php:74
 msgid "Manx pound"
-msgstr "bảng Anh"
+msgstr "pound Manx"
 
 #: includes/helpers/yatra-currency-helper.php:75
 msgid "Indian rupee"
-msgstr "đồng rupee Ấn Độ"
+msgstr "rupee Ấn Độ"
 
 #: includes/helpers/yatra-currency-helper.php:76
 msgid "Iraqi dinar"
-msgstr "đồng dinar của Iraq"
+msgstr "dinar Iraq"
 
 #: includes/helpers/yatra-currency-helper.php:77
 msgid "Iranian rial"
-msgstr "đồng rial của Iran"
+msgstr "rial Iran"
 
 #: includes/helpers/yatra-currency-helper.php:78
 msgid "Iranian toman"
@@ -3224,11 +3228,11 @@ msgstr "toman Iran"
 
 #: includes/helpers/yatra-currency-helper.php:79
 msgid "Icelandic kr&oacute;na"
-msgstr "đồng krona của Iceland"
+msgstr "krona Iceland"
 
 #: includes/helpers/yatra-currency-helper.php:80
 msgid "Jersey pound"
-msgstr "bảng Anh"
+msgstr "pound Jersey"
 
 #: includes/helpers/yatra-currency-helper.php:81
 msgid "Jamaican dollar"
@@ -3244,7 +3248,7 @@ msgstr "yen Nhật"
 
 #: includes/helpers/yatra-currency-helper.php:84
 msgid "Kenyan shilling"
-msgstr "đồng shilling Kenya"
+msgstr "shilling Kenya"
 
 #: includes/helpers/yatra-currency-helper.php:85
 msgid "Kyrgyzstani som"
@@ -3260,11 +3264,11 @@ msgstr "franc Comoros"
 
 #: includes/helpers/yatra-currency-helper.php:88
 msgid "North Korean won"
-msgstr "đồng won của Triều Tiên"
+msgstr "won Triều Tiên"
 
 #: includes/helpers/yatra-currency-helper.php:89
 msgid "South Korean won"
-msgstr "đồng won hàn quốc"
+msgstr "won Hàn Quốc"
 
 #: includes/helpers/yatra-currency-helper.php:90
 msgid "Kuwaiti dinar"
@@ -3276,19 +3280,19 @@ msgstr "đô la Quần đảo Cayman"
 
 #: includes/helpers/yatra-currency-helper.php:92
 msgid "Kazakhstani tenge"
-msgstr "Tenge Kazakhstan"
+msgstr "tenge Kazakhstan"
 
 #: includes/helpers/yatra-currency-helper.php:93
 msgid "Lao kip"
-msgstr "kíp Lào"
+msgstr "kip Lào"
 
 #: includes/helpers/yatra-currency-helper.php:94
 msgid "Lebanese pound"
-msgstr "bảng Li-băng"
+msgstr "pound Li-băng"
 
 #: includes/helpers/yatra-currency-helper.php:95
 msgid "Sri Lankan rupee"
-msgstr "Rupee Sri Lanka"
+msgstr "rupee Sri Lanka"
 
 #: includes/helpers/yatra-currency-helper.php:96
 msgid "Liberian dollar"
@@ -3296,11 +3300,11 @@ msgstr "đô la Liberia"
 
 #: includes/helpers/yatra-currency-helper.php:97
 msgid "Lesotho loti"
-msgstr "Lesotho loti"
+msgstr "loti Lesotho"
 
 #: includes/helpers/yatra-currency-helper.php:98
 msgid "Libyan dinar"
-msgstr "đồng dinar của Libya"
+msgstr "dinar Libya"
 
 #: includes/helpers/yatra-currency-helper.php:99
 msgid "Moroccan dirham"
@@ -3308,15 +3312,15 @@ msgstr "dirham Ma-rốc"
 
 #: includes/helpers/yatra-currency-helper.php:100
 msgid "Moldovan leu"
-msgstr "đồng leu Moldova"
+msgstr "leu Moldova"
 
 #: includes/helpers/yatra-currency-helper.php:101
 msgid "Malagasy ariary"
-msgstr "đàn cá ở Malagasy"
+msgstr "ariary Malagasy"
 
 #: includes/helpers/yatra-currency-helper.php:102
 msgid "Macedonian denar"
-msgstr "Denar Macedonia"
+msgstr "denar Macedonia"
 
 #: includes/helpers/yatra-currency-helper.php:103
 msgid "Burmese kyat"
@@ -3336,31 +3340,31 @@ msgstr "ouguiya Mauritanie"
 
 #: includes/helpers/yatra-currency-helper.php:107
 msgid "Mauritian rupee"
-msgstr "Rupee Mauriti"
+msgstr "rupee Mauriti"
 
 #: includes/helpers/yatra-currency-helper.php:108
 msgid "Maldivian rufiyaa"
-msgstr "Rufiyaa của Maldives"
+msgstr "rufiyaa Maldives"
 
 #: includes/helpers/yatra-currency-helper.php:109
 msgid "Malawian kwacha"
-msgstr "đồng kwacha của người Malawi"
+msgstr "kwacha Malawi"
 
 #: includes/helpers/yatra-currency-helper.php:110
 msgid "Mexican peso"
-msgstr "đồng peso Mexican"
+msgstr "peso Mexico"
 
 #: includes/helpers/yatra-currency-helper.php:111
 msgid "Malaysian ringgit"
-msgstr "Đồng Ringgit Mã Lai"
+msgstr "ringgit Malaysia"
 
 #: includes/helpers/yatra-currency-helper.php:112
 msgid "Mozambican metical"
-msgstr "kim loại mozambique"
+msgstr "metical Mozambique"
 
 #: includes/helpers/yatra-currency-helper.php:113
 msgid "Namibian dollar"
-msgstr "đô la namibia"
+msgstr "đô la Namibia"
 
 #: includes/helpers/yatra-currency-helper.php:114
 msgid "Nigerian naira"
@@ -3368,7 +3372,7 @@ msgstr "naira Nigeria"
 
 #: includes/helpers/yatra-currency-helper.php:115
 msgid "Nicaraguan c&oacute;rdoba"
-msgstr "Córdoba Nicaragua"
+msgstr "córdoba Nicaragua"
 
 #: includes/helpers/yatra-currency-helper.php:116
 msgid "Norwegian krone"
@@ -3376,7 +3380,7 @@ msgstr "krone Na Uy"
 
 #: includes/helpers/yatra-currency-helper.php:117
 msgid "Nepalese rupee"
-msgstr "đồng rupee của Nepal"
+msgstr "rupee Nepal"
 
 #: includes/helpers/yatra-currency-helper.php:118
 msgid "New Zealand dollar"
@@ -3384,27 +3388,27 @@ msgstr "đô la New Zealand"
 
 #: includes/helpers/yatra-currency-helper.php:119
 msgid "Omani rial"
-msgstr "Rial Oman"
+msgstr "rial Oman"
 
 #: includes/helpers/yatra-currency-helper.php:120
 msgid "Panamanian balboa"
-msgstr "Balboa Panama"
+msgstr "balboa Panama"
 
 #: includes/helpers/yatra-currency-helper.php:121
 msgid "Peruvian nuevo sol"
-msgstr "Nuevo sol của Peru"
+msgstr "nuevo sol Peru"
 
 #: includes/helpers/yatra-currency-helper.php:122
 msgid "Papua New Guinean kina"
-msgstr "Kina Papua New Guinean"
+msgstr "kina Papua New Guinean"
 
 #: includes/helpers/yatra-currency-helper.php:123
 msgid "Philippine peso"
-msgstr "đồng peso của Philippines"
+msgstr "peso Philippines"
 
 #: includes/helpers/yatra-currency-helper.php:124
 msgid "Pakistani rupee"
-msgstr "đồng rupee của Pakistan"
+msgstr "rupee Pakistan"
 
 #: includes/helpers/yatra-currency-helper.php:125
 msgid "Polish z&#x142;oty"
@@ -3416,7 +3420,7 @@ msgstr "đồng rúp xuyên biên giới"
 
 #: includes/helpers/yatra-currency-helper.php:127
 msgid "Paraguayan guaran&iacute;"
-msgstr "guarani của Paraguay"
+msgstr "guarani Paraguay"
 
 #: includes/helpers/yatra-currency-helper.php:128
 msgid "Qatari riyal"
@@ -3424,19 +3428,19 @@ msgstr "riyal Qatar"
 
 #: includes/helpers/yatra-currency-helper.php:129
 msgid "Romanian leu"
-msgstr "đồng leu Rumani"
+msgstr "leu Rumani"
 
 #: includes/helpers/yatra-currency-helper.php:130
 msgid "Serbian dinar"
-msgstr "đồng dinar của người Serbia"
+msgstr "dinar Serbia"
 
 #: includes/helpers/yatra-currency-helper.php:131
 msgid "Russian ruble"
-msgstr "đồng rúp Nga"
+msgstr "ruble Nga"
 
 #: includes/helpers/yatra-currency-helper.php:132
 msgid "Rwandan franc"
-msgstr "đồng franc Rwanda"
+msgstr "franc Rwanda"
 
 #: includes/helpers/yatra-currency-helper.php:133
 msgid "Saudi riyal"
@@ -3444,19 +3448,19 @@ msgstr "riyal ả rập xê út"
 
 #: includes/helpers/yatra-currency-helper.php:134
 msgid "Solomon Islands dollar"
-msgstr "Đô la quần đảo Solomon"
+msgstr "đô la quần đảo Solomon"
 
 #: includes/helpers/yatra-currency-helper.php:135
 msgid "Seychellois rupee"
-msgstr "Rupee Seychelles"
+msgstr "rupee Seychelles"
 
 #: includes/helpers/yatra-currency-helper.php:136
 msgid "Sudanese pound"
-msgstr "đồng bảng Sudan"
+msgstr "pound Sudan"
 
 #: includes/helpers/yatra-currency-helper.php:137
 msgid "Swedish krona"
-msgstr "Đồng curon Thụy Điển"
+msgstr "krona Thụy Điển"
 
 #: includes/helpers/yatra-currency-helper.php:138
 msgid "Singapore dollar"
@@ -3464,15 +3468,15 @@ msgstr "đô la Singapore"
 
 #: includes/helpers/yatra-currency-helper.php:139
 msgid "Saint Helena pound"
-msgstr "bảng thánh Helena"
+msgstr "pound Saint Helena"
 
 #: includes/helpers/yatra-currency-helper.php:140
 msgid "Sierra Leonean leone"
-msgstr "Leone Sierra Leone"
+msgstr "leone Sierra Leone"
 
 #: includes/helpers/yatra-currency-helper.php:141
 msgid "Somali shilling"
-msgstr "Shilling Somali"
+msgstr "shilling Somali"
 
 #: includes/helpers/yatra-currency-helper.php:142
 msgid "Surinamese dollar"
@@ -3480,15 +3484,15 @@ msgstr "đô la Suriname"
 
 #: includes/helpers/yatra-currency-helper.php:143
 msgid "South Sudanese pound"
-msgstr "bảng Nam Sudan"
+msgstr "pound Nam Sudan"
 
 #: includes/helpers/yatra-currency-helper.php:144
 msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe dobra"
-msgstr "São Tomé và Príncipe dobra"
+msgstr "dobra São Tomé và Príncipe"
 
 #: includes/helpers/yatra-currency-helper.php:145
 msgid "Syrian pound"
-msgstr "bảng Syria"
+msgstr "pound Syria"
 
 #: includes/helpers/yatra-currency-helper.php:146
 msgid "Swazi lilangeni"
@@ -3496,7 +3500,7 @@ msgstr "lilangeni Swaziland"
 
 #: includes/helpers/yatra-currency-helper.php:147
 msgid "Thai baht"
-msgstr "đồng bạt Thái"
+msgstr "baht Thái"
 
 #: includes/helpers/yatra-currency-helper.php:148
 msgid "Tajikistani somoni"
@@ -3524,11 +3528,11 @@ msgstr "Đô la Trinidad và Tobago"
 
 #: includes/helpers/yatra-currency-helper.php:154
 msgid "New Taiwan dollar"
-msgstr "Đô la Đài Loan mới"
+msgstr "đô la Đài Loan mới"
 
 #: includes/helpers/yatra-currency-helper.php:155
 msgid "Tanzanian shilling"
-msgstr "đồng shilling Tanzania"
+msgstr "shilling Tanzania"
 
 #: includes/helpers/yatra-currency-helper.php:156
 msgid "Ukrainian hryvnia"
@@ -3564,7 +3568,7 @@ msgstr "vatu vanuatu"
 
 #: includes/helpers/yatra-currency-helper.php:164
 msgid "Samoan t&#x101;l&#x101;"
-msgstr "Tiếng Samoa t&#x101;l&#x101;"
+msgstr "t&#x101;l&#x101; Samoa"
 
 #: includes/helpers/yatra-currency-helper.php:165
 msgid "Central African CFA franc"
@@ -3588,7 +3592,7 @@ msgstr "Rial Yemen"
 
 #: includes/helpers/yatra-currency-helper.php:170
 msgid "South African rand"
-msgstr "Đơn vị tiền tệ tiêu chuẩn được sử dụng ở Nam Phi"
+msgstr "rand Nam Phi"
 
 #: includes/helpers/yatra-currency-helper.php:171
 msgid "Zambian kwacha"
@@ -3600,15 +3604,15 @@ msgstr "Bên trái"
 
 #: includes/helpers/yatra-currency-helper.php:389
 msgid "Right"
-msgstr "Phải"
+msgstr "Bên phải"
 
 #: includes/helpers/yatra-currency-helper.php:390
 msgid "Left with space"
-msgstr "Còn lại với không gian"
+msgstr "Bên trái với khoảng cách"
 
 #: includes/helpers/yatra-currency-helper.php:391
 msgid "Right with space"
-msgstr "Đúng với không gian"
+msgstr "Bên phải với khoảng cách"
 
 #: includes/hooks/yatra-list-table-hooks.php:19
 msgid "Pricing might be different as per selected date on booking."
@@ -3672,7 +3676,7 @@ msgstr "Số người"
 #: templates/myaccount/tmpl-booking-item.php:63
 #: templates/myaccount/tmpl-pricing-header.php:4
 msgid "Regular Price"
-msgstr "Giá cả phải chăng"
+msgstr "Giá thông thường"
 
 #: includes/meta-boxes/class-yatra-metabox-booking-cpt.php:164
 #: templates/myaccount/tmpl-booking-item.php:64
@@ -3814,7 +3818,7 @@ msgstr ""
 
 #: includes/modules/dashboard/templates/html-admin-dashboard.php:124
 msgid "Send feature request"
-msgstr "Gửi yêu cầu tính năng"
+msgstr "Gửi yêu cầu nổi bật"
 
 #: includes/modules/dashboard/templates/html-admin-dashboard.php:133
 msgid "Video Introduction"
@@ -3837,7 +3841,7 @@ msgid ""
 msgstr ""
 "Tham gia nhóm cộng đồng facebook của chúng tôi. Bạn có thể gửi truy vấn của "
 "bạn hoặc chia sẻ suy nghĩ của bạn và\n"
-"                            câu hỏi về %sYatra plugin WordPress%s trong nhóm."
+"                            câu hỏi về %sYatra WordPress plugin%s trong nhóm."
 
 #: includes/modules/dashboard/templates/html-admin-dashboard.php:161
 msgid "Join Yatra Facebook Community Group"
@@ -3891,7 +3895,7 @@ msgstr "Lọc"
 
 #: includes/modules/filters/includes/class-yatra-module-filter-top.php:60
 msgid "Sort"
-msgstr "Loại"
+msgstr "Sắp xếp"
 
 #: includes/modules/filters/includes/class-yatra-module-filter-top.php:138
 msgid "Search …"
@@ -3904,7 +3908,7 @@ msgstr "Khoảng thời gian"
 
 #: includes/modules/filters/includes/sections/class-yatra-module-filter-section-price.php:7
 msgid "Price Range"
-msgstr "Phạm vi giá"
+msgstr "Khoảng giá"
 
 #: includes/modules/filters/includes/yatra-filter-functions.php:125
 msgid "Sort by date: descending"
@@ -4291,7 +4295,7 @@ msgstr "Kích thước tệp lớn nhất có thể được chứa trong một 
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:258
 msgid "PHP time limit"
-msgstr "PHP giới hạn thời gian"
+msgstr "Giới hạn thời gian PHP"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:261
 msgid ""
@@ -4303,7 +4307,7 @@ msgstr ""
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:267
 msgid "PHP max input vars"
-msgstr "Vars đầu vào tối đa PHP"
+msgstr "Biến số đầu vào tối đa PHP"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:270
 msgid ""
@@ -4465,7 +4469,7 @@ msgstr ""
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:420
 msgid "Remote post"
-msgstr "bài từ xa"
+msgstr "Đăng bài từ xa"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:423
 msgid ""
@@ -4482,7 +4486,7 @@ msgstr "%s không thành công. Liên hệ với nhà cung cấp dịch vụ lư
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:438
 msgid "Remote get"
-msgstr "nhận từ xa"
+msgstr "Nhận từ xa"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:441
 msgid ""
@@ -4741,7 +4745,7 @@ msgstr "URL nhà phát triển chủ đề gốc."
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:919
 msgid "Templates"
-msgstr "mẫu"
+msgstr "Mẫu"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:922
 msgid ""
@@ -4766,7 +4770,7 @@ msgstr ""
 #: includes/modules/status/templates/html-admin-page-status-report.php:937
 #: includes/modules/status/templates/html-admin-page-status-report.php:966
 msgid "Overrides"
-msgstr "ghi đè"
+msgstr "Ghi đè"
 
 #. Translators: %1$s: Template name, %2$s: Template version, %3$s: Core version.
 #: includes/modules/status/templates/html-admin-page-status-report.php:948
@@ -4775,7 +4779,7 @@ msgstr "Phiên bản %1$s %2$s đã lỗi thời. Phiên bản cốt lõi là %3
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:974
 msgid "Outdated templates"
-msgstr "mẫu lỗi thời"
+msgstr "Mẫu lỗi thời"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:981
 msgid "Learn how to update"
@@ -4791,7 +4795,7 @@ msgstr "Phần này hiển thị thông tin về báo cáo trạng thái này."
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:1005
 msgid "Generated at"
-msgstr "được tạo tại"
+msgstr "Được tạo tại"
 
 #: includes/payment-gateways/booking-only/class-yatra-payment-gateway-booking-only.php:13
 #: includes/payment-gateways/booking-only/class-yatra-payment-gateway-booking-only.php:16
@@ -4886,7 +4890,7 @@ msgstr "Hoạt động"
 
 #: includes/taxonomy/class-yatra-taxonomy-activity.php:71
 msgid "Search Activities"
-msgstr "Hoạt động tìm kiếm"
+msgstr "Tìm kiếm hoạt động"
 
 #: includes/taxonomy/class-yatra-taxonomy-activity.php:72
 msgid "All Activities"
@@ -4894,11 +4898,11 @@ msgstr "Tất cả các hoạt động"
 
 #: includes/taxonomy/class-yatra-taxonomy-activity.php:73
 msgid "Parent Activity"
-msgstr "Hoạt động của phụ huynh"
+msgstr "Hoạt động gốc"
 
 #: includes/taxonomy/class-yatra-taxonomy-activity.php:74
 msgid "Parent Activity:"
-msgstr "Hoạt động của phụ huynh:"
+msgstr "Hoạt động gốc:"
 
 #: includes/taxonomy/class-yatra-taxonomy-activity.php:75
 msgid "Edit Activity"
@@ -4929,7 +4933,7 @@ msgstr "Loại thuộc tính"
 
 #: includes/taxonomy/class-yatra-taxonomy-attributes.php:180
 msgid "Search Attributes"
-msgstr "Thuộc tính tìm kiếm"
+msgstr "Tìm kiếm thuộc tính"
 
 #: includes/taxonomy/class-yatra-taxonomy-attributes.php:181
 msgid "All Attributes"
@@ -4941,7 +4945,7 @@ msgstr "Thuộc tính gốc"
 
 #: includes/taxonomy/class-yatra-taxonomy-attributes.php:183
 msgid "Parent Attributes:"
-msgstr "Thuộc tính cha mẹ:"
+msgstr "Thuộc tính gốc:"
 
 #: includes/taxonomy/class-yatra-taxonomy-attributes.php:184
 msgid "Edit Attributes"
@@ -4976,11 +4980,11 @@ msgstr "Tất cả các điểm đến"
 
 #: includes/taxonomy/class-yatra-taxonomy-destination.php:74
 msgid "Parent Destination"
-msgstr "Điểm đến của phụ huynh"
+msgstr "Điểm đến gốc"
 
 #: includes/taxonomy/class-yatra-taxonomy-destination.php:75
 msgid "Parent Destination:"
-msgstr "Điểm đến của phụ huynh:"
+msgstr "Điểm đến gốc:"
 
 #: includes/taxonomy/class-yatra-taxonomy-destination.php:76
 msgid "Edit Destination"
@@ -5010,11 +5014,11 @@ msgstr "Đặc sắc"
 
 #: includes/template-tags.php:189 includes/template-tags.php:1230
 msgid "Nights"
-msgstr "đêm"
+msgstr "Đêm"
 
 #: includes/template-tags.php:194
 msgid "N/A"
-msgstr "không áp dụng"
+msgstr "Không áp dụng"
 
 #: includes/template-tags.php:260 includes/template-tags.php:312
 msgid "Label Text"
@@ -5030,7 +5034,7 @@ msgstr "Tổng quan"
 
 #: includes/template-tags.php:318
 msgid "Overview Description"
-msgstr "Tổng quan Mô tả"
+msgstr "Mô tả Tổng quan"
 
 #: includes/template-tags.php:338 includes/template-tags.php:385
 #: includes/template-tags.php:430 includes/template-tags.php:473
@@ -5076,7 +5080,7 @@ msgstr "Giá không bao gồm tiêu đề"
 
 #: includes/template-tags.php:406
 msgid "Price excludes"
-msgstr "giá không bao gồm"
+msgstr "Giá không bao gồm"
 
 #: includes/template-tags.php:410
 msgid "Price excludes description"
@@ -5105,7 +5109,7 @@ msgstr "Phòng trưng bày"
 
 #: includes/template-tags.php:528
 msgid "Text Field"
-msgstr "Trương Văn bản"
+msgstr "Trường văn bản"
 
 #: includes/template-tags.php:534 includes/template-tags.php:535
 msgid "Default value for text field."
@@ -5122,7 +5126,7 @@ msgstr "Giá trị mặc định cho trường số."
 
 #: includes/template-tags.php:557
 msgid "Textarea Field"
-msgstr "Trường văn bản"
+msgstr "Trường vùng văn bản"
 
 #: includes/template-tags.php:563 includes/template-tags.php:564
 #: includes/template-tags.php:565
@@ -5317,7 +5321,7 @@ msgstr "hai (2)"
 #: assets/build/js/block-activity.js:1 assets/build/js/block-destination.js:1
 #: assets/build/js/block-tour.js:1
 msgid "Three (3)"
-msgstr "ba (3)"
+msgstr "Ba (3)"
 
 #: includes/widgets/class-yatra-activity-widget.php:64
 #: includes/widgets/class-yatra-destination-widget.php:64
@@ -5353,7 +5357,7 @@ msgstr "Yatra - Giảm giá & Ưu đãi"
 #: includes/widgets/class-yatra-discount-deals-widget.php:49
 #: includes/widgets/class-yatra-tour-widget.php:57
 msgid "Ordering"
-msgstr "đặt hàng"
+msgstr "Đặt hàng"
 
 #: includes/widgets/class-yatra-tour-widget.php:27
 msgid "Displays tour (with filter) list from Yatra tour."
@@ -5416,7 +5420,7 @@ msgstr "Vui lòng chọn bất kỳ tháng nào"
 
 #: includes/yatra-html-functions.php:566
 msgid "Not available any dates on "
-msgstr "Không có sẵn bất kỳ ngày nào trên"
+msgstr "Không có sẵn bất kỳ ngày nào"
 
 #: includes/yatra-misc-functions.php:232
 msgid "View Details"
@@ -5442,7 +5446,7 @@ msgstr "Đổi mật khẩu"
 
 #: includes/yatra-template-functions.php:29
 msgid "My Bookings"
-msgstr "đặt chỗ của tôi"
+msgstr "Đặt chỗ của tôi"
 
 #: includes/yatra-template-functions.php:34
 #: templates/myaccount/tmpl-payment-history.php:22
@@ -5451,7 +5455,7 @@ msgstr "Lịch sử thanh toán"
 
 #: includes/yatra-template-functions.php:213
 msgid "Paid"
-msgstr "Trả"
+msgstr "Đã thanh toán"
 
 #: includes/yatra-template-functions.php:229
 msgid "Make payment of "
@@ -5472,13 +5476,13 @@ msgstr "Không có sẵn"
 #: templates/emails/booking/notification.php:11
 #: templates/tmpl-mini-cart-table.php:16
 msgid "Persons"
-msgstr "người"
+msgstr "Người"
 
 #: templates/emails/booking/notification.php:20
 #: templates/myaccount/tmpl-user-checkout.php:63
 #: templates/tmpl-order-table.php:47
 msgid "Subtotal"
-msgstr "tổng phụ"
+msgstr "Tổng phụ"
 
 #: templates/emails/booking/notification.php:21
 msgid "Discount"
@@ -5498,7 +5502,7 @@ msgstr "Chi tiết thanh toán"
 
 #: templates/emails/booking/notification.php:90
 msgid "Net total"
-msgstr "tổng ròng"
+msgstr "Tổng ròng"
 
 #: templates/emails/booking/notification.php:102
 msgid "View booking on your website"
@@ -5510,7 +5514,7 @@ msgstr "Số lượng người lớn"
 
 #: templates/emails/enquiry/enquiry.php:15
 msgid "Number of childs"
-msgstr "Số con"
+msgstr "Số trẻ em"
 
 #: templates/emails/enquiry/enquiry.php:45
 msgid "Enquiry Details"
@@ -5534,7 +5538,7 @@ msgstr "Ngày:"
 
 #: templates/myaccount/tmpl-booking-item.php:41
 msgid "Persons: "
-msgstr "người:"
+msgstr "Người:"
 
 #: templates/myaccount/tmpl-booking-item.php:49
 msgid "Total Price: "
@@ -5592,7 +5596,7 @@ msgstr "Tên người dùng hoặc địa chỉ email"
 
 #: templates/myaccount/tmpl-form-login.php:40
 msgid "Remember me"
-msgstr "nhớ tôi"
+msgstr "Nhớ tôi"
 
 #: templates/myaccount/tmpl-form-login.php:44
 msgid "Log in"
@@ -5618,7 +5622,7 @@ msgstr "ID thanh toán"
 
 #: templates/myaccount/tmpl-payment-history.php:8
 msgid "Gateway"
-msgstr "cổng"
+msgstr "Cổng"
 
 #: templates/myaccount/tmpl-payment-history.php:10
 msgid "Booking ID"
@@ -5731,7 +5735,7 @@ msgstr "Miễn phí"
 
 #: templates/tmpl-cart-table.php:18 templates/tmpl-cart-table.php:68
 msgid "Person - Per - Pricing"
-msgstr "Người - Mỗi - Giá"
+msgstr "Người - Trên - Giá"
 
 #: templates/tmpl-cart-table.php:90
 msgid "Apply Coupon"
@@ -5756,11 +5760,11 @@ msgstr "Xem giỏ hàng"
 
 #: templates/tour/additional.php:28
 msgid "Maximum Traveller"
-msgstr "khách du lịch tối đa"
+msgstr "Số khách du lịch tối đa"
 
 #: templates/tour/additional.php:40
 msgid "Min Pax"
-msgstr "Pax tối thiểu"
+msgstr "Số người tối thiểu"
 
 #: templates/tour/book-now-button.php:6
 msgid "Book now"
@@ -5821,4 +5825,4 @@ msgstr "Cài đặt chuyến tham quan"
 
 #: assets/build/js/block-tour.js:1
 msgid "Show Feature Tour Only"
-msgstr "Chỉ hiển thị tính năng tham quan"
+msgstr "Chỉ hiển thị chuyến tham quan nổi bật"

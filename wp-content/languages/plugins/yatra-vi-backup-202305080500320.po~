@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-05-04T16:52:56+07:00\n"
-"PO-Revision-Date: 2023-05-08 05:00+0000\n"
+"PO-Revision-Date: 2023-05-08 04:22+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: yatra\n"
 "Language: vi\n"
@@ -5279,7 +5279,7 @@ msgstr "Theo dõi sử dụng"
 #: includes/meta-boxes/class-yatra-metabox-base.php:535
 #: includes/widgets/class-yatra-widget-base.php:267
 msgid "Use image"
-msgstr "Sử dụng hình ảnh"
+msgstr "sử dụng hình ảnh"
 
 #: includes/admin/templates/metabox/tour/pricing/group-pricing.php:67
 msgid "Use Tours price Per"
@@ -5295,7 +5295,7 @@ msgstr "Hồ sơ người dùng được cập nhật thành công."
 
 #: includes/class-yatra-create-account-form.php:23
 msgid "Username"
-msgstr "Tên người dùng"
+msgstr "tên tài khoản"
 
 #: includes/class-yatra-create-account-form.php:28
 msgid "Username - This is can be used to login your account"
@@ -5312,7 +5312,7 @@ msgstr "Tên người dùng hoặc địa chỉ email"
 
 #: includes/helpers/yatra-currency-helper.php:160
 msgid "Uzbekistani som"
-msgstr "som Uzbekistan"
+msgstr "som của người Uzbekistan"
 
 #: includes/classes/class-yatra-core-coupon.php:62
 msgid "Valid Coupon"
@@ -5324,11 +5324,11 @@ msgstr "Lỗi xác thực cho trường %s"
 
 #: includes/helpers/yatra-currency-helper.php:163
 msgid "Vanuatu vatu"
-msgstr "vatu Vanuatu"
+msgstr "vatu vanuatu"
 
 #: includes/helpers/yatra-currency-helper.php:161
 msgid "Venezuelan bol&iacute;var"
-msgstr "bolivar Venezuela"
+msgstr "đồng bolivar của Venezuela"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:853
 msgid "Version"
@@ -5340,7 +5340,7 @@ msgstr "Video giới thiệu"
 
 #: includes/helpers/yatra-currency-helper.php:162
 msgid "Vietnamese &#x111;&#x1ed3;ng"
-msgstr "Việt Nam đồng"
+msgstr "tiếng việt"
 
 #: includes/modules/status/templates/html-admin-page-status-logs.php:40
 msgid "View"
@@ -5414,7 +5414,7 @@ msgstr "Cảnh báo"
 
 #: includes/modules/dashboard/templates/html-admin-dashboard.php:146
 msgid "Watch on youtube"
-msgstr "Xem trên youtube"
+msgstr "xem trên youtube"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:238
 msgid ""
@@ -5430,7 +5430,7 @@ msgstr "Chào mừng bạn đến với Hệ thống đặt chỗ du lịch Word
 
 #: includes/helpers/yatra-currency-helper.php:167
 msgid "West African CFA franc"
-msgstr "franc CFA Tây Phi"
+msgstr "Franc CFA Tây Phi"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:745
 msgid ""
@@ -5475,7 +5475,7 @@ msgstr "Địa chỉ WordPress (URL)"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:161
 msgid "WordPress cron"
-msgstr "Định kỳ WordPress"
+msgstr "định kỳ WordPress"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:145
 msgid "WordPress debug mode"
@@ -5496,11 +5496,11 @@ msgstr "WordPress nhiều trang"
 #. Translators: %1$s: MySQL version, %2$s: Recommended MySQL version.
 #: includes/modules/status/templates/html-admin-page-status-report.php:311
 msgid "WordPress requirements"
-msgstr "Yêu cầu WordPress"
+msgstr "yêu cầu WordPress"
 
 #: includes/modules/status/templates/html-admin-page-status-report.php:86
 msgid "WordPress version"
-msgstr "Phiên bản WordPress"
+msgstr "phiên bản WordPress"
 
 #: core/Hooks/NoticeHooks.php:63 core/Hooks/NoticeHooks.php:104
 #: includes/modules/blocks/class-yatra-blocks.php:18
@@ -5524,7 +5524,7 @@ msgstr "Yatra - Hoạt động"
 
 #. Plugin Name of the plugin
 msgid "Yatra - Best Travel & Tour Booking Plugin"
-msgstr "Yatra - Plugin đặt chỗ tham quan & du lịch tốt nhất"
+msgstr "Yatra - Plugin đặt chỗ du lịch & du lịch tốt nhất"
 
 #: includes/widgets/class-yatra-destination-widget.php:29
 msgid "Yatra - Destination"
@@ -5536,7 +5536,7 @@ msgstr "Yatra - Giảm giá & Ưu đãi"
 
 #: includes/widgets/class-yatra-tour-widget.php:29
 msgid "Yatra - Tour List"
-msgstr "Yatra - Danh sách chuyến tham quan"
+msgstr "Yatra - Danh sách Tour"
 
 #: includes/admin/class-yatra-admin.php:210
 msgid "Yatra Addons"
@@ -5579,8 +5579,8 @@ msgid ""
 "Yatra is a free travel & tour booking WordPress plugin to create travel and "
 "tour packages for tour operators and travel agencies."
 msgstr ""
-"Yatra là một plugin WordPress đặt chỗ tham quan và du lịch miễn phí để tạo "
-"các gói du lịch và tham quan cho các công ty lữ hành và đại lý du lịch."
+"Yatra là một plugin WordPress đặt tour và du lịch miễn phí để tạo các gói du "
+"lịch và tham quan cho các công ty lữ hành và đại lý du lịch."
 
 #: includes/admin/class-yatra-admin-post-types.php:186
 msgid "Yatra My Account Page"
@@ -5630,7 +5630,7 @@ msgstr ""
 
 #: includes/helpers/yatra-currency-helper.php:169
 msgid "Yemeni rial"
-msgstr "rial Yemen"
+msgstr "Rial Yemen"
 
 #: includes/admin/class-yatra-admin-assets.php:152
 #: includes/admin/class-yatra-admin-assets.php:169
@@ -5642,8 +5642,9 @@ msgid ""
 "You can choose date range slot for this tour availability. Do not add any "
 "date range slot to show this tour on all dates."
 msgstr ""
-"Bạn có thể chọn phạm vi ngày cho chuyến tham quan có sẵn này. Không thêm bất "
-"kỳ phạm vi ngày nào để hiển thị chuyến tham quan này vào tất cả các ngày."
+"Bạn có thể chọn vị trí phạm vi ngày cho tính khả dụng của chuyến tham quan "
+"này. Không thêm bất kỳ vị trí phạm vi ngày nào để hiển thị chuyến tham quan "
+"này vào tất cả các ngày."
 
 #: includes/modules/dashboard/templates/html-admin-dashboard.php:171
 msgid "You can read documentation about yatra WordPress plugin."
@@ -5663,7 +5664,7 @@ msgstr "Bạn không có nhiều quyền truy cập để thực hiện thanh to
 
 #: templates/tmpl-mini-cart.php:23
 msgid "You have %d items on the cart"
-msgstr "Bạn có %d mặt hàng trong giỏ hàng"
+msgstr "Bạn có %d mặt hàng trên giỏ hàng"
 
 #: includes/class-yatra-form-handler.php:97
 msgid "You must have to agree privacy policy"
@@ -5715,11 +5716,11 @@ msgstr ""
 #: includes/class-yatra-checkout-form.php:86
 #: includes/class-yatra-enquiry-form.php:107
 msgid "Your contact number"
-msgstr "Số liên lạc của bạn"
+msgstr "số liên lạc của bạn"
 
 #: includes/class-yatra-create-account-form.php:45
 msgid "Your email address"
-msgstr "Địa chỉ email của bạn"
+msgstr "địa chỉ email của bạn"
 
 #: includes/class-yatra-checkout-form.php:36
 #: includes/class-yatra-checkout-form.php:40
@@ -5793,15 +5794,15 @@ msgstr ""
 
 #: core/Admin/Emails/DefaultEmailMessages.php:9
 msgid "Your tour booking has been confirmed"
-msgstr "Đặt chỗ của bạn đã được xác nhận"
+msgstr "Đặt tour của bạn đã được xác nhận"
 
 #: core/Admin/Emails/DefaultEmailMessages.php:51
 msgid "Your tour booking has been {{booking_status}}"
-msgstr "Đặt chỗ của bạn đã được {{booking_status}}"
+msgstr "Đặt chuyến tham quan của bạn đã được {{booking_status}}"
 
 #: includes/helpers/yatra-currency-helper.php:171
 msgid "Zambian kwacha"
-msgstr "kwacha Zambia"
+msgstr "Đồng kwacha của Zambia"
 
 #: core/Admin/Emails/DefaultEmailMessages.php:29
 msgid "{{customer_name}} booked tour package."
