@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-04-12T12:12:16+03:00\n"
-"PO-Revision-Date: 2023-05-19 08:11+0000\n"
+"PO-Revision-Date: 2023-05-19 03:52+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: wpforms-lite\n"
 "Language: vi\n"
@@ -815,7 +815,7 @@ msgstr "Tắt"
 #: src/Integrations/Divi/WPFormsSelector.php:73
 #: src/Integrations/Divi/WPFormsSelector.php:83
 msgid "On"
-msgstr "Trên"
+msgstr "TRÊN"
 
 #: includes/admin/builder/class-builder.php:611
 msgid "or"
@@ -1271,7 +1271,7 @@ msgstr ""
 #: includes/admin/builder/panels/class-payments.php:18
 #: src/Admin/Builder/Help.php:261
 msgid "Payments"
-msgstr "Thanh toán"
+msgstr "thanh toán"
 
 #: includes/admin/builder/panels/class-payments.php:37
 #: includes/admin/builder/panels/class-providers.php:71
@@ -1444,7 +1444,7 @@ msgstr "Bảo vệ thư rác và bảo mật"
 #: lite/wpforms-lite.php:101 src/Admin/AdminBarMenu.php:221
 #: templates/admin/notifications.php:23
 msgid "Notifications"
-msgstr "Thông báo"
+msgstr "thông báo"
 
 #: includes/admin/builder/panels/class-settings.php:44
 #: lite/wpforms-lite.php:409
@@ -2814,7 +2814,7 @@ msgstr "Chỉ kiểu dáng cơ bản"
 
 #: includes/admin/class-settings.php:296
 msgid "No styling"
-msgstr "Không có kiểu dáng"
+msgstr "không có kiểu dáng"
 
 #: includes/admin/class-settings.php:301
 msgid "Load Assets Globally"
@@ -2972,7 +2972,7 @@ msgstr "Vui lòng nhập một số hợp lệ."
 
 #: includes/admin/class-settings.php:442
 msgid "Number Positive"
-msgstr "Số dương"
+msgstr "số dương"
 
 #: includes/admin/class-settings.php:444 src/Frontend/Frontend.php:1936
 msgid "Please enter a valid positive number."
@@ -3527,7 +3527,7 @@ msgstr "Chọn hình thức của bạn"
 #: includes/class-widget.php:139
 msgctxt "Widget"
 msgid "No forms"
-msgstr "Không có biểu mẫu"
+msgstr "không có biểu mẫu"
 
 #: includes/class-widget.php:148
 msgctxt "Widget"
@@ -4212,7 +4212,7 @@ msgstr "Vui lòng cung cấp một giá trị hợp lệ."
 
 #: includes/fields/class-number.php:18
 msgid "Numbers"
-msgstr "Số"
+msgstr "số"
 
 #: includes/fields/class-radio.php:18
 msgid "Multiple Choice"
@@ -4429,7 +4429,7 @@ msgstr "New Jersey"
 
 #: includes/functions/data-presets.php:49
 msgid "New Mexico"
-msgstr "New Mexico"
+msgstr "Mexico mới"
 
 #: includes/functions/data-presets.php:50
 msgid "New York"
@@ -4437,7 +4437,7 @@ msgstr "Newyork"
 
 #: includes/functions/data-presets.php:51
 msgid "North Carolina"
-msgstr "Bắc Carolina"
+msgstr "bắc Carolina"
 
 #: includes/functions/data-presets.php:52
 msgid "North Dakota"
@@ -4954,7 +4954,7 @@ msgstr "Nhật Bản"
 
 #: includes/functions/data-presets.php:195
 msgid "Jersey"
-msgstr "Jersey"
+msgstr "Áo sơ mi"
 
 #: includes/functions/data-presets.php:196
 msgid "Jordan"
@@ -5142,11 +5142,11 @@ msgstr "Caledonia mới"
 
 #: includes/functions/data-presets.php:242
 msgid "New Zealand"
-msgstr "New Zealand"
+msgstr "Tân Tây Lan"
 
 #: includes/functions/data-presets.php:243
 msgid "Nicaragua"
-msgstr "Ni-ca-ra-goa"
+msgstr "ni-ca-ra-goa"
 
 #: includes/functions/data-presets.php:244
 msgid "Niger"
@@ -5174,7 +5174,7 @@ msgstr "Na Uy"
 
 #: includes/functions/data-presets.php:250
 msgid "Oman"
-msgstr "Oman"
+msgstr "ô-man"
 
 #: includes/functions/data-presets.php:251
 msgid "Pakistan"
@@ -5206,7 +5206,7 @@ msgstr "Pêru"
 
 #: includes/functions/data-presets.php:258
 msgid "Philippines"
-msgstr "Philippines"
+msgstr "philippines"
 
 #: includes/functions/data-presets.php:259
 msgid "Pitcairn"
@@ -5627,7 +5627,7 @@ msgstr "Tên biểu mẫu hiển thị"
 #: includes/integrations.php:57 includes/integrations.php:72
 #: src/Integrations/Gutenberg/FormSelector.php:356
 msgid "No"
-msgstr "Không"
+msgstr "KHÔNG"
 
 #: includes/integrations.php:58 includes/integrations.php:73
 msgid "Yes"
@@ -7796,7 +7796,7 @@ msgstr "Gửi"
 #: src/Admin/Tools/Importers/ContactForm7.php:130
 #: src/Admin/Tools/Importers/NinjaForms.php:135
 msgid "Notification 1"
-msgstr "Thông báo 1"
+msgstr "thông báo 1"
 
 #: src/Admin/Tools/Importers/ContactForm7.php:157
 #: src/Admin/Tools/Importers/NinjaForms.php:162
@@ -7810,7 +7810,7 @@ msgstr "Trường chấp nhận"
 
 #: src/Admin/Tools/Importers/ContactForm7.php:440
 msgid "Notification 2"
-msgstr "Thông báo 2"
+msgstr "thông báo 2"
 
 #. translators: %1$s - field type; %2$s - field name if available.
 #: src/Admin/Tools/Importers/ContactForm7.php:532
@@ -8805,7 +8805,7 @@ msgid ""
 "Notifications can only use 1 From Email. Please do not enter multiple "
 "addresses."
 msgstr ""
-"Thông báo chỉ có thể sử dụng từ 1 Email. Vui lòng không nhập nhiều địa chỉ."
+"Thông báo chỉ có thể sử dụng 1 From Email. Vui lòng không nhập nhiều địa chỉ."
 
 #. translators: %1$s - WordPress site domain.
 #: src/Integrations/SMTP/Notifications.php:152
@@ -9936,7 +9936,7 @@ msgstr "Tin nhắn trước"
 
 #: templates/admin/notifications.php:36
 msgid "Next message"
-msgstr "Tin nhắn tiếp theo"
+msgstr "tin nhắn tiếp theo"
 
 #: templates/admin/pages/constant-contact.php:15
 msgid "Constant Contact"

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-04-12T12:12:16+03:00\n"
-"PO-Revision-Date: 2023-05-08 10:21+0000\n"
+"PO-Revision-Date: 2023-05-09 04:42+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: wpforms-lite\n"
 "Language: vi\n"
@@ -2578,7 +2578,7 @@ msgstr ""
 
 #: includes/admin/class-menu.php:56 src/Admin/AdminBarMenu.php:240
 msgid "All Forms"
-msgstr "tất cả các hình thức"
+msgstr "Tất cả các biểu mẫu"
 
 #: includes/admin/class-menu.php:65
 msgid "WPForms Builder"
@@ -2625,7 +2625,7 @@ msgstr "Bổ trợ"
 
 #: includes/admin/class-menu.php:143 includes/admin/class-menu.php:144
 msgid "Analytics"
-msgstr "phân tích"
+msgstr "Phân tích"
 
 #: includes/admin/class-menu.php:153 includes/admin/class-menu.php:154
 msgid "SMTP"
@@ -3818,7 +3818,7 @@ msgstr "nội tuyến"
 
 #: includes/fields/class-base.php:1906
 msgid "Choice Layout"
-msgstr "bố cục lựa chọn"
+msgstr "Bố cục lựa chọn"
 
 #: includes/fields/class-base.php:1939
 msgid "Select auto-populate method to use."
@@ -3878,7 +3878,7 @@ msgstr "Chỉ có thể thêm các giá trị phù hợp với các điều ki�
 
 #: includes/fields/class-checkbox.php:18
 msgid "Checkboxes"
-msgstr "hộp kiểm"
+msgstr "Hộp kiểm"
 
 #: includes/fields/class-checkbox.php:24 includes/fields/class-radio.php:24
 #: includes/fields/class-select.php:49
@@ -3974,7 +3974,7 @@ msgstr ""
 
 #: includes/fields/class-email.php:379
 msgid "Allowlist"
-msgstr "danh sách cho phép"
+msgstr "Danh sách cho phép"
 
 #: includes/fields/class-email.php:380
 msgid "Denylist"
@@ -4268,7 +4268,7 @@ msgstr "Chọn tùy chọn này để giới hạn độ dài văn bản theo s�
 
 #: includes/fields/class-text.php:307 includes/fields/class-textarea.php:151
 msgid "Characters"
-msgstr "Nhân vật"
+msgstr "Ký tự"
 
 #: includes/fields/class-text.php:308 includes/fields/class-textarea.php:152
 msgid "Words"
@@ -4312,7 +4312,7 @@ msgstr "Alaska"
 
 #: includes/functions/data-presets.php:20
 msgid "Arizona"
-msgstr "arizona"
+msgstr "Arizona"
 
 #: includes/functions/data-presets.php:21
 msgid "Arkansas"
@@ -4320,7 +4320,7 @@ msgstr "Arkansas"
 
 #: includes/functions/data-presets.php:22
 msgid "California"
-msgstr "california"
+msgstr "California"
 
 #: includes/functions/data-presets.php:23
 msgid "Colorado"
@@ -4593,7 +4593,7 @@ msgstr "Bêlarut"
 
 #: includes/functions/data-presets.php:105
 msgid "Belgium"
-msgstr "nước Bỉ"
+msgstr "Bỉ"
 
 #: includes/functions/data-presets.php:106
 msgid "Belize"
@@ -4685,7 +4685,7 @@ msgstr "Tchad"
 
 #: includes/functions/data-presets.php:128
 msgid "Chile"
-msgstr "chi-lê"
+msgstr "Chi-lê"
 
 #: includes/functions/data-presets.php:129
 msgid "China"
@@ -5780,7 +5780,7 @@ msgstr ""
 
 #: includes/providers/class-constant-contact.php:445
 msgid "API list error: Constant API error"
-msgstr "Lỗi danh sách API: Lỗi API liên tục"
+msgstr "Lỗi danh sách API: Lỗi hằng số API"
 
 #: includes/providers/class-constant-contact.php:541
 msgid ""
@@ -5803,8 +5803,8 @@ msgid ""
 "Because Constant Contact requires external authentication, you will need to "
 "register WPForms with Constant Contact before you can proceed."
 msgstr ""
-"Vì Constant Contact yêu cầu xác thực bên ngoài nên bạn sẽ cần đăng ký "
-"WPForms với Constant Contact trước khi có thể tiếp tục."
+"Vì Hằng số Liên hệ yêu cầu xác thực bên ngoài nên bạn sẽ cần đăng ký WPForms "
+"với Hằng số Liên hệ trước khi có thể tiếp tục."
 
 #: includes/providers/class-constant-contact.php:555
 #: includes/providers/class-constant-contact.php:694
@@ -6036,9 +6036,9 @@ msgid ""
 "rel=\"noopener noreferrer\">Terms of Service</a> and to share your "
 "information with WPForms."
 msgstr ""
-"Bằng cách bật Lite Connect, bạn đồng ý với <a href=\"%s\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">Điều khoản dịch vụ</a> của chúng tôi và chia sẻ "
-"thông tin của bạn với WPForms."
+"Bằng cách bật Kết nối Rút gọn, bạn đồng ý với <a href=\"%s\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">Điều khoản dịch vụ</a> của "
+"chúng tôi và chia sẻ thông tin của bạn với WPForms."
 
 #: lite/wpforms-lite.php:105
 msgid "Multiple notifications"
@@ -6344,7 +6344,7 @@ msgstr "Kích hoạt tính năng chống thư rác Honeypot"
 
 #: src/Admin/Builder/AntiSpam.php:108
 msgid "Also Available"
-msgstr "cũng có sẵn"
+msgstr "Cũng có sẵn"
 
 #: src/Admin/Builder/AntiSpam.php:135
 msgid "Enable hCaptcha"
@@ -6851,7 +6851,7 @@ msgstr "Quảng trường"
 
 #: src/Admin/Education/Fields.php:252
 msgid "Authorize.Net"
-msgstr "Ủy quyền.Net"
+msgstr "Authorize.Net"
 
 #: src/Admin/Education/Fields.php:261
 msgid "Total"
@@ -8034,7 +8034,7 @@ msgstr "Chọn các biểu mẫu bạn muốn nhập."
 
 #: src/Admin/Tools/Views/Importer.php:157
 msgid "Available Forms"
-msgstr "Mẫu có sẵn"
+msgstr "Biểu mẫu có sẵn"
 
 #: src/Admin/Tools/Views/Importer.php:176
 msgid "Select All"
@@ -9643,7 +9643,7 @@ msgstr "Bạn có thể thêm các trường bổ sung vào biểu mẫu của m
 
 #: templates/admin/challenge/builder.php:31
 msgid "Check Notification Settings"
-msgstr "Kiểm tra cài đặt thông báo"
+msgstr "Cài đặt kiểm tra thông báo"
 
 #: templates/admin/challenge/builder.php:32
 msgid ""
@@ -10067,9 +10067,9 @@ msgid ""
 "contacts and engage with them even after they leave your website. When you "
 "use Constant Contact + WPForms together, you can:"
 msgstr ""
-"Nhưng khi bạn kết hợp WPForms với Constant Contact, bạn có thể nuôi dưỡng "
-"các liên hệ của mình và tương tác với họ ngay cả sau khi họ rời khỏi trang "
-"web của bạn. Khi sử dụng Constant Contact + WPForms cùng nhau, bạn có thể:"
+"Nhưng khi bạn kết hợp WPForms với Liên hệ Cố định, bạn có thể nuôi dưỡng các "
+"liên hệ của mình và tương tác với họ ngay cả sau khi họ rời khỏi trang web "
+"của bạn. Khi sử dụng Liên hệ Cố định + WPForms cùng nhau, bạn có thể:"
 
 #: templates/admin/pages/constant-contact.php:98
 msgid "Seamlessly add new contacts to your email list"

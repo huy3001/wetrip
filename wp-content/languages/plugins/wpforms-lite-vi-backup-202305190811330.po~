@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-04-12T12:12:16+03:00\n"
-"PO-Revision-Date: 2023-05-08 07:05+0000\n"
+"PO-Revision-Date: 2023-05-19 03:54+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: wpforms-lite\n"
 "Language: vi\n"
@@ -68,7 +68,7 @@ msgstr "Kích hoạt"
 
 #: includes/admin/admin.php:154 includes/admin/class-about.php:403
 msgid "Activated"
-msgstr "kích hoạt"
+msgstr "Đã kích hoạt"
 
 #: includes/admin/admin.php:155 includes/admin/class-about.php:400
 msgid "Active"
@@ -76,7 +76,7 @@ msgstr "Tích cực"
 
 #: includes/admin/admin.php:156
 msgid "Deactivate"
-msgstr "hủy kích hoạt"
+msgstr "Hủy kích hoạt"
 
 #: includes/admin/admin.php:157 includes/admin/class-about.php:408
 msgid "Inactive"
@@ -381,7 +381,7 @@ msgid ""
 "plan, click <em>refresh</em>."
 msgstr ""
 "Sau khi nâng cấp, key bản quyền của bạn sẽ được giữ nguyên.<br> Bạn có thể "
-"cần làm mới nhanh để mở khóa các addon mới của mình. Trong quản trị viên "
+"cần làm mới nhanh để mở khóa các bổ trợ mới của mình. Trong quản trị viên "
 "WordPress của bạn, hãy truy cập <strong>WPForms » Settings</strong> . Nếu "
 "bạn không thấy gói đã cập nhật của mình, hãy nhấp vào <em>làm mới</em> ."
 
@@ -493,7 +493,7 @@ msgstr "Đã tắt plugin."
 
 #: includes/admin/ajax-actions.php:554
 msgid "Addon deactivated."
-msgstr "Addon bị vô hiệu hóa."
+msgstr "Bổ trợ bị vô hiệu hóa."
 
 #: includes/admin/ajax-actions.php:558
 msgid ""
@@ -544,7 +544,7 @@ msgstr "Đã cài đặt và kích hoạt plugin."
 
 #: includes/admin/ajax-actions.php:741
 msgid "Addon installed & activated."
-msgstr "Addon được cài đặt và kích hoạt."
+msgstr "Bổ trợ được cài đặt và kích hoạt."
 
 #: includes/admin/ajax-actions.php:764 src/Admin/FormEmbedWizard.php:420
 msgid "Incorrect usage of this operation."
@@ -1091,7 +1091,7 @@ msgstr "Tháng"
 
 #: includes/admin/builder/class-builder.php:824
 msgid "Days"
-msgstr "ngày"
+msgstr "Ngày"
 
 #: includes/admin/builder/class-builder.php:958
 #: includes/admin/class-welcome.php:138
@@ -1449,7 +1449,7 @@ msgstr "thông báo"
 #: includes/admin/builder/panels/class-settings.php:44
 #: lite/wpforms-lite.php:409
 msgid "Confirmations"
-msgstr "xác nhận"
+msgstr "Xác nhận"
 
 #: includes/admin/builder/panels/class-settings.php:91
 #: src/Admin/Forms/Tags.php:259
@@ -1547,7 +1547,7 @@ msgstr "Cho phép gửi biểu mẫu mà không cần tải lại trang."
 #: src/Integrations/Gutenberg/FormSelector.php:323
 #: src/Lite/Admin/Education/Builder/Notifications.php:119
 msgid "Advanced"
-msgstr "Trình độ cao"
+msgstr "Trình nâng cao"
 
 #: includes/admin/builder/panels/class-setup.php:21
 msgid "Setup"
@@ -2262,7 +2262,7 @@ msgstr ""
 
 #: includes/admin/class-about.php:1102
 msgid "Duplicator"
-msgstr "sao chép"
+msgstr "Sao chép"
 
 #: includes/admin/class-about.php:1103
 msgid ""
@@ -2468,11 +2468,11 @@ msgstr "Không bao gồm Addons"
 
 #: includes/admin/class-about.php:1453
 msgid "Custom Captcha Addon included"
-msgstr "Đã bao gồm Addon Captcha tùy chỉnh"
+msgstr "Hình ảnh xác thực đã bao gồm Addon tùy chỉnh"
 
 #: includes/admin/class-about.php:1459
 msgid "Email Marketing Addons included"
-msgstr "Email Marketing Addons bao gồm"
+msgstr "Email Marketing Addons đã được tính hợp"
 
 #: includes/admin/class-about.php:1465
 msgid "Pro Addons Included"
@@ -2490,7 +2490,7 @@ msgstr ""
 #: includes/admin/class-about.php:1472 includes/admin/class-about.php:1479
 #: includes/admin/class-about.php:1486
 msgid "All Addons Included"
-msgstr "Bao gồm tất cả các Addon"
+msgstr "Bao gồm tất cả các Bổ trợ"
 
 #: includes/admin/class-about.php:1473 includes/admin/class-about.php:1480
 #: includes/admin/class-about.php:1487
@@ -2578,7 +2578,7 @@ msgstr ""
 
 #: includes/admin/class-menu.php:56 src/Admin/AdminBarMenu.php:240
 msgid "All Forms"
-msgstr "tất cả các hình thức"
+msgstr "Tất cả các biểu mẫu"
 
 #: includes/admin/class-menu.php:65
 msgid "WPForms Builder"
@@ -2621,11 +2621,11 @@ msgstr "Thông tin"
 
 #: includes/admin/class-menu.php:134 src/Admin/Builder/Help.php:260
 msgid "Addons"
-msgstr "bổ trợ"
+msgstr "Bổ trợ"
 
 #: includes/admin/class-menu.php:143 includes/admin/class-menu.php:144
 msgid "Analytics"
-msgstr "phân tích"
+msgstr "Phân tích"
 
 #: includes/admin/class-menu.php:153 includes/admin/class-menu.php:154
 msgid "SMTP"
@@ -2761,7 +2761,7 @@ msgstr "Thẩm định"
 #: includes/admin/class-settings.php:202 includes/admin/class-settings.php:489
 #: includes/admin/class-settings.php:496
 msgid "Integrations"
-msgstr "tích hợp"
+msgstr "Tích hợp"
 
 #: includes/admin/class-settings.php:207 includes/admin/class-welcome.php:271
 #: templates/education/admin/settings/geolocation/heading.php:16
@@ -2980,7 +2980,7 @@ msgstr "Vui lòng nhập một số dương hợp lệ."
 
 #: includes/admin/class-settings.php:448
 msgid "Confirm Value"
-msgstr "xác nhận giá trị"
+msgstr "Xác nhận giá trị"
 
 #: includes/admin/class-settings.php:450 src/Frontend/Frontend.php:1937
 msgid "Field values do not match."
@@ -3429,7 +3429,7 @@ msgstr ""
 
 #: includes/class-process.php:161
 msgid "Invalid form."
-msgstr "hình thức không hợp lệ."
+msgstr "Biểu mẫu không hợp lệ."
 
 #. translators: %s - error unique ID.
 #: includes/class-process.php:182
@@ -3814,11 +3814,11 @@ msgstr "ba cột"
 
 #: includes/fields/class-base.php:1898
 msgid "Inline"
-msgstr "nội tuyến"
+msgstr "Nội tuyến"
 
 #: includes/fields/class-base.php:1906
 msgid "Choice Layout"
-msgstr "bố cục lựa chọn"
+msgstr "Bố cục lựa chọn"
 
 #: includes/fields/class-base.php:1939
 msgid "Select auto-populate method to use."
@@ -3878,7 +3878,7 @@ msgstr "Chỉ có thể thêm các giá trị phù hợp với các điều ki�
 
 #: includes/fields/class-checkbox.php:18
 msgid "Checkboxes"
-msgstr "hộp kiểm"
+msgstr "Hộp kiểm"
 
 #: includes/fields/class-checkbox.php:24 includes/fields/class-radio.php:24
 #: includes/fields/class-select.php:49
@@ -3974,11 +3974,11 @@ msgstr ""
 
 #: includes/fields/class-email.php:379
 msgid "Allowlist"
-msgstr "danh sách cho phép"
+msgstr "Danh sách cho phép"
 
 #: includes/fields/class-email.php:380
 msgid "Denylist"
-msgstr "danh sách từ chối"
+msgstr "Danh sách từ chối"
 
 #: includes/fields/class-email.php:563 includes/fields/class-email.php:613
 #: includes/fields/class-email.php:623
@@ -4220,7 +4220,7 @@ msgstr "Nhiều lựa chọn"
 
 #: includes/fields/class-select.php:43
 msgid "Dropdown"
-msgstr "thả xuống"
+msgstr "Thả xuống"
 
 #: includes/fields/class-select.php:256
 msgid "Multiple Options Selection"
@@ -4268,7 +4268,7 @@ msgstr "Chọn tùy chọn này để giới hạn độ dài văn bản theo s�
 
 #: includes/fields/class-text.php:307 includes/fields/class-textarea.php:151
 msgid "Characters"
-msgstr "Nhân vật"
+msgstr "Ký tự"
 
 #: includes/fields/class-text.php:308 includes/fields/class-textarea.php:152
 msgid "Words"
@@ -4308,11 +4308,11 @@ msgstr "Alabama"
 
 #: includes/functions/data-presets.php:19
 msgid "Alaska"
-msgstr "alaska"
+msgstr "Alaska"
 
 #: includes/functions/data-presets.php:20
 msgid "Arizona"
-msgstr "arizona"
+msgstr "Arizona"
 
 #: includes/functions/data-presets.php:21
 msgid "Arkansas"
@@ -4320,7 +4320,7 @@ msgstr "Arkansas"
 
 #: includes/functions/data-presets.php:22
 msgid "California"
-msgstr "california"
+msgstr "California"
 
 #: includes/functions/data-presets.php:23
 msgid "Colorado"
@@ -4385,7 +4385,7 @@ msgstr "Maine"
 
 #: includes/functions/data-presets.php:38
 msgid "Maryland"
-msgstr "maryland"
+msgstr "Maryland"
 
 #: includes/functions/data-presets.php:39
 msgid "Massachusetts"
@@ -4421,15 +4421,15 @@ msgstr "Nevada"
 
 #: includes/functions/data-presets.php:47
 msgid "New Hampshire"
-msgstr "Mới Hampshire"
+msgstr "New Hampshire"
 
 #: includes/functions/data-presets.php:48
 msgid "New Jersey"
-msgstr "Áo mới"
+msgstr "New Jersey"
 
 #: includes/functions/data-presets.php:49
 msgid "New Mexico"
-msgstr "Mexico mới"
+msgstr "New Mexico"
 
 #: includes/functions/data-presets.php:50
 msgid "New York"
@@ -4517,7 +4517,7 @@ msgstr "Quần đảo Aland"
 
 #: includes/functions/data-presets.php:86
 msgid "Albania"
-msgstr "anbani"
+msgstr "Anbani"
 
 #: includes/functions/data-presets.php:87
 msgid "Algeria"
@@ -4593,7 +4593,7 @@ msgstr "Bêlarut"
 
 #: includes/functions/data-presets.php:105
 msgid "Belgium"
-msgstr "nước Bỉ"
+msgstr "Bỉ"
 
 #: includes/functions/data-presets.php:106
 msgid "Belize"
@@ -4685,7 +4685,7 @@ msgstr "Tchad"
 
 #: includes/functions/data-presets.php:128
 msgid "Chile"
-msgstr "chi-lê"
+msgstr "Chi-lê"
 
 #: includes/functions/data-presets.php:129
 msgid "China"
@@ -4701,7 +4701,7 @@ msgstr "Quần đảo Cocos (Keeling)"
 
 #: includes/functions/data-presets.php:132
 msgid "Colombia"
-msgstr "cô-lôm-bi-a"
+msgstr "Cô-lôm-bi-a"
 
 #: includes/functions/data-presets.php:133
 msgid "Comoros"
@@ -4737,7 +4737,7 @@ msgstr "Cuba"
 
 #: includes/functions/data-presets.php:141
 msgid "Curaçao"
-msgstr "Rượu cam bì"
+msgstr "Curacao"
 
 #: includes/functions/data-presets.php:142
 msgid "Cyprus"
@@ -4954,7 +4954,7 @@ msgstr "Nhật Bản"
 
 #: includes/functions/data-presets.php:195
 msgid "Jersey"
-msgstr "áo sơ mi"
+msgstr "Jersey"
 
 #: includes/functions/data-presets.php:196
 msgid "Jordan"
@@ -5050,11 +5050,11 @@ msgstr "Malaysia"
 
 #: includes/functions/data-presets.php:219
 msgid "Maldives"
-msgstr "ma-đi-vơ"
+msgstr "Ma-đi-vơ"
 
 #: includes/functions/data-presets.php:220
 msgid "Mali"
-msgstr "ma-li"
+msgstr "Ma-li"
 
 #: includes/functions/data-presets.php:221
 msgid "Malta"
@@ -5062,7 +5062,7 @@ msgstr "Malta"
 
 #: includes/functions/data-presets.php:222
 msgid "Marshall Islands"
-msgstr "đảo Marshall"
+msgstr "Đảo Marshall"
 
 #: includes/functions/data-presets.php:223
 msgid "Martinique"
@@ -5102,7 +5102,7 @@ msgstr "Mông Cổ"
 
 #: includes/functions/data-presets.php:232
 msgid "Montenegro"
-msgstr "người Montenegro"
+msgstr "Montenegro"
 
 #: includes/functions/data-presets.php:233
 msgid "Montserrat"
@@ -5142,11 +5142,11 @@ msgstr "Caledonia mới"
 
 #: includes/functions/data-presets.php:242
 msgid "New Zealand"
-msgstr "Tân Tây Lan"
+msgstr "New Zealand"
 
 #: includes/functions/data-presets.php:243
 msgid "Nicaragua"
-msgstr "ni-ca-ra-goa"
+msgstr "Ni-ca-ra-goa"
 
 #: includes/functions/data-presets.php:244
 msgid "Niger"
@@ -5526,7 +5526,7 @@ msgstr "Tháng tư"
 
 #: includes/functions/data-presets.php:353
 msgid "May"
-msgstr "Có thể"
+msgstr "Tháng năm"
 
 #: includes/functions/data-presets.php:354
 msgid "June"
@@ -5627,7 +5627,7 @@ msgstr "Tên biểu mẫu hiển thị"
 #: includes/integrations.php:57 includes/integrations.php:72
 #: src/Integrations/Gutenberg/FormSelector.php:356
 msgid "No"
-msgstr "KHÔNG"
+msgstr "Không"
 
 #: includes/integrations.php:58 includes/integrations.php:73
 msgid "Yes"
@@ -5768,7 +5768,7 @@ msgstr "Tích hợp %s với WPForms"
 #: includes/providers/class-base.php:1326
 #: src/Providers/Provider/Settings/PageIntegrations.php:89
 msgid "Connected"
-msgstr "kết nối"
+msgstr "Đã kết nối"
 
 #: includes/providers/class-base.php:1359
 #: src/Providers/Provider/Settings/PageIntegrations.php:187
@@ -5780,7 +5780,7 @@ msgstr ""
 
 #: includes/providers/class-constant-contact.php:445
 msgid "API list error: Constant API error"
-msgstr "Lỗi danh sách API: Lỗi API liên tục"
+msgstr "Lỗi danh sách API: Lỗi hằng số API"
 
 #: includes/providers/class-constant-contact.php:541
 msgid ""
@@ -5803,8 +5803,8 @@ msgid ""
 "Because Constant Contact requires external authentication, you will need to "
 "register WPForms with Constant Contact before you can proceed."
 msgstr ""
-"Vì Constant Contact yêu cầu xác thực bên ngoài nên bạn sẽ cần đăng ký "
-"WPForms với Constant Contact trước khi có thể tiếp tục."
+"Vì Hằng số Liên hệ yêu cầu xác thực bên ngoài nên bạn sẽ cần đăng ký WPForms "
+"với Hằng số Liên hệ trước khi có thể tiếp tục."
 
 #: includes/providers/class-constant-contact.php:555
 #: includes/providers/class-constant-contact.php:694
@@ -5893,7 +5893,7 @@ msgstr "Tiện ích không xác định"
 
 #: lite/templates/admin/addons.php:43
 msgid "logo"
-msgstr "Logo"
+msgstr "logo"
 
 #: lite/templates/admin/addons.php:49
 #: src/Integrations/Gutenberg/FormSelector.php:335
@@ -6036,9 +6036,9 @@ msgid ""
 "rel=\"noopener noreferrer\">Terms of Service</a> and to share your "
 "information with WPForms."
 msgstr ""
-"Bằng cách bật Lite Connect, bạn đồng ý với <a href=\"%s\" target=\"_blank\" "
-"rel=\"noopener noreferrer\">Điều khoản dịch vụ</a> của chúng tôi và chia sẻ "
-"thông tin của bạn với WPForms."
+"Bằng cách bật Kết nối Rút gọn, bạn đồng ý với <a href=\"%s\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">Điều khoản dịch vụ</a> của "
+"chúng tôi và chia sẻ thông tin của bạn với WPForms."
 
 #: lite/wpforms-lite.php:105
 msgid "Multiple notifications"
@@ -6344,7 +6344,7 @@ msgstr "Kích hoạt tính năng chống thư rác Honeypot"
 
 #: src/Admin/Builder/AntiSpam.php:108
 msgid "Also Available"
-msgstr "cũng có sẵn"
+msgstr "Cũng có sẵn"
 
 #: src/Admin/Builder/AntiSpam.php:135
 msgid "Enable hCaptcha"
@@ -6495,7 +6495,7 @@ msgstr "Phím tắt tiện dụng cho các hành động phổ biến trong trì
 #: src/Admin/Builder/Templates.php:679
 #: src/Integrations/Elementor/Widget.php:201
 msgid "New form"
-msgstr "Hình thức mới"
+msgstr "Biểu mẫu mới"
 
 #. translators: %d - templates count.
 #: src/Admin/Builder/Templates.php:852
@@ -6663,7 +6663,7 @@ msgstr "Có, kích hoạt"
 
 #: src/Admin/Education/Core.php:98
 msgid "Addon activated"
-msgstr "addon đã kích hoạt"
+msgstr "Bổ trợ đã kích hoạt"
 
 #: src/Admin/Education/Core.php:99
 msgid "Plugin activated"
@@ -6671,7 +6671,7 @@ msgstr "Đã kích hoạt plugin"
 
 #: src/Admin/Education/Core.php:100
 msgid "Activating"
-msgstr "kích hoạt"
+msgstr "Đang kích hoạt"
 
 #. translators: %s - addon name.
 #: src/Admin/Education/Core.php:102
@@ -6827,7 +6827,7 @@ msgstr "Một vật thể"
 
 #: src/Admin/Education/Fields.php:201
 msgid "Multiple Items"
-msgstr "nhiều mục"
+msgstr "Nhiều mục"
 
 #: src/Admin/Education/Fields.php:209
 msgid "Checkbox Items"
@@ -6851,7 +6851,7 @@ msgstr "Quảng trường"
 
 #: src/Admin/Education/Fields.php:252
 msgid "Authorize.Net"
-msgstr "Ủy quyền.Net"
+msgstr "Authorize.Net"
 
 #: src/Admin/Education/Fields.php:261
 msgid "Total"
@@ -6867,7 +6867,7 @@ msgstr "Hỗ trợ & Tài liệu"
 
 #: src/Admin/FlyoutMenu.php:124
 msgid "Join Our Community"
-msgstr "tham gia cộng đồng của chúng tôi"
+msgstr "Tham gia cộng đồng của chúng tôi"
 
 #: src/Admin/FlyoutMenu.php:129 src/Admin/Pages/Community.php:105
 #: src/Admin/Pages/Community.php:107
@@ -6888,7 +6888,7 @@ msgstr "Khôi phục"
 
 #: src/Admin/Forms/BulkActions.php:285 src/Admin/Forms/Views.php:540
 msgid "Delete Permanently"
-msgstr "xóa vĩnh viễn"
+msgstr "Xóa vĩnh viễn"
 
 #: src/Admin/Forms/BulkActions.php:289 src/Admin/Forms/Views.php:69
 #: src/Admin/Forms/Views.php:475
@@ -6903,19 +6903,19 @@ msgstr "Kiểm tra bảo mật không thành công. Vui lòng thử lại."
 #: src/Admin/Forms/BulkActions.php:358
 msgid "%d form was successfully moved to Trash."
 msgid_plural "%d forms were successfully moved to Trash."
-msgstr[0] "%d biểu mẫu đã được di chuyển thành công vào Thùng rác."
+msgstr[0] "%d biểu mẫu đã được chuyển đến Thùng rác."
 
 #. translators: %d - Restored forms count.
 #: src/Admin/Forms/BulkActions.php:365
 msgid "%d form was successfully restored."
 msgid_plural "%d forms were successfully restored."
-msgstr[0] "Biểu mẫu %d đã được khôi phục thành công."
+msgstr[0] "%d biểu mẫu đã được khôi phục."
 
 #. translators: %d - Deleted forms count.
 #: src/Admin/Forms/BulkActions.php:372
 msgid "%d form was successfully permanently deleted."
 msgid_plural "%d forms were successfully permanently deleted."
-msgstr[0] "Biểu mẫu %d đã được xóa vĩnh viễn thành công."
+msgstr[0] "%d biểu mẫu đã được xóa vĩnh viễn."
 
 #. translators: %d - Duplicated forms count.
 #: src/Admin/Forms/BulkActions.php:379
@@ -6986,7 +6986,7 @@ msgstr "Đã xóa 1 thẻ thành công."
 #. translators: %d - Number of deleted tags.
 #: src/Admin/Forms/Tags.php:287
 msgid "%d tags were successfully deleted."
-msgstr "%d thẻ đã được xóa thành công."
+msgstr "%d thẻ đã được xóa."
 
 #: src/Admin/Forms/Tags.php:288
 msgid "Almost done!"
@@ -7765,7 +7765,7 @@ msgstr "Không tìm thấy"
 
 #: src/Admin/SiteHealth.php:107
 msgid "DB tables"
-msgstr "bảng cơ sở dữ liệu"
+msgstr "Bảng cơ sở dữ liệu"
 
 #: src/Admin/SiteHealth.php:115
 msgid "Total forms"
@@ -8034,7 +8034,7 @@ msgstr "Chọn các biểu mẫu bạn muốn nhập."
 
 #: src/Admin/Tools/Views/Importer.php:157
 msgid "Available Forms"
-msgstr "Mẫu có sẵn"
+msgstr "Biểu mẫu có sẵn"
 
 #: src/Admin/Tools/Views/Importer.php:176
 msgid "Select All"
@@ -8240,11 +8240,11 @@ msgstr "mẫu %s"
 
 #: src/Admin/Traits/FormTemplates.php:244
 msgid "Addon"
-msgstr "Thêm vào"
+msgstr "Bổ trợ"
 
 #: src/Admin/Traits/FormTemplates.php:251
 msgid "Custom"
-msgstr "Phong tục"
+msgstr "Tùy chỉnh"
 
 #: src/Admin/Traits/FormTemplates.php:274
 msgid "Selected"
@@ -8271,7 +8271,7 @@ msgstr "%s Dòng chủ đề trống."
 #. translators: %s - namespaced class name.
 #: src/Emails/Mailer.php:449
 msgid "%s Empty message."
-msgstr "%s Thông báo trống."
+msgstr "%s Tin nhắn trống."
 
 #: src/Emails/Mailer.php:495
 msgid ""
@@ -8646,7 +8646,7 @@ msgstr "Kiểu trường"
 
 #: src/Integrations/Gutenberg/FormSelector.php:320
 msgid "Label Styles"
-msgstr "kiểu nhãn"
+msgstr "Kiểu nhãn"
 
 #: src/Integrations/Gutenberg/FormSelector.php:321
 msgid "Button Styles"
@@ -8666,7 +8666,7 @@ msgstr "Các lớp CSS bổ sung"
 
 #: src/Integrations/Gutenberg/FormSelector.php:329
 msgid "Do not forget to test your form."
-msgstr "Đừng quên để kiểm tra hình thức của bạn."
+msgstr "Đừng quên kiểm tra biểu mẫu của bạn."
 
 #: src/Integrations/Gutenberg/FormSelector.php:331
 msgid "Check out our complete guide!"
@@ -8750,7 +8750,7 @@ msgstr "Có, Đặt lại"
 
 #: src/Integrations/Gutenberg/FormSelector.php:357
 msgid "Copy / Paste Style Settings"
-msgstr "Sao chép / Dán cài đặt kiểu"
+msgstr "Cài đặt kiểu Sao chép / Dán"
 
 #: src/Integrations/Gutenberg/FormSelector.php:358
 msgid ""
@@ -9465,7 +9465,7 @@ msgstr "--- Chọn Trường Mẫu ---"
 #: src/Providers/Provider/Settings/FormBuilder.php:171
 #: src/Providers/Provider/Settings/FormBuilder.php:224
 msgid "Add Another"
-msgstr "thêm cái khác"
+msgstr "Thêm cái khác"
 
 #: src/Providers/Provider/Settings/FormBuilder.php:177
 msgid "Remove"
@@ -9496,7 +9496,7 @@ msgstr "Thêm kết nối mới"
 
 #: src/Providers/Provider/Settings/PageIntegrations.php:133
 msgid "N/A"
-msgstr "không áp dụng"
+msgstr "Không áp dụng"
 
 #: src/Providers/Provider/Settings/PageIntegrations.php:148
 msgid "No Label"
@@ -9643,7 +9643,7 @@ msgstr "Bạn có thể thêm các trường bổ sung vào biểu mẫu của m
 
 #: templates/admin/challenge/builder.php:31
 msgid "Check Notification Settings"
-msgstr "Kiểm tra cài đặt thông báo"
+msgstr "Cài đặt kiểm tra thông báo"
 
 #: templates/admin/challenge/builder.php:32
 msgid ""
@@ -9936,7 +9936,7 @@ msgstr "Tin nhắn trước"
 
 #: templates/admin/notifications.php:36
 msgid "Next message"
-msgstr "tin nhắn tiếp theo"
+msgstr "Tin nhắn tiếp theo"
 
 #: templates/admin/pages/constant-contact.php:15
 msgid "Constant Contact"
@@ -9995,9 +9995,9 @@ msgid ""
 "<strong>Email converts</strong> - People who buy products marketed through "
 "email spend 138% more than those who don't receive email offers."
 msgstr ""
-"<strong>Người chuyển đổi qua email</strong> - Những người mua sản phẩm được "
-"tiếp thị qua email chi tiêu nhiều hơn 138% so với những người không nhận "
-"được ưu đãi qua email."
+"<strong>Chuyển đổi qua email</strong> - Những người mua sản phẩm được tiếp "
+"thị qua email chi tiêu nhiều hơn 138% so với những người không nhận được ưu "
+"đãi qua email."
 
 #: templates/admin/pages/constant-contact.php:63
 msgid ""
@@ -10067,9 +10067,9 @@ msgid ""
 "contacts and engage with them even after they leave your website. When you "
 "use Constant Contact + WPForms together, you can:"
 msgstr ""
-"Nhưng khi bạn kết hợp WPForms với Constant Contact, bạn có thể nuôi dưỡng "
-"các liên hệ của mình và tương tác với họ ngay cả sau khi họ rời khỏi trang "
-"web của bạn. Khi sử dụng Constant Contact + WPForms cùng nhau, bạn có thể:"
+"Nhưng khi bạn kết hợp WPForms với Liên hệ Cố định, bạn có thể nuôi dưỡng các "
+"liên hệ của mình và tương tác với họ ngay cả sau khi họ rời khỏi trang web "
+"của bạn. Khi sử dụng Liên hệ Cố định + WPForms cùng nhau, bạn có thể:"
 
 #: templates/admin/pages/constant-contact.php:98
 msgid "Seamlessly add new contacts to your email list"
@@ -10369,7 +10369,7 @@ msgstr ""
 #: templates/builder/revisions/notice-disabled.php:18
 #: templates/builder/revisions/notice-limited.php:27
 msgid "Learn How"
-msgstr "học như thế nào"
+msgstr "Học như thế nào"
 
 #: templates/builder/revisions/notice-limited.php:16
 msgid "Form Revisions Are Limited"
@@ -10593,11 +10593,11 @@ msgstr ""
 
 #: templates/fields/number-slider/builder-option-min-max.php:4
 msgid "Minimum"
-msgstr "tối thiểu"
+msgstr "Tối thiểu"
 
 #: templates/fields/number-slider/builder-option-min-max.php:8
 msgid "Maximum"
-msgstr "tối đa"
+msgstr "Tối đa"
 
 #: templates/integrations/elementor/no-forms.php:20
 msgid ""
