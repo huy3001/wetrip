@@ -37,13 +37,13 @@ if (\Blocksy\Plugin::instance()->account_auth->has_woo_register_flow()) {
 	<?php if ($has_username) { ?>
 		<p>
 			<label for="user_login_register"><?php echo __('Username', 'blocksy-companion') ?></label>
-			<input type="text" name="user_login" id="user_login_register" class="input" value="" size="20" autocapitalize="off">
+			<input type="text" name="user_login" id="user_login_register" class="input" value="" size="20" autocomplete="username" autocapitalize="off">
 		</p>
 	<?php } ?>
 
 	<p>
 		<label for="ct_user_email"><?php echo __('Email', 'blocksy-companion') ?></label>
-		<input type="email" name="user_email" id="ct_user_email" class="input" value="" size="25">
+		<input type="email" name="user_email" id="ct_user_email" class="input" value="" size="20" autocomplete="email">
 	</p>
 
 	<?php if ($has_password) { ?>

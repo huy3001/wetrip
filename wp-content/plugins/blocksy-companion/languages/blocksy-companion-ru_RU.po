@@ -3481,7 +3481,7 @@ msgstr "Скорость анимации"
 
 #: framework/premium/features/content-blocks/options/popup.php:144
 msgid "Entrance Value"
-msgstr "Входное значение"
+msgstr "Вход��ое значение"
 
 #: framework/premium/features/content-blocks/options/popup.php:156
 msgid "Trigger Condition"

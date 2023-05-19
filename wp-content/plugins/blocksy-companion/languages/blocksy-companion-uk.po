@@ -5526,7 +5526,7 @@ msgstr "Батьківська категорія"
 
 #: framework/extensions/product-reviews/extension.php:595
 msgid "Parent Category:"
-msgstr "Батьківська категорія:"
+msgstr "Батьківська катего��ія:"
 
 #: framework/extensions/product-reviews/extension.php:596
 msgid "Edit Category"
